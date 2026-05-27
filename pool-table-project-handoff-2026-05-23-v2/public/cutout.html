@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>California House Waypoint Cutout</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/finish.css" />
+    <link rel="stylesheet" href="/cutout.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>Waypoint Cutout</h1>
+          <p>Click around the cloth area, then save the transparent PNG.</p>
+        </div>
+        <div class="top-actions">
+          <a href="/finish.html" class="back-link">Review Cutouts</a>
+          <a href="/" class="back-link">Image Importer</a>
+        </div>
+      </section>
+
+      <section class="cutout-toolbar">
+        <div>
+          <strong id="tableName">Loading...</strong>
+          <span id="progressText">0 of 0</span>
+        </div>
+        <div class="cutout-actions">
+          <button id="prevBtn" type="button">Previous</button>
+          <button id="undoBtn" type="button">Undo Point</button>
+          <button id="clearBtn" type="button">Clear</button>
+          <button id="saveBtn" type="button" class="primary">Save PNG</button>
+          <button id="saveNextBtn" type="button" class="primary">Save & Next</button>
+          <button id="nextBtn" type="button">Next</button>
+        </div>
+      </section>
+
+      <section class="cutout-layout">
+        <div class="cutout-stage">
+          <canvas id="cutoutCanvas" width="1600" height="1000"></canvas>
+        </div>
+        <aside class="cutout-side">
+          <div>
+            <span id="pointCount">0</span>
+            <p>waypoints</p>
+          </div>
+          <div id="saveStatus" class="save-status">Click the cloth edge to place points.</div>
+          <img id="savedPreview" alt="Saved transparent PNG preview" />
+        </aside>
+      </section>
+    </main>
+    <script src="/cutout.js"></script>
+  </body>
+</html>

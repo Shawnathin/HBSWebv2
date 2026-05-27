@@ -1,0 +1,2148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cues | Home Billiards</title>
+    <style>
+      :root {
+        --ink: #171717;
+        --muted: #626262;
+        --soft: #f7f4ef;
+        --warm: #efe8dc;
+        --line: rgba(0, 0, 0, 0.12);
+        --line-strong: rgba(0, 0, 0, 0.22);
+        --white: #fff;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(18px);
+      }
+
+      .commerce-inner,
+      .category-inner,
+      .page {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding-inline: 22px;
+      }
+
+      .commerce-inner {
+        display: grid;
+        grid-template-columns: minmax(190px, 1fr) minmax(660px, 720px) auto minmax(118px, 1fr);
+        gap: 14px;
+        align-items: center;
+        justify-content: stretch;
+        padding-block: 16px;
+      }
+
+      .wordmark {
+        min-width: 190px;
+        color: #555a6c;
+        font-size: 1.72rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .wordmark span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .search-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 42px;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+      }
+
+      .search-bar input {
+        min-width: 0;
+        border: 0;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+
+      .search-bar input:focus {
+        outline: 2px solid rgba(45, 48, 58, 0.22);
+        outline-offset: -2px;
+      }
+
+      .search-bar button {
+        border: 0;
+        border-left: 1px solid rgba(45, 48, 58, 0.16);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 16px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .contact-button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 22px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .contact-button:hover {
+        border-color: rgba(45, 48, 58, 0.44);
+        color: #2d303a;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        min-width: 118px;
+        justify-content: flex-end;
+        color: #2d303a;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .category-nav {
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .category-inner {
+        display: flex;
+        min-height: 46px;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        height: 46px;
+        align-items: center;
+        gap: 6px;
+        padding: 0 18px;
+        color: #353844;
+        font-size: 0.88rem;
+        font-weight: 720;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-item {
+        position: static;
+      }
+
+      .nav-item > a {
+        position: relative;
+      }
+
+      .nav-item > a::after {
+        content: "";
+        position: absolute;
+        right: 18px;
+        bottom: 0;
+        left: 18px;
+        height: 3px;
+        background: #171717;
+        opacity: 0;
+        transform: scaleX(0.65);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item.current > a::after,
+      .nav-item:hover > a::after,
+      .nav-item:focus-within > a::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 65;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        background: #fff;
+        box-shadow: 0 22px 36px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover .mega-menu,
+      .nav-item:focus-within .mega-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mega-inner {
+        display: grid;
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 44px;
+        padding: 34px 20px 38px;
+      }
+
+      .mega-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #30323a;
+        font-size: 1.65rem;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 28px;
+      }
+
+      .mega-group h3 {
+        margin: 0;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.26);
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .mega-group h3 a {
+        color: #30323a;
+        font-size: inherit;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-group ul {
+        display: grid;
+        gap: 10px;
+        margin: 13px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mega-group a {
+        color: #555;
+        font-size: 0.95rem;
+        font-weight: 520;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature {
+        align-self: start;
+        background: #f5f1eb;
+      }
+
+      .mega-feature img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.45 / 1;
+        object-fit: contain;
+        padding: 14px;
+      }
+
+      .mega-feature-body {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+      }
+
+      .mega-feature-body a {
+        color: #30323a;
+        font-weight: 800;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature-body span {
+        color: #666;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .breadcrumbs {
+        display: flex;
+        gap: 8px;
+        padding-top: 22px;
+        color: #777;
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .breadcrumbs a {
+        text-decoration: none;
+      }
+
+      .category-hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 520px);
+        gap: 38px;
+        align-items: stretch;
+        min-height: 560px;
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+        padding: 58px;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.74) 42%, rgba(255, 255, 255, 0.12) 100%),
+          linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.28)),
+          url("assets/cues-hero-fusion-series.webp") center / cover no-repeat;
+      }
+
+      .category-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.08));
+        pointer-events: none;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+        align-self: end;
+      }
+
+      .eyebrow {
+        color: #747474;
+        font-size: 0.72rem;
+        font-weight: 820;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-top: 12px;
+        font-size: clamp(3.2rem, 7vw, 6.4rem);
+        line-height: 0.9;
+        letter-spacing: -0.035em;
+      }
+
+      .lead {
+        max-width: 690px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 1.04rem;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 0 16px;
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 800;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .feature-card {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-rows: minmax(260px, 1fr) auto;
+        min-height: 430px;
+        max-height: 430px;
+        align-self: center;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.16);
+        backdrop-filter: blur(12px);
+      }
+
+      .feature-media {
+        display: grid;
+        place-items: center;
+        padding: 26px;
+        background: rgba(247, 244, 239, 0.84);
+      }
+
+      .feature-media img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: contain;
+      }
+
+      .feature-media.product-feature {
+        height: 320px;
+        min-height: 320px;
+        padding: 0;
+        background: #050505;
+      }
+
+      .feature-media.product-feature img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .hero-cue-visual,
+      .cue-visual,
+      .chip-cue-visual {
+        position: relative;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        min-height: 180px;
+        place-items: center;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 26% 28%, rgba(255, 255, 255, 0.92), transparent 28%),
+          linear-gradient(135deg, #f9f8f5, #ebe5dc);
+      }
+
+      .hero-cue-visual {
+        min-height: 320px;
+      }
+
+      .cue-line {
+        position: absolute;
+        width: 92%;
+        height: 11px;
+        border-radius: 999px;
+        background:
+          linear-gradient(90deg, var(--butt, #2b211d) 0 28%, var(--wrap, #111) 28% 34%, var(--shaft, #d7b46f) 34% 82%, #f4e4bd 82% 100%);
+        box-shadow: 0 12px 24px rgba(32, 24, 18, 0.18);
+        transform: rotate(-15deg);
+      }
+
+      .cue-line.secondary {
+        width: 80%;
+        height: 9px;
+        opacity: 0.72;
+        transform: translateY(42px) rotate(-15deg);
+      }
+
+      .cue-line.third {
+        width: 70%;
+        height: 8px;
+        opacity: 0.56;
+        transform: translateY(-42px) rotate(-15deg);
+      }
+
+      .cue-case-shape {
+        position: absolute;
+        right: 12%;
+        bottom: 18%;
+        width: 44%;
+        height: 58px;
+        border: 1px solid rgba(23, 23, 23, 0.15);
+        background: linear-gradient(135deg, rgba(38, 34, 31, 0.95), rgba(83, 66, 48, 0.9));
+        box-shadow: 0 18px 38px rgba(32, 24, 18, 0.18);
+        transform: rotate(-15deg);
+      }
+
+      .chip-cue-visual {
+        min-height: 128px;
+      }
+
+      .chip-cue-visual .cue-line {
+        width: 84%;
+        height: 7px;
+      }
+
+      .feature-body {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        align-items: end;
+        border-top: 1px solid var(--line);
+        background: #fff;
+        padding: 20px;
+      }
+
+      .feature-body h2 {
+        font-size: 1.25rem;
+      }
+
+      .feature-body p {
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .category-toolbar {
+        display: grid;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+        padding: 34px 0 24px;
+      }
+
+      .category-toolbar-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .category-toolbar-title {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: baseline;
+      }
+
+      .category-toolbar-title h2 {
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .category-toolbar-title a {
+        color: #171717;
+        font-size: 0.86rem;
+        font-weight: 750;
+        text-decoration: underline;
+      }
+
+      .filter-row {
+        display: grid;
+        grid-auto-columns: minmax(160px, 1fr);
+        grid-auto-flow: column;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .chip {
+        display: grid;
+        gap: 10px;
+        min-width: 160px;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        background: transparent;
+        padding: 0 0 12px;
+        color: #171717;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .chip.active {
+        border-bottom-color: #171717;
+      }
+
+      .chip-image {
+        display: block;
+        height: 128px;
+        min-height: 128px;
+        overflow: hidden;
+        background: #f2f0ec;
+      }
+
+      .chip-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        padding: 0;
+      }
+
+      .chip-image.contain {
+        display: grid;
+        place-items: center;
+      }
+
+      .chip-image.contain img {
+        object-fit: contain;
+        padding: 8px;
+      }
+
+      .chip-image.cue-photo {
+        background: #f5f5f3;
+      }
+
+      .chip-image.cue-photo img {
+        object-fit: cover;
+        object-position: var(--focus, center);
+        mix-blend-mode: multiply;
+        filter: contrast(1.04) saturate(0.95);
+        transform: scale(1.14);
+      }
+
+      .chip-label {
+        font-size: 0.96rem;
+        font-weight: 650;
+        line-height: 1.2;
+      }
+
+      .sort-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.84rem;
+        font-weight: 700;
+      }
+
+      .sort-select {
+        min-height: 38px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 0 13px;
+        color: #30323a;
+        font-size: 0.84rem;
+        font-weight: 760;
+        cursor: pointer;
+      }
+
+      .listing-layout {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 30px;
+        padding: 28px 0 90px;
+      }
+
+      .facet-panel {
+        position: sticky;
+        top: 132px;
+        align-self: start;
+      }
+
+      .facet-head,
+      .facet-group {
+        border-bottom: 1px solid var(--line);
+        padding: 18px 0;
+      }
+
+      .facet-group:last-child {
+        border-bottom: 0;
+      }
+
+      .facet-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .facet-head strong {
+        font-size: 0.96rem;
+      }
+
+      .facet-head button {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .facet-group h3 {
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .facet-options {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .price-range {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .price-range input {
+        width: 100%;
+        accent-color: #171717;
+      }
+
+      .price-range-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .price-range-row strong {
+        color: var(--ink);
+      }
+
+      .facet-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #444;
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+
+      .facet-option input {
+        width: 16px;
+        height: 16px;
+        accent-color: #171717;
+      }
+
+      .results-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .results-head h2 {
+        font-size: 1.55rem;
+      }
+
+      .results-count {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 46px 24px;
+      }
+
+      .product-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: minmax(340px, auto) 1fr;
+        min-height: 100%;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        text-decoration: none;
+        transition: transform 160ms ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-2px);
+      }
+
+      .product-card.featured {
+        border-color: transparent;
+      }
+
+      .product-badges {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .badge {
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 7px 9px;
+        color: #171717;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0;
+      }
+
+      .badge.dark {
+        background: rgba(255, 255, 255, 0.94);
+        color: #171717;
+      }
+
+      .wishlist-button {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 2;
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 0;
+        background: transparent;
+        color: #171717;
+        font-size: 1.55rem;
+        line-height: 1;
+      }
+
+      .product-media {
+        display: grid;
+        min-height: 340px;
+        place-items: center;
+        overflow: hidden;
+        background: #f5f5f3;
+        padding: 20px;
+      }
+
+      .product-media img {
+        width: 100%;
+        max-height: 315px;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        filter: contrast(1.02);
+        transition: transform 180ms ease;
+      }
+
+      .product-card:hover .product-media img,
+      .product-card:hover .cue-visual {
+        transform: scale(1.025);
+      }
+
+      .cue-visual {
+        min-height: 315px;
+        transition: transform 180ms ease;
+      }
+
+      .product-body {
+        display: grid;
+        gap: 7px;
+        padding: 12px 0 0;
+      }
+
+      .product-brand {
+        color: #555;
+        font-size: 0.82rem;
+        font-weight: 750;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .product-name {
+        margin-top: 0;
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .product-meta {
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.4;
+      }
+
+      .swatches {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .swatch {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+        background: var(--swatch);
+      }
+
+      .product-foot {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+      }
+
+      .product-price {
+        color: #b02d23;
+        font-weight: 850;
+      }
+
+      .product-action {
+        color: #555;
+        font-size: 0.82rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .empty-state {
+        display: none;
+        border: 1px solid var(--line);
+        padding: 28px;
+      }
+
+      .empty-state.visible {
+        display: block;
+      }
+
+      .help-band {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 22px;
+        align-items: center;
+        border-top: 1px solid var(--line);
+        background: var(--soft);
+        padding: 34px 22px;
+      }
+
+      .help-band h2 {
+        font-size: 1.55rem;
+      }
+
+      .help-band p {
+        max-width: 720px;
+        margin-top: 8px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1180px) {
+        .commerce-inner {
+          grid-template-columns: auto 1fr auto;
+          justify-content: stretch;
+        }
+
+        .search-bar {
+          grid-column: 1 / -1;
+          order: 4;
+        }
+
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 960px) {
+        .commerce-inner,
+        .category-hero,
+        .listing-layout,
+        .help-band {
+          grid-template-columns: 1fr;
+        }
+
+        .category-hero {
+          min-height: auto;
+          padding: 34px;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 244, 239, 0.86)),
+            linear-gradient(135deg, #ffffff 0%, #f6f3ee 48%, #ece6dc 100%);
+        }
+
+        .commerce-inner {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .search-bar {
+          order: initial;
+        }
+
+        .contact-button,
+        .cart-link {
+          justify-content: flex-start;
+        }
+
+        .category-toolbar,
+        .facet-panel {
+          position: static;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          overflow-x: auto;
+        }
+
+        .mega-menu {
+          display: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .commerce-inner {
+          padding-inline: 16px;
+        }
+
+        .page,
+        .category-inner {
+          padding-inline: 16px;
+        }
+
+        .category-hero {
+          padding: 28px 18px;
+        }
+
+        .wordmark {
+          min-width: 0;
+        }
+
+        .cart-link {
+          justify-content: flex-start;
+        }
+
+        .category-toolbar {
+          grid-template-columns: 1fr;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-body,
+        .results-head,
+        .category-toolbar-head {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+      }
+      .nav-item.has-mega > a::before {
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: -12px;
+        left: 12px;
+        height: 16px;
+      }
+
+      .mega-inner.menu-only {
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+        padding-bottom: 54px;
+      }
+
+      .mega-link-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px 34px;
+      }
+
+      .mega-link-grid a {
+        display: block;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.28);
+        padding: 0 0 14px;
+        color: #30323a;
+        font-size: 1.04rem;
+        font-weight: 820;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .mega-link-grid a:hover,
+      .mega-link-grid a:focus-visible,
+      .mega-group a:hover,
+      .mega-feature-body a:hover {
+        color: #111;
+        border-color: #171717;
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #222321;
+        color: #f7f4ef;
+      }
+
+      .site-footer-main {
+        display: grid;
+        width: min(100%, 1520px);
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 42px;
+        margin: 0 auto;
+        padding: 52px 22px 46px;
+      }
+
+      .site-footer-brand {
+        max-width: 390px;
+      }
+
+      .site-footer-logo {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .site-footer-logo span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.88rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .site-footer-main h3 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .site-footer-main p,
+      .site-footer-main a {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
+      .site-footer-main a:hover {
+        color: #fff;
+      }
+
+      .site-footer-main ul {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer-contact {
+        display: grid;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .site-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer-bottom-inner {
+        display: flex;
+        width: min(100%, 1520px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
+      }
+
+      .site-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .site-footer-social a {
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+
+      /* site chrome responsive refinements */
+      @media (max-width: 900px) {
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+      }
+
+    </style>
+    <link rel="stylesheet" href="assets/mobile-overrides.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="commerce-inner">
+        <a class="wordmark" href="index.html" aria-label="Home Billiards home">
+          Home
+          <span>Billiards</span>
+        </a>
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Look for billiards, games, and lifestyle equipment"
+            aria-label="Search products"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <a class="contact-button" href="contact-us.html">Contact Us</a>
+        <a class="cart-link" href="#">My Cart</a>
+      </div>
+
+      <nav class="category-nav" aria-label="Main navigation">
+        <div class="category-inner">
+          <ul class="nav-links">
+            <li class="nav-item has-mega current">
+              <a href="pool-tables.html">Billiards</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="pool-tables.html">All Billiards</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="pool-tables.html">Pool Tables</a></h3>
+                        <ul>
+                          <li><a href="pool-tables.html">In-Stock Pool Tables</a></li>
+                          <li><a href="#">Canada Billiards</a></li>
+                          <li><a href="#">California House</a></li>
+                          <li><a href="#">Olhausen Billiards</a></li>
+                          <li><a href="#">Legacy Billiards</a></li>
+                          <li><a href="#">Custom Pool Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Table Essentials</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Felt</a></li>
+                          <li><a href="#">Pool Table Covers</a></li>
+                          <li><a href="#">Pool Table Lights</a></li>
+                          <li><a href="#">Dining Tops</a></li>
+                          <li><a href="#">Benches and Storage</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Cues and Play</h3>
+                        <ul>
+                          <li><a href="cues.html">Pool Cues</a></li>
+                          <li><a href="#">Pool Cue Cases</a></li>
+                          <li><a href="#">Balls</a></li>
+                          <li><a href="#">Pool Cue Racks &amp; Holders</a></li>
+                          <li><a href="#">Billiard Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Help and Services</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Design Center</a></li>
+                          <li><a href="#">Room Size Guide</a></li>
+                          <li><a href="#">Delivery and Installation</a></li>
+                          <li><a href="#">Moving and Recovering</a></li>
+                          <li><a href="#">Commercial Projects</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="assets/california-house-austin-renders/truffle.png" alt="California House Austin pool table" />
+                    <div class="mega-feature-body">
+                      <a href="austin-pool-table.html">Build a luxury pool table</a>
+                      <span>Choose size, finish, cloth, and room upgrades.</span>
+                      <a href="pool-tables.html">View sale and in-stock tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="ping-pong-tables.html">Ping Pong</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="ping-pong-tables.html">All Ping Pong</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="ping-pong-tables.html">Ping Pong Tables</a></h3>
+                        <ul>
+                          <li><a href="ping-pong-tables.html">Indoor Tables</a></li>
+                          <li><a href="#">Outdoor Tables</a></li>
+                          <li><a href="#">Competition Tables</a></li>
+                          <li><a href="#">Foldable Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Play Gear</h3>
+                        <ul>
+                          <li><a href="#">Ping Pong Paddles</a></li>
+                          <li><a href="#">Ping Pong Balls</a></li>
+                          <li><a href="#">Nets &amp; Posts</a></li>
+                          <li><a href="#">Ping Pong Robots</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Accessories</h3>
+                        <ul>
+                          <li><a href="#">Table Covers</a></li>
+                          <li><a href="#">Replacement Nets</a></li>
+                          <li><a href="#">Storage and Care</a></li>
+                          <li><a href="#">Training Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Shop by Need</h3>
+                        <ul>
+                          <li><a href="#">Family Play</a></li>
+                          <li><a href="#">Club Practice</a></li>
+                          <li><a href="#">Commercial Use</a></li>
+                          <li><a href="#">Made in Germany</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" alt="Whistler indoor table tennis table" />
+                    <div class="mega-feature-body">
+                      <a href="whistler-indoor-table-tennis-table.html">Whistler Indoor Table Tennis Table</a>
+                      <span>Competition-quality indoor table with playback position.</span>
+                      <a href="ping-pong-tables.html">Shop ping pong tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="traeger-smokers.html">BBQ</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="traeger-smokers.html">All BBQ</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Grills and Smokers</h3><ul><li><a href="traeger-smokers.html">Traeger Smokers</a></li><li><a href="#">Pellet Grills</a></li><li><a href="#">Pizza Ovens</a></li><li><a href="#">Portable Grills</a></li></ul></section>
+                      <section class="mega-group"><h3>Fuel and Flavour</h3><ul><li><a href="#">Wood Pellets</a></li><li><a href="#">Sauces &amp; Spices</a></li><li><a href="#">Rubs</a></li><li><a href="#">Cooking Pellets</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Traeger Grill Covers</a></li><li><a href="#">Grill Tools</a></li><li><a href="#">Thermometers</a></li><li><a href="#">Cleaning Supplies</a></li></ul></section>
+                      <section class="mega-group"><h3>Outdoor Living</h3><ul><li><a href="#">Backyard Cooking</a></li><li><a href="#">Entertaining Essentials</a></li><li><a href="#">Gifts for Grillers</a></li><li><a href="#">Sale BBQ</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="traeger-smokers.html">Build the backyard setup</a><span>Smokers, pellets, covers, tools, and outdoor cooking accessories.</span><a href="traeger-smokers.html">Shop BBQ essentials</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Foosball</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Foosball</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Tables</h3><ul><li><a href="#">Foosball Tables</a></li><li><a href="#">Home Tables</a></li><li><a href="#">Commercial Tables</a></li><li><a href="#">Coin-Operated Tables</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Foosball Balls</a></li><li><a href="#">Replacement Men</a></li><li><a href="#">Handles and Rods</a></li><li><a href="#">Table Covers</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Brand</h3><ul><li><a href="#">Legacy Billiards</a></li><li><a href="#">Dynamo</a></li><li><a href="#">Commercial Grade</a></li><li><a href="#">View All</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Home vs Commercial</a></li><li><a href="#">Delivery Options</a></li><li><a href="#">Parts and Service</a></li><li><a href="#">Sale Foosball</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Game room staples</a><span>Durable tables and parts for home rec rooms and commercial spaces.</span><a href="#">Shop foosball</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="dartboards.html">Darts</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="dartboards.html">All Darts</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Boards and Cabinets</h3><ul><li><a href="dartboards.html">Dartboards</a></li><li><a href="#">Dart Board Cabinets</a></li><li><a href="#">Surrounds</a></li><li><a href="#">Scoreboards</a></li></ul></section>
+                      <section class="mega-group"><h3>Darts</h3><ul><li><a href="#">Steel Tip Darts</a></li><li><a href="#">Soft Tip Darts</a></li><li><a href="#">Winmau</a></li><li><a href="#">Beginner Sets</a></li></ul></section>
+                      <section class="mega-group"><h3>Parts</h3><ul><li><a href="#">Dart Flights</a></li><li><a href="#">Dart Shafts</a></li><li><a href="#">Dart Cases &amp; Wallets</a></li><li><a href="#">Dart Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Need</h3><ul><li><a href="#">Home Setup</a></li><li><a href="#">League Play</a></li><li><a href="#">Gifts</a></li><li><a href="#">Sale Darts</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="dartboards.html">Set up a proper dart wall</a><span>Boards, cabinets, lighting, darts, flights, shafts, and cases.</span><a href="dartboards.html">Shop dart gear</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Games</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Games</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Game Tables</h3><ul><li><a href="#">Air Hockey Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Poker Tables</a></li><li><a href="#">Game Table Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Table Games</h3><ul><li><a href="#">Poker Chips</a></li><li><a href="#">Cards</a></li><li><a href="#">Dice</a></li><li><a href="#">Board Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Rec Room</h3><ul><li><a href="#">Sports</a></li><li><a href="#">Misc. Games</a></li><li><a href="#">Family Games</a></li><li><a href="#">Party Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Room Planning</a></li><li><a href="#">Gift Ideas</a></li><li><a href="#">Commercial Game Rooms</a></li><li><a href="#">Sale Games</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Round out the room</a><span>Shuffleboard, air hockey, poker, games, cards, dice, and accessories.</span><a href="#">Shop games</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Commercial</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Commercial</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Coin-Operated</h3><ul><li><a href="#">Coin-Operated Pool Tables</a></li><li><a href="#">Coin-Operated Foosball Tables</a></li><li><a href="#">Coin-Operated Jet-Pong</a></li><li><a href="#">Parts and Service</a></li></ul></section>
+                      <section class="mega-group"><h3>Venue Games</h3><ul><li><a href="#">Commercial Air Hockey Tables</a></li><li><a href="#">Commercial Pool Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Arcade-Ready Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Projects</h3><ul><li><a href="#">Bars and Restaurants</a></li><li><a href="#">Offices</a></li><li><a href="#">Strata and Amenity Rooms</a></li><li><a href="#">Schools and Clubs</a></li></ul></section>
+                      <section class="mega-group"><h3>Support</h3><ul><li><a href="#">Bulk Quotes</a></li><li><a href="#">Delivery Planning</a></li><li><a href="#">Installation</a></li><li><a href="#">Maintenance</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Commercial game room support</a><span>Durable tables, venue-ready games, delivery planning, and service.</span><a href="#">Start a commercial quote</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#">New Arrivals</a></li>
+            <li class="nav-item"><a href="#">Sale</a></li>
+            <li class="nav-item"><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="#">Billiards</a>
+        <span>/</span>
+        <span>Cues</span>
+      </nav>
+
+      <section class="category-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Billiards</p>
+          <h1>Pool Cues</h1>
+          <p class="lead">
+            Browse playing cues, break cues, cases, and accessories with the same clean shopping
+            flow as the pool table pages.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#productGrid">Shop cues</a>
+            <a class="btn" href="contact-us.html">Ask for a cue recommendation</a>
+          </div>
+        </div>
+        <article class="feature-card">
+          <div class="feature-media product-feature">
+            <img src="assets/little-monster-cue.webp" alt="Little Monster carbon fiber cue" />
+          </div>
+          <div class="feature-body">
+            <div>
+              <p class="eyebrow">Featured cue</p>
+              <h2>Little Monster Carbon Fiber Cue</h2>
+              <p>A bold black-and-gold carbon fiber cue for players who want a more expressive setup.</p>
+            </div>
+            <a class="btn primary" href="#productGrid">Shop cues</a>
+          </div>
+        </article>
+      </section>
+
+      <section class="category-toolbar" aria-label="Category tools">
+        <div class="category-toolbar-head">
+          <div class="category-toolbar-title">
+            <h2>Cues</h2>
+            <a href="#productGrid">View 15 items</a>
+          </div>
+          <label class="sort-wrap">
+            Sort by
+            <select class="sort-select" id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price low to high</option>
+              <option value="price-high">Price high to low</option>
+              <option value="delivery">Fastest delivery</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-row" id="topFilters">
+          <button class="chip active" type="button" data-filter="all">
+            <span class="chip-image cue-photo" style="--focus:center 48%;"><img src="assets/cue-products/bull-carbon-green-stained-curly-maple-pool-cue.jpg" alt="Cue collection" /></span>
+            <span class="chip-label">All Cues</span>
+          </button>
+          <button class="chip" type="button" data-filter="pool">
+            <span class="chip-image cue-photo" style="--focus:center 52%;"><img src="assets/cue-products/koda-8-point-pool-cue-with-low-deflection-shaft.jpg" alt="Pool cue" /></span>
+            <span class="chip-label">Pool Cues</span>
+          </button>
+          <button class="chip" type="button" data-filter="snooker">
+            <span class="chip-image cue-photo" style="--focus:center 54%;"><img src="assets/cue-products/bce-black-series---mark-selby-3-piece-carbon---bla.jpg" alt="Snooker cue" /></span>
+            <span class="chip-label">Snooker Cues</span>
+          </button>
+          <button class="chip" type="button" data-filter="break">
+            <span class="chip-image cue-photo" style="--focus:center 48%;"><img src="assets/cue-products/bull-carbon-bull-gun-metal-break-cue-with-wrap.jpg" alt="Break cue" /></span>
+            <span class="chip-label">Break Cues</span>
+          </button>
+          <button class="chip" type="button" data-filter="bull-carbon">
+            <span class="chip-image cue-photo" style="--focus:center 48%;"><img src="assets/cue-products/bull-carbon-black-with-6-purple-abalone-points.jpg" alt="Bull Carbon cue" /></span>
+            <span class="chip-label">Bull Carbon</span>
+          </button>
+          <button class="chip" type="button" data-filter="predator">
+            <span class="chip-image cue-photo" style="--focus:center 52%;"><img src="assets/cue-products/predator-le-true-splice-16---ebony-with-purple-pin.jpg" alt="Predator cue" /></span>
+            <span class="chip-label">Predator</span>
+          </button>
+          <button class="chip" type="button" data-filter="new-arrivals">
+            <span class="chip-image cue-photo" style="--focus:center 54%;"><img src="assets/cue-products/bce-black-series---mark-selby-3-piece-scarlet-red-.jpg" alt="New arrival cue" /></span>
+            <span class="chip-label">New Arrivals</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="listing-layout">
+        <aside class="facet-panel" aria-label="Filters">
+          <div class="facet-head">
+            <strong>Filters</strong>
+            <button type="button" id="clearFilters">Clear</button>
+          </div>
+          <div class="facet-group">
+            <h3>Price</h3>
+            <div class="price-range">
+              <input
+                id="priceRange"
+                type="range"
+                min="100"
+                max="2000"
+                step="50"
+                value="2000"
+                aria-label="Maximum price"
+              />
+              <div class="price-range-row">
+                <span>$100</span>
+                <strong id="priceRangeValue">Up to $2,000</strong>
+              </div>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h3>Brand</h3>
+            <div class="facet-options">
+              <label class="facet-option"><input type="checkbox" value="bull-carbon" data-facet="brand" /> Bull Carbon</label>
+              <label class="facet-option"><input type="checkbox" value="predator" data-facet="brand" /> Predator</label>
+              <label class="facet-option"><input type="checkbox" value="bce" data-facet="brand" /> BCE</label>
+              <label class="facet-option"><input type="checkbox" value="dufferin" data-facet="brand" /> Dufferin</label>
+              <label class="facet-option"><input type="checkbox" value="koda" data-facet="brand" /> Koda</label>
+              <label class="facet-option"><input type="checkbox" value="k2" data-facet="brand" /> K2</label>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h3>Availability</h3>
+            <div class="facet-options">
+              <label class="facet-option"><input type="checkbox" value="stock" data-facet="availability" /> In stock</label>
+              <label class="facet-option"><input type="checkbox" value="order" data-facet="availability" /> Special order</label>
+            </div>
+          </div>
+          <div class="facet-group">
+            <h3>Cue Type</h3>
+            <div class="facet-options">
+              <label class="facet-option"><input type="checkbox" value="pool" data-facet="type" /> Pool cue</label>
+              <label class="facet-option"><input type="checkbox" value="snooker" data-facet="type" /> Snooker cue</label>
+              <label class="facet-option"><input type="checkbox" value="break" data-facet="type" /> Break cue</label>
+              <label class="facet-option"><input type="checkbox" value="butt" data-facet="type" /> Butt only</label>
+            </div>
+          </div>
+        </aside>
+
+        <section aria-label="Cue results">
+          <div class="results-head">
+            <div>
+              <p class="eyebrow">Shop cues</p>
+              <h2 id="resultsTitle">All Cues</h2>
+            </div>
+            <p class="results-count" id="resultsCount"></p>
+          </div>
+          <div class="product-grid" id="productGrid"></div>
+          <div class="empty-state" id="emptyState">
+            <h2>No cues match those filters</h2>
+            <p class="lead">Clear one filter or start with all cues.</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <section class="help-band">
+      <div>
+        <p class="eyebrow">Showroom support</p>
+        <h2>Not sure which cue fits your game?</h2>
+        <p>
+          Home Billiards can help narrow down weight, shaft feel, tip style, cases, and starter
+          accessories before the customer commits.
+        </p>
+      </div>
+      <a class="btn primary" href="contact-us.html">Request help choosing</a>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <div class="site-footer-logo">Home<span>Billiards</span></div>
+          <p>Canada's destination for luxury game rooms, billiards, outdoor living, and commercial play spaces.</p>
+          <div class="site-footer-contact">
+            <p>1644 S.E. Marine Drive, Vancouver, BC V5P 2R6</p>
+            <p>604 321 5553</p>
+            <p>info@homebilliards.ca</p>
+          </div>
+        </div>
+        <div>
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pool Table Design Center</a></li>
+            <li><a href="#">Services We Provide</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="pool-tables.html">Billiards</a></li>
+            <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+            <li><a href="traeger-smokers.html">BBQ</a></li>
+            <li><a href="#">Foosball</a></li>
+            <li><a href="dartboards.html">Darts</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Popular Brands</h3>
+          <ul>
+            <li><a href="#">Canada Billiards</a></li>
+            <li><a href="#">Legacy Billiards</a></li>
+            <li><a href="#">Olhausen Billiards</a></li>
+            <li><a href="#">Traeger</a></li>
+            <li><a href="#">California House</a></li>
+            <li><a href="#">Predator</a></li>
+            <li><a href="#">Winmau</a></li>
+            <li><a href="#">Championship Shuffleboard</a></li>
+            <li><a href="#">Dynamo</a></li>
+            <li><a href="#">Harrow</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <div class="site-footer-bottom-inner">
+          <span>(c) 2026 Home Billiards. All rights reserved.</span>
+          <div class="site-footer-social" aria-label="Social links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const products = [
+        {
+          id: "bull-carbon-purple-abalone",
+          name: "Black with 6 Purple Abalone Points",
+          brand: "Bull Carbon",
+          brandId: "bull-carbon",
+          url: "#",
+          price: 1999,
+          priceLabel: "$1,999",
+          availability: "stock",
+          category: "pool",
+          type: "pool",
+          deliveryRank: 1,
+          meta: "Carbon-shaft pool cue with black styling and purple abalone points",
+          badges: ["Carbon shaft"],
+          featured: true,
+          image: "assets/cue-products/bull-carbon-black-with-6-purple-abalone-points.jpg",
+          swatches: ["#111111", "#6f4ca0", "#d8bd7d"],
+        },
+        {
+          id: "bull-carbon-green-curly-maple",
+          name: "Green-Stained Curly Maple Pool Cue",
+          brand: "Bull Carbon",
+          brandId: "bull-carbon",
+          url: "#",
+          price: 1199.99,
+          priceLabel: "$1,199.99",
+          availability: "stock",
+          category: "pool",
+          type: "pool",
+          deliveryRank: 2,
+          meta: "Curly maple pool cue with a vivid green stain and carbon performance",
+          badges: ["Pool cue"],
+          featured: true,
+          image: "assets/cue-products/bull-carbon-green-stained-curly-maple-pool-cue.jpg",
+          swatches: ["#1f5b3b", "#111111", "#d8bd7d"],
+        },
+        {
+          id: "bull-carbon-gun-metal-break",
+          name: "Bull Gun Metal Break Cue with Wrap",
+          brand: "Bull Carbon",
+          brandId: "bull-carbon",
+          url: "#",
+          price: 1099.9,
+          priceLabel: "$1,099.90",
+          availability: "stock",
+          category: "break",
+          type: "break",
+          deliveryRank: 2,
+          meta: "Dedicated break cue with a gun metal finish and wrap grip",
+          badges: ["Break cue"],
+          featured: true,
+          image: "assets/cue-products/bull-carbon-bull-gun-metal-break-cue-with-wrap.jpg",
+          swatches: ["#333333", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "bce-black-series-carbon",
+          name: "Black Series Mark Selby Carbon & Black Snooker Cue",
+          brand: "BCE",
+          brandId: "bce",
+          url: "#",
+          price: 469.99,
+          priceLabel: "$469.99",
+          availability: "stock",
+          category: "snooker",
+          type: "snooker",
+          deliveryRank: 1,
+          meta: "Three-piece Mark Selby snooker cue with carbon-and-black styling",
+          badges: ["New arrival"],
+          collections: ["new-arrivals"],
+          featured: true,
+          image: "assets/cue-products/bce-black-series---mark-selby-3-piece-carbon---bla.jpg",
+          swatches: ["#111111", "#3a3a3a", "#d9bd7d"],
+        },
+        {
+          id: "bce-black-series-scarlet",
+          name: "Black Series Mark Selby Scarlet Red & Black Snooker Cue",
+          brand: "BCE",
+          brandId: "bce",
+          url: "#",
+          price: 469.99,
+          priceLabel: "$469.99",
+          availability: "stock",
+          category: "snooker",
+          type: "snooker",
+          deliveryRank: 1,
+          meta: "Three-piece Mark Selby snooker cue with scarlet and black detailing",
+          badges: ["New arrival"],
+          collections: ["new-arrivals"],
+          featured: true,
+          image: "assets/cue-products/bce-black-series---mark-selby-3-piece-scarlet-red-.jpg",
+          swatches: ["#111111", "#a42125", "#d9bd7d"],
+        },
+        {
+          id: "bce-england-traditional",
+          name: "England Traditional 3/4 Cut 3 Piece Snooker Cue",
+          brand: "BCE",
+          brandId: "bce",
+          url: "#",
+          price: 239,
+          priceLabel: "$239",
+          availability: "stock",
+          category: "snooker",
+          type: "snooker",
+          deliveryRank: 2,
+          meta: "Traditional three-piece snooker cue with a 3/4 cut build",
+          badges: ["Snooker"],
+          featured: false,
+          image: "assets/cue-products/bce-england-traditional-3-4-cut---3-piece-snooker-.jpg",
+          swatches: ["#5b351f", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "bce-heritage-mark-selby",
+          name: "Heritage Mark Selby HER-200 Snooker Cue",
+          brand: "BCE",
+          brandId: "bce",
+          url: "#",
+          price: 199,
+          priceLabel: "$199",
+          availability: "stock",
+          category: "snooker",
+          type: "snooker",
+          deliveryRank: 1,
+          meta: "Approachable Mark Selby snooker cue with classic BCE styling",
+          badges: ["New arrival"],
+          collections: ["new-arrivals"],
+          featured: false,
+          image: "assets/cue-products/bce-heritage-mark-selby-her---200-snooker-cue.jpg",
+          swatches: ["#2b211d", "#8b5b32", "#d9bd7d"],
+        },
+        {
+          id: "dufferin-maple-ldc-snooker",
+          name: "Second Maple LDC Snooker Cue",
+          brand: "Dufferin",
+          brandId: "dufferin",
+          url: "#",
+          price: 399,
+          priceLabel: "$399",
+          availability: "stock",
+          category: "snooker",
+          type: "snooker",
+          deliveryRank: 3,
+          meta: "Maple snooker cue with low-deflection control and a clean traditional feel",
+          badges: ["Low deflection"],
+          featured: false,
+          image: "assets/cue-products/dufferin-second-maple-ldc-snooker-cue.jpg",
+          swatches: ["#71451f", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "koda-8-point-ld",
+          name: "8 Point Pool Cue with Low Deflection Shaft",
+          brand: "Koda",
+          brandId: "koda",
+          url: "#",
+          price: 429.99,
+          priceLabel: "$429.99",
+          availability: "stock",
+          category: "pool",
+          type: "pool",
+          deliveryRank: 3,
+          meta: "Eight-point pool cue paired with a low-deflection shaft",
+          badges: ["Low deflection"],
+          featured: false,
+          image: "assets/cue-products/koda-8-point-pool-cue-with-low-deflection-shaft.jpg",
+          swatches: ["#5b351f", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "k2-matte-metallic-pink",
+          name: "Matte Metallic Pink with Bull Carbon Fiber",
+          brand: "K2",
+          brandId: "k2",
+          url: "#",
+          price: 999,
+          priceLabel: "$999",
+          availability: "order",
+          category: "pool",
+          type: "pool",
+          deliveryRank: 5,
+          meta: "Matte metallic pool cue with a Bull Carbon fiber shaft",
+          badges: ["Carbon shaft"],
+          featured: false,
+          image: "assets/cue-products/k2-matte-metallic-pink-with-bull-carbon-fiber.jpg",
+          swatches: ["#c37f9a", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "bull-carbon-matte-metallic-blue",
+          name: "Matte Metallic Blue with Bull Carbon Fiber Shaft",
+          brand: "Bull Carbon",
+          brandId: "bull-carbon",
+          url: "#",
+          price: 999,
+          priceLabel: "$999",
+          availability: "order",
+          category: "pool",
+          type: "pool",
+          deliveryRank: 5,
+          meta: "Matte metallic blue pool cue with a Bull Carbon fiber shaft",
+          badges: ["Carbon shaft"],
+          featured: false,
+          image: "assets/cue-products/matte-metallic-blue-with-bull-carbon-fiber-shaft.jpg",
+          swatches: ["#315d83", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "predator-true-splice-purple",
+          name: "LE True Splice 16 Ebony with Purple/Pink Points - Butt Only",
+          brand: "Predator",
+          brandId: "predator",
+          url: "#",
+          price: 1699,
+          priceLabel: "$1,699",
+          availability: "order",
+          category: "pool",
+          type: "butt",
+          deliveryRank: 4,
+          meta: "Limited-edition ebony cue butt with purple and pink point work",
+          badges: ["New arrival"],
+          collections: ["new-arrivals"],
+          featured: true,
+          image: "assets/cue-products/predator-le-true-splice-16---ebony-with-purple-pin.jpg",
+          swatches: ["#151515", "#7d4ca4", "#d9bd7d"],
+        },
+        {
+          id: "predator-true-splice-red-orange",
+          name: "LE True Splice 16 Ebony with Red/Orange Points - Butt Only",
+          brand: "Predator",
+          brandId: "predator",
+          url: "#",
+          price: 1699,
+          priceLabel: "$1,699",
+          availability: "order",
+          category: "pool",
+          type: "butt",
+          deliveryRank: 4,
+          meta: "Limited-edition ebony cue butt with red and orange point work",
+          badges: ["New arrival"],
+          collections: ["new-arrivals"],
+          featured: true,
+          image: "assets/cue-products/predator-le-true-splice-16---ebony-with-red-orange.jpg",
+          swatches: ["#151515", "#bf3a24", "#d9bd7d"],
+        },
+        {
+          id: "predator-sp2-lime-green-1",
+          name: "SP2 Lime Green 1 - Butt Only",
+          brand: "Predator",
+          brandId: "predator",
+          url: "#",
+          price: 699,
+          priceLabel: "$699",
+          availability: "stock",
+          category: "pool",
+          type: "butt",
+          deliveryRank: 2,
+          meta: "Lime green Predator SP2 cue butt for a custom shaft pairing",
+          badges: ["Butt only"],
+          featured: false,
+          image: "assets/cue-products/predator-sp2-lime-green-1---butt-only.jpg",
+          swatches: ["#99b73f", "#111111", "#d9bd7d"],
+        },
+        {
+          id: "predator-sp2-lime-green-2",
+          name: "SP2 Lime Green 2 - Butt Only",
+          brand: "Predator",
+          brandId: "predator",
+          url: "#",
+          price: 699,
+          priceLabel: "$699",
+          availability: "stock",
+          category: "pool",
+          type: "butt",
+          deliveryRank: 2,
+          meta: "Second SP2 lime green cue butt option for a custom Predator setup",
+          badges: ["Butt only"],
+          featured: false,
+          image: "assets/cue-products/predator-sp2-lime-green-2---butt-only.jpg",
+          swatches: ["#99b73f", "#111111", "#d9bd7d"],
+        },
+      ];
+
+      const state = {
+        topFilter: "all",
+        facets: {
+          brand: [],
+          availability: [],
+          type: [],
+        },
+        maxPrice: 2000,
+        sort: "featured",
+      };
+
+      const money = new Intl.NumberFormat("en-CA", {
+        style: "currency",
+        currency: "CAD",
+        maximumFractionDigits: 0,
+      });
+      const productGrid = document.getElementById("productGrid");
+      const resultsCount = document.getElementById("resultsCount");
+      const resultsTitle = document.getElementById("resultsTitle");
+      const emptyState = document.getElementById("emptyState");
+      const sortSelect = document.getElementById("sortSelect");
+      const priceRange = document.getElementById("priceRange");
+      const priceRangeValue = document.getElementById("priceRangeValue");
+
+      function matchesTopFilter(product) {
+        if (state.topFilter === "all") return true;
+        if (state.topFilter === "pool") return product.category === "pool";
+        if (state.topFilter === "snooker") return product.category === "snooker";
+        if (state.topFilter === "break") return product.category === "break";
+        if (state.topFilter === "new-arrivals") return (product.collections || []).includes("new-arrivals");
+        return product.brandId === state.topFilter;
+      }
+
+      function matchesFacets(product) {
+        const { brand, availability, type } = state.facets;
+        const brandMatch = !brand.length || brand.includes(product.brandId);
+        const availabilityMatch = !availability.length || availability.includes(product.availability);
+        const typeMatch = !type.length || type.includes(product.type);
+        const priceMatch = product.price <= state.maxPrice;
+        return brandMatch && availabilityMatch && typeMatch && priceMatch;
+      }
+
+      function sortedProducts(items) {
+        return [...items].sort((a, b) => {
+          if (state.sort === "price-low") return a.price - b.price;
+          if (state.sort === "price-high") return b.price - a.price;
+          if (state.sort === "delivery") return a.deliveryRank - b.deliveryRank;
+          return Number(b.featured) - Number(a.featured) || a.deliveryRank - b.deliveryRank;
+        });
+      }
+
+      function filterLabel() {
+        const active = document.querySelector(`[data-filter="${state.topFilter}"]`);
+        return active ? active.textContent.trim() : "All Cues";
+      }
+
+      function cueVisual(product) {
+        const visual = product.visual || {};
+        const style = `--butt:${visual.butt || "#2b211d"}; --wrap:${visual.wrap || "#111"}; --shaft:${visual.shaft || "#d8bb78"};`;
+        if (visual.case) {
+          return `<div class="cue-visual" style="${style}"><span class="cue-case-shape"></span><span class="cue-line secondary"></span></div>`;
+        }
+        return `<div class="cue-visual" style="${style}"><span class="cue-line third"></span><span class="cue-line"></span><span class="cue-line secondary"></span></div>`;
+      }
+
+      function productCard(product) {
+        return `<a class="product-card ${product.featured ? "featured" : ""}" href="${product.url}" data-product-id="${product.id}">
+          <div class="product-badges">
+            ${product.badges
+              .slice(0, 1)
+              .map((badge, index) => `<span class="badge ${index === 0 && product.availability === "stock" ? "dark" : ""}">${badge}</span>`)
+              .join("")}
+          </div>
+          <span class="wishlist-button" aria-hidden="true">♡</span>
+          <div class="product-media">
+            ${
+              product.image
+                ? `<img src="${product.image}" alt="${product.brand} ${product.name}" />`
+                : cueVisual(product)
+            }
+          </div>
+          <div class="product-body">
+            <div class="swatches" aria-label="Available finish examples">
+              ${product.swatches.map((swatch) => `<span class="swatch" style="--swatch:${swatch}"></span>`).join("")}
+            </div>
+            <div>
+              <p class="product-brand">${product.brand}</p>
+              <h3 class="product-name">${product.name}</h3>
+            </div>
+            <p class="product-meta">${product.meta}</p>
+            <div class="product-foot">
+              <p class="product-price">${product.priceLabel}</p>
+              <span class="product-action">${product.actionLabel || (product.url === "#" ? "View details" : "Customize")}</span>
+            </div>
+          </div>
+        </a>`;
+      }
+
+      function render() {
+        const filtered = sortedProducts(products.filter((item) => matchesTopFilter(item) && matchesFacets(item)));
+        productGrid.innerHTML = filtered.map(productCard).join("");
+        resultsCount.textContent = `${filtered.length} item${filtered.length === 1 ? "" : "s"}`;
+        resultsTitle.textContent = filterLabel();
+        priceRangeValue.textContent = `Up to ${money.format(state.maxPrice)}`;
+        emptyState.classList.toggle("visible", filtered.length === 0);
+      }
+
+      document.querySelector(".search-bar").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+
+      productGrid.addEventListener("click", (event) => {
+        if (event.target.closest(".product-card")) {
+          event.preventDefault();
+        }
+      });
+
+      document.querySelectorAll("[data-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.topFilter = button.dataset.filter;
+          document.querySelectorAll("[data-filter]").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          render();
+        });
+      });
+
+      document.querySelectorAll("[data-facet]").forEach((input) => {
+        input.addEventListener("change", () => {
+          const group = input.dataset.facet;
+          state.facets[group] = [...document.querySelectorAll(`[data-facet="${group}"]:checked`)].map((item) => item.value);
+          render();
+        });
+      });
+
+      sortSelect.addEventListener("change", () => {
+        state.sort = sortSelect.value;
+        render();
+      });
+
+      priceRange.addEventListener("input", () => {
+        state.maxPrice = Number(priceRange.value);
+        render();
+      });
+
+      document.getElementById("clearFilters").addEventListener("click", () => {
+        state.topFilter = "all";
+        state.facets = { brand: [], availability: [], type: [] };
+        state.maxPrice = 2000;
+        priceRange.value = state.maxPrice;
+        document.querySelectorAll("[data-filter]").forEach((item) => item.classList.toggle("active", item.dataset.filter === "all"));
+        document.querySelectorAll("[data-facet]").forEach((input) => {
+          input.checked = false;
+        });
+        render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4007 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxury Pool Table Configurator</title>
+    <style>
+      :root {
+        --paper: #f7f4ef;
+        --ink: #171717;
+        --muted: #646464;
+        --line: rgba(0, 0, 0, 0.12);
+        --soft: #faf8f4;
+        --white: #fff;
+        --warm: #f6f1e9;
+        --warm-2: #eee5d7;
+        --hairline: rgba(82, 68, 48, 0.12);
+        --header-height: 112px;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .shell {
+        min-height: 100vh;
+        padding-bottom: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(18px);
+      }
+
+      .utility-inner,
+      .commerce-inner,
+      .category-inner,
+      .breadcrumbs,
+      .page,
+      .footer-inner {
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        padding-inline: 20px;
+      }
+
+      .utility-bar {
+        display: none;
+      }
+
+      .utility-inner {
+        display: flex;
+        min-height: 36px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .utility-links,
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .utility-links a,
+      .nav-links a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .commerce-inner {
+        display: grid;
+        grid-template-columns: minmax(190px, 1fr) minmax(660px, 720px) auto minmax(118px, 1fr);
+        gap: 14px;
+        align-items: center;
+        justify-content: stretch;
+        padding-block: 16px;
+      }
+
+      .wordmark {
+        min-width: 190px;
+        color: #555a6c;
+        font-size: 1.72rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .wordmark span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .search-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 42px;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+      }
+
+      .search-bar input {
+        min-width: 0;
+        border: 0;
+        border-radius: 0;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+
+      .search-bar input:focus {
+        outline: 2px solid rgba(45, 48, 58, 0.22);
+        outline-offset: -2px;
+      }
+
+      .search-bar button {
+        border: 0;
+        border-left: 1px solid rgba(45, 48, 58, 0.16);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 16px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .contact-button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 22px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .contact-button:hover {
+        border-color: rgba(45, 48, 58, 0.44);
+        color: #2d303a;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        min-width: 118px;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        color: #2d303a;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .cart-icon {
+        position: relative;
+        width: 22px;
+        height: 17px;
+        border: 2px solid currentColor;
+        border-top: 0;
+      }
+
+      .cart-icon::before,
+      .cart-icon::after {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        width: 5px;
+        height: 5px;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      .cart-icon::before {
+        left: 2px;
+      }
+
+      .cart-icon::after {
+        right: 2px;
+      }
+
+      .category-nav {
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .category-inner {
+        display: flex;
+        min-height: 46px;
+        align-items: stretch;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        overflow: visible;
+        scrollbar-width: none;
+        gap: 0;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        height: 46px;
+        align-items: center;
+        gap: 6px;
+        color: #353844;
+        padding: 0 18px;
+        font-size: 0.88rem;
+        font-weight: 720;
+        white-space: nowrap;
+      }
+
+      .nav-links a:hover,
+      .utility-links a:hover {
+        color: #111;
+      }
+
+      .nav-item {
+        position: static;
+      }
+
+      .nav-item > a {
+        position: relative;
+      }
+
+      .nav-item > a::after {
+        content: "";
+        position: absolute;
+        right: 18px;
+        bottom: 0;
+        left: 18px;
+        height: 3px;
+        background: #171717;
+        opacity: 0;
+        transform: scaleX(0.65);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover > a::after,
+      .nav-item:focus-within > a::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 65;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        background: #fff;
+        box-shadow: 0 22px 36px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover .mega-menu,
+      .nav-item:focus-within .mega-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mega-inner {
+        display: grid;
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 44px;
+        padding: 34px 20px 38px;
+      }
+
+      .mega-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #30323a;
+        font-size: 1.65rem;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 28px;
+      }
+
+      .mega-group h3 {
+        margin: 0;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.26);
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .mega-group h3 a {
+        color: #30323a;
+        font-size: inherit;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-group h3 a:hover {
+        color: #171717;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .mega-group ul {
+        display: grid;
+        gap: 10px;
+        margin: 13px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mega-group a {
+        display: inline;
+        height: auto;
+        padding: 0;
+        color: #555;
+        font-size: 0.95rem;
+        font-weight: 520;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-group a:hover {
+        color: #171717;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .mega-feature {
+        align-self: start;
+        background: #f5f1eb;
+      }
+
+      .mega-feature img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.45 / 1;
+        object-fit: cover;
+      }
+
+      .mega-feature-body {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+      }
+
+      .mega-feature-body a {
+        display: inline;
+        height: auto;
+        padding: 0;
+        color: #30323a;
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature-body span {
+        color: #666;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .contact-link {
+        display: none;
+        min-width: 142px;
+        align-items: center;
+        justify-content: center;
+        background: #777b95;
+        color: #fff;
+        font-weight: 760;
+        text-decoration: none;
+      }
+
+      .breadcrumbs {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        padding-top: 22px;
+        color: #777;
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .breadcrumbs a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .breadcrumbs a:hover {
+        color: #171717;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: #737373;
+        font-size: 0.72rem;
+        font-weight: 650;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 4px;
+        font-size: clamp(1.25rem, 2vw, 1.6rem);
+        letter-spacing: 0;
+      }
+
+      .top-steps {
+        display: flex;
+        gap: 10px;
+      }
+
+      .step-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        color: #595959;
+        padding: 9px 14px;
+        cursor: pointer;
+        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      .step-pill:hover {
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .step-pill.active {
+        border-color: #000;
+        background: #000;
+        color: #fff;
+      }
+
+      .step-pill.done {
+        background: #fff;
+        color: #262626;
+      }
+
+      .icon {
+        display: inline-grid;
+        place-items: center;
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+      }
+
+      .page {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1.38fr) minmax(430px, 0.62fr);
+        gap: 44px;
+        isolation: isolate;
+        min-height: 560px;
+        padding-block: 24px;
+      }
+
+      .page::before {
+        content: none;
+      }
+
+      .preview-column {
+        position: sticky;
+        top: calc(var(--header-height) + 18px);
+        align-self: start;
+      }
+
+      .preview-card {
+        display: grid;
+        grid-template-columns: 74px minmax(0, 1fr);
+        gap: 16px;
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .gallery-rail {
+        display: grid;
+        align-content: start;
+        gap: 12px;
+      }
+
+      .gallery-thumb {
+        display: grid;
+        width: 74px;
+        min-height: 74px;
+        place-items: center;
+        border: 1px solid transparent;
+        background: #fff;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .gallery-thumb.active {
+        border-color: #171717;
+      }
+
+      .gallery-thumb img {
+        display: block;
+        width: 100%;
+        height: 74px;
+        object-fit: cover;
+      }
+
+      .gallery-thumb span {
+        font-size: 1.35rem;
+      }
+
+      .preview-stage {
+        position: relative;
+        display: grid;
+        min-height: clamp(420px, 43vw, 600px);
+        place-items: center;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .media-badges {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .media-badges span {
+        background: rgba(255, 255, 255, 0.84);
+        padding: 7px 10px;
+        color: #333;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .pool-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .pool-photo.gallery-photo {
+        width: 100%;
+        height: 100%;
+        max-height: clamp(420px, 43vw, 600px);
+        object-fit: contain;
+      }
+
+      .product-media-frame {
+        position: relative;
+        width: min(100%, 832px);
+      }
+
+      .product-media-frame.gallery-frame {
+        width: 100%;
+        height: 100%;
+      }
+
+      .cloth-overlay {
+        position: absolute;
+        inset: 0;
+        background: var(--selected-cloth, #353634);
+        mix-blend-mode: multiply;
+        opacity: 0.88;
+        pointer-events: none;
+        z-index: 1;
+        -webkit-mask: url("assets/austin-pool-table-cloth-alpha-mask.png") center / 100% 100% no-repeat;
+        mask: url("assets/austin-pool-table-cloth-alpha-mask.png") center / 100% 100% no-repeat;
+        mask-mode: alpha;
+      }
+
+      .config-column {
+        position: relative;
+        z-index: 1;
+        min-width: 0;
+        min-height: 0;
+        align-self: start;
+        border: 1px solid rgba(34, 34, 34, 0.1);
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.85) inset,
+          0 24px 70px rgba(17, 17, 17, 0.06);
+        padding: 24px;
+        backdrop-filter: blur(18px);
+      }
+
+      .config-column::before {
+        content: none;
+      }
+
+      .pool-table {
+        position: relative;
+        width: min(100%, 720px);
+        rotate: -1deg;
+        border-radius: 8px;
+        padding: 28px;
+        box-shadow: 0 40px 90px rgba(48, 31, 18, 0.32);
+      }
+
+      .grain {
+        position: absolute;
+        inset: 8px;
+        border-radius: 8px;
+        opacity: 0.42;
+        pointer-events: none;
+      }
+
+      .rail {
+        position: relative;
+        border: 14px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        padding: 16px;
+        box-shadow: inset 0 0 22px rgba(0, 0, 0, 0.22);
+      }
+
+      .felt {
+        position: relative;
+        display: grid;
+        aspect-ratio: 2.04 / 1;
+        place-items: center;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      .felt::before,
+      .felt::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 26px;
+        height: 16px;
+        translate: -50% 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+
+      .felt::before {
+        top: 9%;
+        border-radius: 0 0 999px 999px;
+      }
+
+      .felt::after {
+        bottom: 9%;
+        border-radius: 999px 999px 0 0;
+      }
+
+      .ball {
+        width: 16px;
+        height: 16px;
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .pocket {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.62);
+      }
+
+      .pocket.one {
+        left: 10%;
+        top: 13%;
+      }
+
+      .pocket.two {
+        right: 10%;
+        top: 13%;
+      }
+
+      .pocket.three {
+        left: 10%;
+        bottom: 13%;
+      }
+
+      .pocket.four {
+        right: 10%;
+        bottom: 13%;
+      }
+
+      .included-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 20px;
+      }
+
+      .mini {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 16px;
+        box-shadow: 0 2px 10px rgba(15, 15, 15, 0.04);
+      }
+
+      .mini h4 {
+        margin: 10px 0 0;
+        font-size: 0.96rem;
+      }
+
+      .mini p {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 32px;
+        box-shadow: 0 2px 10px rgba(15, 15, 15, 0.04);
+      }
+
+      .product-panel {
+        min-width: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .intro {
+        border-bottom: 1px solid var(--hairline);
+        padding: 8px 0 20px;
+      }
+
+      .intro-copy {
+        max-width: 720px;
+      }
+
+      h2 {
+        margin-top: 8px;
+        max-width: 720px;
+        font-size: clamp(2.25rem, 4vw, 3.25rem);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .product-description {
+        max-width: 700px;
+        margin-top: 14px;
+        color: #626262;
+        font-size: clamp(0.9rem, 1.1vw, 0.98rem);
+        line-height: 1.6;
+      }
+
+      .path-picker {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin: 18px -6px 0;
+        padding: 6px;
+      }
+
+      .path-card {
+        position: relative;
+        overflow: hidden;
+        min-height: 168px;
+        border: 1px solid rgba(0, 0, 0, 0.11);
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.68);
+        padding: 16px;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+        transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease,
+          transform 160ms ease;
+      }
+
+      .path-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 3px;
+        background: rgba(23, 23, 23, 0.78);
+        opacity: 0;
+        transition: opacity 160ms ease;
+      }
+
+      .path-card:hover {
+        border-color: rgba(0, 0, 0, 0.24);
+        box-shadow: 0 14px 34px rgba(15, 15, 15, 0.05);
+        transform: translateY(-1px);
+      }
+
+      .path-card.active {
+        border-color: rgba(0, 0, 0, 0.34);
+        background: rgba(255, 255, 255, 0.94);
+        color: #171717;
+        box-shadow:
+          0 18px 48px rgba(15, 15, 15, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.92);
+      }
+
+      .path-card.active::before {
+        opacity: 1;
+      }
+
+      .path-card h3 {
+        margin-top: 9px;
+        font-size: 1.22rem;
+        line-height: 1.15;
+      }
+
+      .path-card p {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.35;
+      }
+
+      .path-card .eyebrow {
+        color: #777;
+        font-size: 0.7rem;
+      }
+
+      .path-card.active .eyebrow {
+        color: #777;
+      }
+
+      .path-card.active p,
+      .path-card.active .path-facts {
+        color: #555;
+      }
+
+      .path-facts {
+        display: grid;
+        gap: 5px;
+        margin: 14px 0 0;
+        padding: 0;
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.35;
+        list-style: none;
+      }
+
+      .path-facts strong {
+        color: #171717;
+        font-weight: 780;
+      }
+
+      .path-note {
+        max-width: 26ch;
+      }
+
+      .progress {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .progress button {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .progress-line {
+        height: 6px;
+        border-radius: 999px;
+        background: #e5e5e5;
+      }
+
+      .progress button.active .progress-line,
+      .progress button.done .progress-line {
+        background: #000;
+      }
+
+      .progress p {
+        margin-top: 10px;
+        color: #777;
+        font-size: 0.85rem;
+      }
+
+      .progress strong {
+        display: block;
+        margin-top: 2px;
+        color: #555;
+        font-size: 0.88rem;
+        font-weight: 500;
+      }
+
+      .progress button.active p,
+      .progress button.active strong {
+        color: #171717;
+      }
+
+      .step-content {
+        margin-top: 24px;
+      }
+
+      .step-title {
+        margin-top: 8px;
+        font-size: clamp(1.85rem, 3vw, 2.55rem);
+        line-height: 1.08;
+      }
+
+      .step-description {
+        max-width: 700px;
+        margin-top: 12px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .accordion-flow {
+        display: grid;
+        gap: 0;
+        margin-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+
+      .accordion-step {
+        overflow: visible;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+        background: #fff;
+      }
+
+      .accordion-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto 32px;
+        width: 100%;
+        align-items: center;
+        gap: 18px;
+        border: 0;
+        background: transparent;
+        padding: 22px 0;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .accordion-title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px 12px;
+      }
+
+      .accordion-step.locked .accordion-head {
+        cursor: default;
+      }
+
+      .accordion-head h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.2;
+      }
+
+      .accordion-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      .accordion-count {
+        flex: 0 0 auto;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-align: right;
+      }
+
+      .accordion-toggle {
+        display: block;
+        color: #171717;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .accordion-body {
+        padding: 0 0 28px;
+      }
+
+      .locked-message {
+        padding: 0 0 22px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .summary-choice {
+        color: #171717;
+        font-weight: 800;
+      }
+
+      .option-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .option,
+      .finish,
+      .cloth,
+      .addon {
+        min-height: 0;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.84);
+        color: var(--ink);
+        text-align: left;
+        cursor: pointer;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+        transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease,
+          background 160ms ease, color 160ms ease;
+      }
+
+      .option:hover,
+      .finish:hover,
+      .cloth:hover,
+      .addon:hover {
+        border-color: rgba(0, 0, 0, 0.32);
+        box-shadow: 0 14px 34px rgba(15, 15, 15, 0.07);
+        transform: translateY(-2px);
+      }
+
+      .option {
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+        padding: 18px;
+      }
+
+      .selected {
+        border-color: #000;
+        background: #171717;
+        color: #fff;
+      }
+
+      .option.selected {
+        border-color: rgba(23, 23, 23, 0.5);
+        outline: 0;
+        background: rgba(255, 255, 255, 0.96);
+        color: #171717;
+        box-shadow:
+          0 16px 38px rgba(15, 15, 15, 0.07),
+          inset 0 3px 0 #171717;
+      }
+
+      .option-head,
+      .addon-head,
+      .finish-body-top,
+      .cloth-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .option h4,
+      .addon h4 {
+        margin: 0;
+        font-size: 1.14rem;
+      }
+
+      .subtle {
+        color: var(--muted);
+      }
+
+      .selected .subtle,
+      .selected .soft-text {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .option.selected .subtle,
+      .option.selected .soft-text,
+      .option.selected .body {
+        color: #555;
+      }
+
+      .check-circle {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        border-radius: 999px;
+      }
+
+      .selected .check-circle {
+        border-color: #fff;
+        background: #fff;
+        color: #000;
+      }
+
+      .option.selected .check-circle {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .room-box {
+        display: grid;
+        gap: 5px;
+        margin-top: 16px;
+        border-radius: 8px;
+        background: rgba(246, 243, 238, 0.86);
+        padding: 11px 12px;
+      }
+
+      .selected .room-box {
+        background: rgba(255, 255, 255, 0.11);
+      }
+
+      .option.selected .room-box {
+        background: rgba(246, 243, 238, 0.92);
+      }
+
+      .room-box span {
+        color: #777;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .room-box strong {
+        display: block;
+        margin-top: 0;
+        font-size: 0.95rem;
+      }
+
+      .option .body,
+      .addon .body {
+        margin-top: 12px;
+        color: #555;
+        font-size: 0.84rem;
+        line-height: 1.42;
+      }
+
+      .selected .body {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .price-line {
+        margin-top: auto;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        padding-top: 12px;
+        font-size: 0.88rem;
+        font-weight: 760;
+      }
+
+      .finish {
+        overflow: hidden;
+      }
+
+      .finish-section {
+        margin-top: 22px;
+      }
+
+      .finish-section + .finish-section {
+        margin-top: 28px;
+      }
+
+      .finish-section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
+
+      .finish-section-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .finish-section-head h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .finish-section-head p {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      .selected-finish-name {
+        display: inline-flex;
+        min-height: 26px;
+        align-items: center;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 750;
+        white-space: nowrap;
+      }
+
+      .finish-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .finish.selected {
+        border-color: rgba(23, 23, 23, 0.5);
+        outline: 0;
+        background: rgba(255, 255, 255, 0.96);
+        color: #171717;
+        box-shadow:
+          0 16px 38px rgba(15, 15, 15, 0.07),
+          inset 0 3px 0 #171717;
+      }
+
+      .finish-swatch {
+        position: relative;
+        height: 78px;
+        overflow: hidden;
+        background: #f5f5f5;
+      }
+
+      .finish-swatch img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .finish-check {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        display: grid;
+        width: 26px;
+        height: 26px;
+        place-items: center;
+        border-radius: 999px;
+        background: #fff;
+        color: #171717;
+        font-size: 0.86rem;
+        font-weight: 900;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+      }
+
+      .cloth {
+        padding: 14px;
+      }
+
+      .cloth h4 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .charge {
+        margin-top: 16px;
+        color: #737373;
+        font-size: 0.9rem;
+      }
+
+      .cloth-dot {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.22);
+      }
+
+      .best-for {
+        display: block;
+        margin-top: 10px;
+        color: #444;
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
+      .cloth-section {
+        margin-top: 18px;
+      }
+
+      .cloth-section + .cloth-section {
+        margin-top: 22px;
+      }
+
+      .cloth-section-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 10px;
+      }
+
+      .cloth-section-head h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .cloth-section-head p {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+
+      .cloth-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .cloth {
+        position: relative;
+        display: flex;
+        min-height: 40px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        padding: 0;
+      }
+
+      .cloth.selected {
+        border-color: rgba(23, 23, 23, 0.72);
+        outline: 2px solid rgba(23, 23, 23, 0.5);
+        outline-offset: 2px;
+        color: #fff;
+      }
+
+      .cloth-type {
+        display: inline-flex;
+        min-height: 26px;
+        align-items: center;
+        border-radius: 999px;
+        background: #f2f2f2;
+        padding: 5px 10px;
+        color: #555;
+        font-size: 0.72rem;
+        font-weight: 750;
+        white-space: nowrap;
+      }
+
+      .selected-cloth-name {
+        margin-left: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 500;
+      }
+
+      .cloth-check {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 24px;
+        height: 24px;
+        place-items: center;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        color: #171717;
+        font-size: 0.72rem;
+        font-weight: 900;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+      }
+
+      .addon-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .addon {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .addon-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .addon-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex: 0 0 auto;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 25px;
+        border-radius: 999px;
+        background: #f2f2f2;
+        padding: 4px 10px;
+        color: #555;
+        font-size: 0.74rem;
+      }
+
+      .selected .badge {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+      }
+
+      .nav-row {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        margin-top: 32px;
+        padding-top: 24px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: transparent;
+        color: #444;
+        padding: 11px 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .btn:hover {
+        border-color: #000;
+      }
+
+      .btn.primary {
+        border-color: #000;
+        background: #000;
+        color: #fff;
+      }
+
+      .btn.primary:hover {
+        background: #262626;
+      }
+
+      .btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.35;
+      }
+
+      .build-summary {
+        margin-top: 24px;
+      }
+
+      .preview-column .build-summary {
+        margin-top: 14px;
+        border: 1px solid rgba(23, 23, 23, 0.1);
+        border-radius: 6px;
+        background:
+          linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(250, 248, 244, 0.58)),
+          rgba(255, 255, 255, 0.72);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.95) inset,
+          0 24px 70px rgba(31, 24, 16, 0.08);
+        padding: 24px;
+        backdrop-filter: blur(22px) saturate(1.08);
+      }
+
+      .build-summary h3 {
+        font-size: 1.3rem;
+        letter-spacing: -0.015em;
+      }
+
+      .build-summary-grid {
+        display: grid;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .build-item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid rgba(23, 23, 23, 0.08);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.66);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.82) inset;
+        padding: 11px 13px;
+      }
+
+      .build-item h4 {
+        margin: 0;
+        color: #666;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .build-item p {
+        margin-top: 0;
+        color: var(--ink);
+        font-size: 0.86rem;
+        font-weight: 760;
+        line-height: 1.4;
+        text-align: right;
+      }
+
+      .package-band {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .preview-column .package-band {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 16px;
+      }
+
+      .package-card strong {
+        display: block;
+      }
+
+      .package-card span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .collection-section {
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        padding: 12px 20px 96px;
+      }
+
+      .collection-headline {
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .collection-headline h2 {
+        margin: 0;
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        line-height: 1.1;
+      }
+
+      .collection-headline a {
+        color: #333;
+        font-size: 0.9rem;
+        font-weight: 760;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .collection-products {
+        display: grid;
+        grid-auto-columns: minmax(260px, 1fr);
+        grid-auto-flow: column;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x proximity;
+      }
+
+      .collection-product {
+        min-width: 0;
+        color: inherit;
+        scroll-snap-align: start;
+        text-decoration: none;
+      }
+
+      .collection-product-media {
+        display: grid;
+        min-height: 300px;
+        place-items: center;
+        background: #f6f6f6;
+        padding: 22px;
+      }
+
+      .collection-product-media img {
+        display: block;
+        width: 100%;
+        max-height: 260px;
+        object-fit: contain;
+      }
+
+      .collection-product-body {
+        padding-top: 14px;
+      }
+
+      .collection-product-title {
+        font-size: 1rem;
+        font-weight: 760;
+        line-height: 1.35;
+      }
+
+      .collection-product-price {
+        margin-top: 4px;
+        font-weight: 850;
+      }
+
+      .collection-product-meta {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .modal-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        background: rgba(23, 23, 23, 0.42);
+        padding: 20px;
+      }
+
+      .modal {
+        width: min(100%, 720px);
+        max-height: min(760px, calc(100vh - 40px));
+        overflow: auto;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 36px 100px rgba(0, 0, 0, 0.34);
+      }
+
+      .modal-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+        padding: 24px;
+      }
+
+      .modal-head h3 {
+        margin-top: 8px;
+        font-size: 1.7rem;
+      }
+
+      .modal-close {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        cursor: pointer;
+      }
+
+      .modal-body {
+        padding: 24px;
+      }
+
+      .modal-summary {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .modal-form {
+        display: grid;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      label {
+        display: grid;
+        gap: 7px;
+        color: #555;
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px 13px;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 92px;
+        resize: vertical;
+      }
+
+      .success-message {
+        margin-top: 16px;
+        border: 1px solid rgba(2, 110, 75, 0.22);
+        border-radius: 8px;
+        background: rgba(2, 110, 75, 0.08);
+        padding: 14px;
+        color: #174334;
+        font-weight: 750;
+      }
+
+      .purchase-panel {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+        border-top: 1px solid var(--line);
+        padding-top: 22px;
+      }
+
+      .included-box {
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        border-radius: 8px;
+        background: #fff;
+        padding: 16px 18px;
+      }
+
+      .included-box h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .included-list {
+        display: grid;
+        gap: 5px;
+        margin: 12px 0 0;
+        padding: 0;
+        color: #222;
+        font-size: 0.82rem;
+        line-height: 1.32;
+        list-style: none;
+      }
+
+      .included-list li::before {
+        content: "✓";
+        margin-right: 10px;
+      }
+
+      .purchase-actions {
+        display: grid;
+        grid-template-columns: minmax(118px, 0.45fr) minmax(0, 1fr);
+        gap: 14px;
+        align-items: end;
+        min-width: 0;
+      }
+
+      .summary-label {
+        color: #777;
+        font-size: 0.74rem;
+      }
+
+      .strike {
+        margin-top: 3px;
+        color: #777;
+        font-weight: 700;
+        text-decoration: line-through;
+      }
+
+      .price-wrap {
+        display: block;
+        min-width: 160px;
+      }
+
+      .big-price {
+        margin: 0;
+        font-size: clamp(1.65rem, 2.75vw, 2.05rem);
+        font-weight: 800;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .footer-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        justify-content: flex-end;
+        min-width: 0;
+      }
+
+      .footer-actions .btn {
+        width: 100%;
+        min-height: 50px;
+        padding-inline: 16px;
+        line-height: 1.12;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      @media (max-width: 1100px) {
+        .page {
+          grid-template-columns: 1fr;
+          height: auto;
+          overflow: visible;
+        }
+
+        .page::before {
+          right: -20px;
+          left: -20px;
+          width: auto;
+          bottom: auto;
+          height: 55%;
+          opacity: 0.72;
+        }
+
+        .config-column::before {
+          inset: -14px -16px 42px;
+        }
+
+        .preview-column {
+          position: static;
+        }
+
+        .preview-card {
+          grid-template-columns: 68px minmax(0, 1fr);
+        }
+
+        .gallery-thumb {
+          width: 68px;
+          min-height: 68px;
+        }
+
+        .gallery-thumb img {
+          height: 68px;
+        }
+
+        .preview-card {
+          position: static;
+        }
+
+        .preview-column .build-summary {
+          position: static;
+        }
+
+        .preview-stage {
+          min-height: 360px;
+        }
+
+        .product-media-frame {
+          width: min(100%, 576px);
+        }
+
+        .purchase-actions {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .commerce-inner {
+          grid-template-columns: auto 1fr auto;
+          justify-content: stretch;
+        }
+
+        .search-bar {
+          grid-column: 1 / -1;
+          order: 4;
+        }
+      }
+
+      @media (max-width: 760px) {
+        :root {
+          --header-height: 150px;
+        }
+
+        .shell {
+          padding-bottom: 260px;
+        }
+
+        .utility-inner,
+        .commerce-inner,
+        .category-inner,
+        .breadcrumbs,
+        .page,
+            .footer-inner {
+              padding-inline: 16px;
+            }
+
+        .utility-inner {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .utility-links {
+          display: none;
+        }
+
+        .commerce-inner {
+          grid-template-columns: 1fr auto;
+          gap: 16px;
+          padding-block: 14px;
+        }
+
+        .wordmark {
+          min-width: 0;
+          font-size: 1.42rem;
+        }
+
+        .wordmark span {
+          font-size: 0.76rem;
+        }
+
+        .search-bar {
+          grid-column: 1 / -1;
+          order: 3;
+        }
+
+        .contact-button {
+          min-height: 38px;
+          padding: 0 14px;
+        }
+
+        .cart-link {
+          min-width: 0;
+        }
+
+        .category-inner {
+          padding-right: 0;
+        }
+
+        .nav-links {
+          overflow-x: auto;
+          overflow-y: hidden;
+        }
+
+        .mega-menu {
+          display: none;
+        }
+
+        .contact-link {
+          display: none;
+        }
+
+        .page {
+          padding-block: 20px;
+        }
+
+        .breadcrumbs {
+          overflow-x: auto;
+          padding-top: 16px;
+          white-space: nowrap;
+        }
+
+        .preview-card {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-rail {
+          display: flex;
+          overflow-x: auto;
+        }
+
+        .preview-stage {
+          min-height: 330px;
+        }
+
+        .product-media-frame {
+          width: min(100%, 528px);
+        }
+
+        .pool-table {
+          padding: 16px;
+        }
+
+        .rail {
+          border-width: 10px;
+          padding: 10px;
+        }
+
+        .included-grid,
+        .path-picker,
+        .option-grid,
+        .finish-grid,
+        .cloth-grid,
+        .build-summary-grid,
+        .package-band,
+        .modal-summary,
+        .field-grid,
+        .progress {
+          grid-template-columns: 1fr;
+        }
+
+        .panel {
+          padding: 22px;
+        }
+
+        .product-panel {
+          padding: 0 0 20px;
+        }
+
+        .addon-row,
+        .footer-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .addon-actions {
+          justify-content: space-between;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+      .nav-item.has-mega > a::before {
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: -12px;
+        left: 12px;
+        height: 16px;
+      }
+
+      .mega-inner.menu-only {
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+        padding-bottom: 54px;
+      }
+
+      .mega-link-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px 34px;
+      }
+
+      .mega-link-grid a {
+        display: block;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.28);
+        padding: 0 0 14px;
+        color: #30323a;
+        font-size: 1.04rem;
+        font-weight: 820;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .mega-link-grid a:hover,
+      .mega-link-grid a:focus-visible,
+      .mega-group a:hover,
+      .mega-feature-body a:hover {
+        color: #111;
+        border-color: #171717;
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #222321;
+        color: #f7f4ef;
+      }
+
+      .site-footer-main {
+        display: grid;
+        width: min(100%, 1520px);
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 42px;
+        margin: 0 auto;
+        padding: 52px 22px 46px;
+      }
+
+      .site-footer-brand {
+        max-width: 390px;
+      }
+
+      .site-footer-logo {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .site-footer-logo span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.88rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .site-footer-main h3 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .site-footer-main p,
+      .site-footer-main a {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
+      .site-footer-main a:hover {
+        color: #fff;
+      }
+
+      .site-footer-main ul {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer-contact {
+        display: grid;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .site-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer-bottom-inner {
+        display: flex;
+        width: min(100%, 1520px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
+      }
+
+      .site-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .site-footer-social a {
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+
+      /* site chrome responsive refinements */
+      @media (max-width: 900px) {
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+      }
+
+    </style>
+    <link rel="stylesheet" href="assets/mobile-overrides.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="site-header">
+      <div class="commerce-inner">
+        <a class="wordmark" href="index.html" aria-label="Home Billiards home">
+          Home
+          <span>Billiards</span>
+        </a>
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Look for billiards, games, and lifestyle equipment"
+            aria-label="Search products"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <a class="contact-button" href="contact-us.html">Contact Us</a>
+        <a class="cart-link" href="#">My Cart</a>
+      </div>
+
+      <nav class="category-nav" aria-label="Main navigation">
+        <div class="category-inner">
+          <ul class="nav-links">
+            <li class="nav-item has-mega">
+              <a href="pool-tables.html">Billiards</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="pool-tables.html">All Billiards</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="pool-tables.html">Pool Tables</a></h3>
+                        <ul>
+                          <li><a href="pool-tables.html">In-Stock Pool Tables</a></li>
+                          <li><a href="#">Canada Billiards</a></li>
+                          <li><a href="#">California House</a></li>
+                          <li><a href="#">Olhausen Billiards</a></li>
+                          <li><a href="#">Legacy Billiards</a></li>
+                          <li><a href="#">Custom Pool Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Table Essentials</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Felt</a></li>
+                          <li><a href="#">Pool Table Covers</a></li>
+                          <li><a href="#">Pool Table Lights</a></li>
+                          <li><a href="#">Dining Tops</a></li>
+                          <li><a href="#">Benches and Storage</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Cues and Play</h3>
+                        <ul>
+                          <li><a href="cues.html">Pool Cues</a></li>
+                          <li><a href="#">Pool Cue Cases</a></li>
+                          <li><a href="#">Balls</a></li>
+                          <li><a href="#">Pool Cue Racks &amp; Holders</a></li>
+                          <li><a href="#">Billiard Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Help and Services</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Design Center</a></li>
+                          <li><a href="#">Room Size Guide</a></li>
+                          <li><a href="#">Delivery and Installation</a></li>
+                          <li><a href="#">Moving and Recovering</a></li>
+                          <li><a href="#">Commercial Projects</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="assets/california-house-austin-renders/truffle.png" alt="California House Austin pool table" />
+                    <div class="mega-feature-body">
+                      <a href="austin-pool-table.html">Build a luxury pool table</a>
+                      <span>Choose size, finish, cloth, and room upgrades.</span>
+                      <a href="pool-tables.html">View sale and in-stock tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="ping-pong-tables.html">Ping Pong</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="ping-pong-tables.html">All Ping Pong</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="ping-pong-tables.html">Ping Pong Tables</a></h3>
+                        <ul>
+                          <li><a href="ping-pong-tables.html">Indoor Tables</a></li>
+                          <li><a href="#">Outdoor Tables</a></li>
+                          <li><a href="#">Competition Tables</a></li>
+                          <li><a href="#">Foldable Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Play Gear</h3>
+                        <ul>
+                          <li><a href="#">Ping Pong Paddles</a></li>
+                          <li><a href="#">Ping Pong Balls</a></li>
+                          <li><a href="#">Nets &amp; Posts</a></li>
+                          <li><a href="#">Ping Pong Robots</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Accessories</h3>
+                        <ul>
+                          <li><a href="#">Table Covers</a></li>
+                          <li><a href="#">Replacement Nets</a></li>
+                          <li><a href="#">Storage and Care</a></li>
+                          <li><a href="#">Training Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Shop by Need</h3>
+                        <ul>
+                          <li><a href="#">Family Play</a></li>
+                          <li><a href="#">Club Practice</a></li>
+                          <li><a href="#">Commercial Use</a></li>
+                          <li><a href="#">Made in Germany</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" alt="Whistler indoor table tennis table" />
+                    <div class="mega-feature-body">
+                      <a href="whistler-indoor-table-tennis-table.html">Whistler Indoor Table Tennis Table</a>
+                      <span>Competition-quality indoor table with playback position.</span>
+                      <a href="ping-pong-tables.html">Shop ping pong tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="traeger-smokers.html">BBQ</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="traeger-smokers.html">All BBQ</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Grills and Smokers</h3><ul><li><a href="traeger-smokers.html">Traeger Smokers</a></li><li><a href="#">Pellet Grills</a></li><li><a href="#">Pizza Ovens</a></li><li><a href="#">Portable Grills</a></li></ul></section>
+                      <section class="mega-group"><h3>Fuel and Flavour</h3><ul><li><a href="#">Wood Pellets</a></li><li><a href="#">Sauces &amp; Spices</a></li><li><a href="#">Rubs</a></li><li><a href="#">Cooking Pellets</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Traeger Grill Covers</a></li><li><a href="#">Grill Tools</a></li><li><a href="#">Thermometers</a></li><li><a href="#">Cleaning Supplies</a></li></ul></section>
+                      <section class="mega-group"><h3>Outdoor Living</h3><ul><li><a href="#">Backyard Cooking</a></li><li><a href="#">Entertaining Essentials</a></li><li><a href="#">Gifts for Grillers</a></li><li><a href="#">Sale BBQ</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="traeger-smokers.html">Build the backyard setup</a><span>Smokers, pellets, covers, tools, and outdoor cooking accessories.</span><a href="traeger-smokers.html">Shop BBQ essentials</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Foosball</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Foosball</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Tables</h3><ul><li><a href="#">Foosball Tables</a></li><li><a href="#">Home Tables</a></li><li><a href="#">Commercial Tables</a></li><li><a href="#">Coin-Operated Tables</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Foosball Balls</a></li><li><a href="#">Replacement Men</a></li><li><a href="#">Handles and Rods</a></li><li><a href="#">Table Covers</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Brand</h3><ul><li><a href="#">Legacy Billiards</a></li><li><a href="#">Dynamo</a></li><li><a href="#">Commercial Grade</a></li><li><a href="#">View All</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Home vs Commercial</a></li><li><a href="#">Delivery Options</a></li><li><a href="#">Parts and Service</a></li><li><a href="#">Sale Foosball</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Game room staples</a><span>Durable tables and parts for home rec rooms and commercial spaces.</span><a href="#">Shop foosball</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="dartboards.html">Darts</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="dartboards.html">All Darts</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Boards and Cabinets</h3><ul><li><a href="dartboards.html">Dartboards</a></li><li><a href="#">Dart Board Cabinets</a></li><li><a href="#">Surrounds</a></li><li><a href="#">Scoreboards</a></li></ul></section>
+                      <section class="mega-group"><h3>Darts</h3><ul><li><a href="#">Steel Tip Darts</a></li><li><a href="#">Soft Tip Darts</a></li><li><a href="#">Winmau</a></li><li><a href="#">Beginner Sets</a></li></ul></section>
+                      <section class="mega-group"><h3>Parts</h3><ul><li><a href="#">Dart Flights</a></li><li><a href="#">Dart Shafts</a></li><li><a href="#">Dart Cases &amp; Wallets</a></li><li><a href="#">Dart Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Need</h3><ul><li><a href="#">Home Setup</a></li><li><a href="#">League Play</a></li><li><a href="#">Gifts</a></li><li><a href="#">Sale Darts</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="dartboards.html">Set up a proper dart wall</a><span>Boards, cabinets, lighting, darts, flights, shafts, and cases.</span><a href="dartboards.html">Shop dart gear</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Games</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Games</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Game Tables</h3><ul><li><a href="#">Air Hockey Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Poker Tables</a></li><li><a href="#">Game Table Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Table Games</h3><ul><li><a href="#">Poker Chips</a></li><li><a href="#">Cards</a></li><li><a href="#">Dice</a></li><li><a href="#">Board Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Rec Room</h3><ul><li><a href="#">Sports</a></li><li><a href="#">Misc. Games</a></li><li><a href="#">Family Games</a></li><li><a href="#">Party Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Room Planning</a></li><li><a href="#">Gift Ideas</a></li><li><a href="#">Commercial Game Rooms</a></li><li><a href="#">Sale Games</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Round out the room</a><span>Shuffleboard, air hockey, poker, games, cards, dice, and accessories.</span><a href="#">Shop games</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Commercial</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Commercial</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Coin-Operated</h3><ul><li><a href="#">Coin-Operated Pool Tables</a></li><li><a href="#">Coin-Operated Foosball Tables</a></li><li><a href="#">Coin-Operated Jet-Pong</a></li><li><a href="#">Parts and Service</a></li></ul></section>
+                      <section class="mega-group"><h3>Venue Games</h3><ul><li><a href="#">Commercial Air Hockey Tables</a></li><li><a href="#">Commercial Pool Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Arcade-Ready Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Projects</h3><ul><li><a href="#">Bars and Restaurants</a></li><li><a href="#">Offices</a></li><li><a href="#">Strata and Amenity Rooms</a></li><li><a href="#">Schools and Clubs</a></li></ul></section>
+                      <section class="mega-group"><h3>Support</h3><ul><li><a href="#">Bulk Quotes</a></li><li><a href="#">Delivery Planning</a></li><li><a href="#">Installation</a></li><li><a href="#">Maintenance</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Commercial game room support</a><span>Durable tables, venue-ready games, delivery planning, and service.</span><a href="#">Start a commercial quote</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#">New Arrivals</a></li>
+            <li class="nav-item"><a href="#">Sale</a></li>
+            <li class="nav-item"><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="#">Billiards</a>
+        <span>/</span>
+        <a href="#">Pool Tables</a>
+        <span>/</span>
+        <a href="#">California House</a>
+        <span>/</span>
+        <span>Austin Pool Table</span>
+      </nav>
+
+      <main class="page">
+        <aside class="preview-column">
+          <div class="preview-card">
+            <div class="gallery-rail" id="galleryRail" aria-label="Product gallery thumbnails"></div>
+            <div class="preview-stage">
+              <div class="media-badges" aria-hidden="true">
+                <span>In stock</span>
+                <span>Ready for Install</span>
+              </div>
+              <div class="product-media-frame">
+                <img
+                  class="pool-photo"
+                  src="assets/california-house-austin-renders/truffle.png"
+                  alt="California House Austin pool table in Truffle finish"
+                />
+                <div class="cloth-overlay" id="clothOverlay" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel build-summary">
+            <h3>Your Austin Pool Table at a Glance</h3>
+            <div class="build-summary-grid" id="buildSummaryGrid"></div>
+          </div>
+        </aside>
+
+        <section class="config-column">
+          <div class="panel product-panel">
+            <div class="intro">
+              <div class="intro-copy">
+                <p class="eyebrow">California House</p>
+                <h2>Austin Pool Table</h2>
+                <p class="product-description">
+                  The Austin Pool Table is one of the finest pool tables made today and many of our
+                  customers design their billiard room around the clean design.
+                </p>
+              </div>
+            </div>
+
+            <div class="path-picker" id="pathPicker"></div>
+            <div class="accordion-flow" id="accordionFlow"></div>
+            <div class="purchase-panel">
+              <div class="included-box">
+                <div>
+                  <h3>Installation and play package included</h3>
+                  <ul class="included-list">
+                    <li>Delivery and installation in the Greater Vancouver area.</li>
+                    <li>Cues, balls, rack, chalk, brush, and bridge cue included.</li>
+                    <li>Configuration is saved with your quote or cart request.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="purchase-actions">
+                <div class="price-wrap">
+                  <p class="big-price" id="priceLine"></p>
+                </div>
+                <div class="footer-actions">
+                  <button class="btn" id="quoteBtn" type="button">Request a Quote</button>
+                  <button class="btn primary" id="cartBtn" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="collection-section" aria-labelledby="collectionTitle">
+        <div class="collection-headline">
+          <h2 id="collectionTitle">Part of the Austin Collection</h2>
+          <a href="pool-tables.html">Shop all</a>
+        </div>
+        <div class="collection-products" id="collectionProducts"></div>
+      </section>
+
+      <footer class="site-footer">
+            <div class="site-footer-main">
+              <div class="site-footer-brand">
+                <div class="site-footer-logo">Home<span>Billiards</span></div>
+                <p>Canada's destination for luxury game rooms, billiards, outdoor living, and commercial play spaces.</p>
+                <div class="site-footer-contact">
+                  <p>1644 S.E. Marine Drive, Vancouver, BC V5P 2R6</p>
+                  <p>604 321 5553</p>
+                  <p>info@homebilliards.ca</p>
+                </div>
+              </div>
+              <div>
+                <h3>Navigate</h3>
+                <ul>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms and Conditions</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Pool Table Design Center</a></li>
+                  <li><a href="#">Services We Provide</a></li>
+                  <li><a href="#">Shipping &amp; Returns</a></li>
+                  <li><a href="#">Resources</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Categories</h3>
+                <ul>
+                  <li><a href="pool-tables.html">Billiards</a></li>
+                  <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+                  <li><a href="traeger-smokers.html">BBQ</a></li>
+                  <li><a href="#">Foosball</a></li>
+                  <li><a href="dartboards.html">Darts</a></li>
+                  <li><a href="#">Games</a></li>
+                  <li><a href="#">Commercial</a></li>
+                  <li><a href="#">New Arrivals</a></li>
+                  <li><a href="#">Sale</a></li>
+                  <li><a href="#">Made in Canada</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Popular Brands</h3>
+                <ul>
+                  <li><a href="#">Canada Billiards</a></li>
+                  <li><a href="#">Legacy Billiards</a></li>
+                  <li><a href="#">Olhausen Billiards</a></li>
+                  <li><a href="#">Traeger</a></li>
+                  <li><a href="#">California House</a></li>
+                  <li><a href="#">Predator</a></li>
+                  <li><a href="#">Winmau</a></li>
+                  <li><a href="#">Championship Shuffleboard</a></li>
+                  <li><a href="#">Dynamo</a></li>
+                  <li><a href="#">Harrow</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="site-footer-bottom">
+              <div class="site-footer-bottom-inner">
+                <span>(c) 2026 Home Billiards. All rights reserved.</span>
+                <div class="site-footer-social" aria-label="Social links">
+                  <a href="#">Facebook</a>
+                  <a href="#">Twitter</a>
+                  <a href="#">YouTube</a>
+                  <a href="#">Instagram</a>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+      <div class="modal-backdrop hidden" id="actionModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+          <div class="modal-head">
+            <div>
+              <p class="eyebrow" id="modalEyebrow">Next Step</p>
+              <h3 id="modalTitle">Save Your Build</h3>
+              <p class="lead" id="modalText"></p>
+            </div>
+            <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Close">×</button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-summary" id="modalSummary"></div>
+            <form class="modal-form" id="quoteForm">
+              <div class="field-grid">
+                <label>
+                  Name
+                  <input id="customerName" name="name" autocomplete="name" required />
+                </label>
+                <label>
+                  Phone
+                  <input id="customerPhone" name="phone" autocomplete="tel" required />
+                </label>
+              </div>
+              <label>
+                Email
+                <input id="customerEmail" name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Room notes
+                <textarea id="customerNotes" name="notes" placeholder="Room size, preferred delivery timing, stairs, elevator, or anything you want the showroom to know."></textarea>
+              </label>
+              <button class="btn primary" id="modalSubmitBtn" type="submit">Send Build</button>
+            </form>
+            <div class="success-message hidden" id="modalSuccess"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const steps = [
+        {
+          id: "size",
+          label: "Table Size",
+          eyebrow: "Step 1",
+          title: "Choose the right table for the room.",
+          description: "",
+          icon: "↔",
+        },
+        {
+          id: "finish",
+          label: "Wood Finish",
+          eyebrow: "Step 2",
+          title: "Select the finish that anchors the space.",
+          description: "",
+          icon: "✦",
+        },
+        {
+          id: "cloth",
+          label: "Cloth Swatch",
+          eyebrow: "Step 3",
+          title: "Choose the cloth colour and performance level.",
+          description: "",
+          icon: "◐",
+        },
+        {
+          id: "addons",
+          label: "Table Add-Ons",
+          eyebrow: "Step 4",
+          title: "Finish the table with functional upgrades.",
+          description:
+            "Dining tops, storage, benches, lighting, and premium play kits turn the table into a full room solution.",
+          icon: "□",
+        },
+      ];
+
+      const sizes = [
+        {
+          id: "7ft",
+          name: "7 Foot",
+          subtitle: "Best for tighter rooms",
+          recommendedRoom: "13' x 16' minimum",
+          playFeel: "Bar size / casual",
+          basePrice: 13995,
+          msrp: 15995,
+          note: "Easy fit for condos and multi-use rooms.",
+        },
+        {
+          id: "8ft",
+          name: "8 Foot",
+          subtitle: "Most popular home size",
+          recommendedRoom: "13' 6\" x 17' minimum",
+          playFeel: "Balanced home play",
+          basePrice: 16995,
+          msrp: 18995,
+          note: "The easiest size to play up or down from.",
+        },
+        {
+          id: "9ft",
+          name: "9 Foot",
+          subtitle: "Tournament presence",
+          recommendedRoom: "14' x 18' minimum",
+          playFeel: "Full competitive layout",
+          basePrice: 19995,
+          msrp: 22995,
+          note: "Best for dedicated billiard rooms.",
+        },
+        {
+          id: "custom",
+          name: "Custom Size",
+          subtitle: "Designer / project quote",
+          recommendedRoom: "Reviewed by specialist",
+          playFeel: "Built around the space",
+          basePrice: 0,
+          msrp: 0,
+          quoteOnly: true,
+          note: "For exact dimensions or project requirements.",
+        },
+      ];
+
+      const californiaHouseFinishPath = "assets/california-house-finishes";
+      const californiaHouseAustinRenderPath = "assets/california-house-austin-renders";
+
+      const galleryImages = [
+        {
+          id: "build",
+          label: "Editable table render",
+          alt: "California House Austin pool table configurable render",
+        },
+        {
+          id: "auburn-khaki",
+          label: "Auburn with khaki cloth",
+          src: "assets/austin-gallery/austin-auburn-khaki.jpg",
+          alt: "California House Austin pool table in Auburn finish with Khaki cloth",
+        },
+        {
+          id: "room-wide",
+          label: "Room scene",
+          src: "assets/austin-gallery/austin-roomscene-wide.jpg",
+          alt: "Austin pool table in a furnished game room",
+        },
+        {
+          id: "room",
+          label: "Alternate room scene",
+          src: "assets/austin-gallery/austin-roomscene.jpg",
+          alt: "Austin pool table room scene from California House",
+        },
+        {
+          id: "end-view",
+          label: "End view",
+          src: "assets/austin-gallery/austin-end-view.jpg",
+          alt: "End view detail of the Austin pool table",
+        },
+        {
+          id: "internal-pockets",
+          label: "Internal pockets",
+          src: "assets/austin-gallery/austin-internal-pockets.jpg",
+          alt: "Austin pool table internal pocket detail",
+        },
+        {
+          id: "honey-steel-grey",
+          label: "Honey with steel grey cloth",
+          src: "assets/austin-gallery/austin-honey-steel-grey-room.jpg",
+          alt: "Austin pool table in Honey finish with Steel Grey cloth",
+        },
+        {
+          id: "chassis",
+          label: "Chassis detail",
+          src: "assets/austin-gallery/austin-chassis.jpg",
+          alt: "Austin pool table chassis detail",
+        },
+      ];
+
+      const finishes = [
+        {
+          id: "auburn-distressed-glazed",
+          name: "Auburn Distressed Glazed",
+          group: "Maple",
+          tone: "Warm distressed maple",
+          image: `${californiaHouseFinishPath}/auburn-distressed-glazed.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#6b3f28",
+          grain: "#9a6747",
+        },
+        {
+          id: "auburn",
+          name: "Auburn",
+          group: "Maple",
+          tone: "Classic warm maple",
+          image: `${californiaHouseFinishPath}/auburn.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#6a4e32",
+          grain: "#8d6d45",
+        },
+        {
+          id: "coastal-grey-glazed",
+          name: "Coastal Grey Glazed",
+          group: "Maple",
+          tone: "Layered grey maple",
+          image: `${californiaHouseFinishPath}/coastal-grey-glazed.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#777c7c",
+          grain: "#a0a4a0",
+        },
+        {
+          id: "coastal-grey",
+          name: "Coastal Grey",
+          group: "Maple",
+          tone: "Soft grey maple",
+          image: `${californiaHouseFinishPath}/coastal-grey.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#a9a398",
+          grain: "#c9c0ae",
+        },
+        {
+          id: "dusk",
+          name: "Dusk",
+          group: "Maple",
+          tone: "Deep modern maple",
+          image: `${californiaHouseFinishPath}/dusk.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#302d2d",
+          grain: "#4b4643",
+        },
+        {
+          id: "frost",
+          name: "Frost",
+          group: "Maple",
+          tone: "Light painted maple",
+          image: `${californiaHouseFinishPath}/frost.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#efe9df",
+          grain: "#f7f2e8",
+        },
+        {
+          id: "honey-distressed-glazed",
+          name: "Honey Distressed Glazed",
+          group: "Maple",
+          tone: "Golden distressed maple",
+          image: `${californiaHouseFinishPath}/honey-distressed-glazed.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#9d7340",
+          grain: "#c09a60",
+        },
+        {
+          id: "honey",
+          name: "Honey",
+          group: "Maple",
+          tone: "Golden maple",
+          image: `${californiaHouseFinishPath}/honey.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#9b7b43",
+          grain: "#c4a460",
+        },
+        {
+          id: "java",
+          name: "Java",
+          group: "Maple",
+          tone: "Dark espresso maple",
+          image: `${californiaHouseFinishPath}/java.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#342824",
+          grain: "#4d3d34",
+        },
+        {
+          id: "midnight",
+          name: "Midnight",
+          group: "Maple",
+          tone: "Black painted maple",
+          image: `${californiaHouseFinishPath}/midnight.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#111111",
+          grain: "#232323",
+        },
+        {
+          id: "sand",
+          name: "Sand",
+          group: "Maple",
+          tone: "Light neutral maple",
+          image: `${californiaHouseFinishPath}/sand.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#d9c28b",
+          grain: "#ead7a7",
+        },
+        {
+          id: "toast",
+          name: "Toast",
+          group: "Maple",
+          tone: "Medium brown maple",
+          image: `${californiaHouseFinishPath}/toast.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#5c4638",
+          grain: "#7b604b",
+        },
+        {
+          id: "copper-oak",
+          name: "Copper Oak",
+          group: "Oak",
+          tone: "Warm textured oak",
+          image: `${californiaHouseFinishPath}/copper-oak.jpg`,
+          upcharge: 2000,
+          msrpUpcharge: 2000,
+          rail: "#8b5526",
+          grain: "#b06c31",
+        },
+        {
+          id: "graphite-oak",
+          name: "Graphite Oak",
+          group: "Oak",
+          tone: "Dark textured oak",
+          image: `${californiaHouseFinishPath}/graphite-oak.jpg`,
+          upcharge: 2000,
+          msrpUpcharge: 2000,
+          rail: "#42352e",
+          grain: "#5c4a3d",
+        },
+        {
+          id: "rustic-white-oak",
+          name: "Rustic White Oak",
+          group: "Oak",
+          tone: "Natural rustic oak",
+          image: `${californiaHouseFinishPath}/rustic-white-oak.jpg`,
+          upcharge: 2000,
+          msrpUpcharge: 2000,
+          rail: "#b8995c",
+          grain: "#d9ba77",
+        },
+        {
+          id: "truffle",
+          name: "Truffle",
+          group: "Maple",
+          tone: "Rich dark maple",
+          image: `${californiaHouseFinishPath}/truffle.jpg`,
+          upcharge: 0,
+          msrpUpcharge: 0,
+          rail: "#4a382c",
+          grain: "#644b3a",
+        },
+      ];
+
+      const austinCollection = [
+        {
+          bigCommerceProductId: "bc-austin-pool-table",
+          name: "Austin Pool Table",
+          category: "Pool Tables",
+          url: "austin-pool-table.html",
+          image: `${californiaHouseAustinRenderPath}/truffle.png`,
+          price: "From $20,545",
+          meta: "Shown in Truffle with custom cloth options",
+        },
+        {
+          bigCommerceProductId: "bc-austin-shuffleboard-table",
+          name: "Austin Shuffleboard Table",
+          category: "Shuffleboard Tables",
+          url: "#",
+          image: `${californiaHouseAustinRenderPath}/auburn.png`,
+          price: "Request quote",
+          meta: "Matching Austin profile, available by order",
+        },
+        {
+          bigCommerceProductId: "bc-austin-game-table",
+          name: "Austin Reversible Top Game Table",
+          category: "Game Tables",
+          url: "#",
+          image: `${californiaHouseAustinRenderPath}/honey.png`,
+          price: "Request quote",
+          meta: "Dining and game table companion piece",
+        },
+      ];
+
+      const cloths = [
+        {
+          id: "invitational-red",
+          name: "Red",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#B90610",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-burgundy",
+          name: "Burgundy",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#8E1013",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-titanium",
+          name: "Titanium",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#2E3945",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-charcoal",
+          name: "Charcoal",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#353634",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-steel-grey",
+          name: "Steel Grey",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#5D6C60",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-black",
+          name: "Black",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#1A1918",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-purple",
+          name: "Purple",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#1A1173",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-olive",
+          name: "Olive",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#525132",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-taupe",
+          name: "Taupe",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#6E582F",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-golden",
+          name: "Golden",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#B48824",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-khaki",
+          name: "Khaki",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#8D7B52",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-camel",
+          name: "Camel",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#936B3C",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-brown",
+          name: "Brown",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#5A3216",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-basic-green",
+          name: "Basic Green",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#025F65",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-championship-green",
+          name: "Championship Green",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#026E4B",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-dark-green",
+          name: "Dark Green",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#04392D",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-bottle-green",
+          name: "Bottle Green",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#113028",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-english-green",
+          name: "English Green",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#035012",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-aztec",
+          name: "Aztec",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#AB5108",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-brick",
+          name: "Brick",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#752F0B",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-navy",
+          name: "Navy",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#162133",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-wine",
+          name: "Wine",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#48161A",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-academy-blue",
+          name: "Academy Blue",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#314A74",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-championship-blue",
+          name: "Championship Blue",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#0362B6",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-euro-blue",
+          name: "Euro Blue",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#022EA3",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "invitational-electric-blue",
+          name: "Electric Blue",
+          family: "Championship Invitational",
+          upcharge: 0,
+          msrpUpcharge: 0,
+          hex: "#054CBC",
+          note: "Included cloth colour.",
+        },
+        {
+          id: "tour-championship-green",
+          name: "Championship Green",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#026E4B",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-dark-green",
+          name: "Dark Green",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#04392D",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-red",
+          name: "Red",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#B90610",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-olive",
+          name: "Olive",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#525132",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-bottle-green",
+          name: "Bottle Green",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#113028",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-electric-blue",
+          name: "Electric Blue",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#054CBC",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-camel",
+          name: "Camel",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#936B3C",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-euro-blue",
+          name: "Euro Blue",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#022EA3",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-navy",
+          name: "Navy",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#162133",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-burgundy",
+          name: "Burgundy",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#8E1013",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-merlot",
+          name: "Merlot",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#5B1424",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-wine",
+          name: "Wine",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#48161A",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-steel-grey",
+          name: "Steel Grey",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#5D6C60",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-charcoal",
+          name: "Charcoal",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#353634",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-black",
+          name: "Black",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#1A1918",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-championship-blue",
+          name: "Championship Blue",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#0362B6",
+          note: "Tournament cloth upgrade.",
+        },
+        {
+          id: "tour-lilac",
+          name: "Lilac",
+          family: "Championship Tour Edition",
+          upcharge: 249,
+          msrpUpcharge: 249,
+          hex: "#9B82B8",
+          note: "Tournament cloth upgrade.",
+        },
+      ];
+
+      const addOns = [
+        {
+          id: "dining-top",
+          name: "Matching Dining Top",
+          price: 2900,
+          msrp: 3600,
+          description: "Converts the table into a dining or boardroom surface.",
+          badge: "Most requested",
+        },
+        {
+          id: "bench",
+          name: "Matching Bench Set",
+          price: 1800,
+          msrp: 2300,
+          description: "Designed to match the table finish and tuck cleanly away.",
+        },
+        {
+          id: "lighting",
+          name: "Premium Table Lighting",
+          price: 1200,
+          msrp: 1600,
+          description: "Recommended for dedicated rooms or darker interiors.",
+        },
+        {
+          id: "designer-review",
+          name: "Designer Finish Review",
+          price: 0,
+          msrp: 0,
+          quoteOnly: true,
+          description:
+            "Send room photos, finish samples, and plans for a more precise recommendation.",
+          badge: "Quote required",
+        },
+      ];
+
+      const stockPackages = [
+        {
+          id: "truffle-8ft-ready",
+          name: "California House Austin",
+          subtitle: "In-stock option · fastest delivery",
+          sizeId: "8ft",
+          finishId: "truffle",
+          note:
+            "Size and finish are already set. Choose your cloth and any add-ons, then request delivery timing.",
+        },
+      ];
+
+      const state = {
+        mode: "stock",
+        openStep: "cloth",
+        selectedStockId: stockPackages[0].id,
+        selectedSize: sizes[1],
+        selectedFinish: finishes.find((finish) => finish.id === "truffle"),
+        selectedCloth: cloths.find((cloth) => cloth.id === "invitational-charcoal"),
+        selectedAddOns: ["dining-top"],
+        promoActive: false,
+        activeGalleryId: "build",
+      };
+
+      const money = new Intl.NumberFormat("en-CA", {
+        style: "currency",
+        currency: "CAD",
+        maximumFractionDigits: 0,
+      });
+
+      function formatMoney(value) {
+        return value ? money.format(value) : "Quote";
+      }
+
+      function selectedAddOnItems() {
+        return addOns.filter((item) => state.selectedAddOns.includes(item.id));
+      }
+
+      function requiresQuote() {
+        return state.selectedSize.quoteOnly || selectedAddOnItems().some((item) => item.quoteOnly);
+      }
+
+      function subtotal() {
+        if (state.selectedSize.quoteOnly) return 0;
+        return (
+          state.selectedSize.basePrice +
+          state.selectedFinish.upcharge +
+          state.selectedCloth.upcharge +
+          selectedAddOnItems().reduce((sum, item) => sum + (item.quoteOnly ? 0 : item.price), 0)
+        );
+      }
+
+      function msrp() {
+        if (state.selectedSize.quoteOnly) return 0;
+        return (
+          state.selectedSize.msrp +
+          state.selectedFinish.msrpUpcharge +
+          state.selectedCloth.msrpUpcharge +
+          selectedAddOnItems().reduce((sum, item) => sum + (item.quoteOnly ? 0 : item.msrp), 0)
+        );
+      }
+
+      function promoPrice() {
+        const base = subtotal();
+        return state.promoActive && base ? Math.round(base * 0.94) : null;
+      }
+
+      function displayPrice() {
+        if (requiresQuote()) return "Request Quote";
+        return formatMoney(promoPrice() || subtotal());
+      }
+
+      function savingsVsMsrp() {
+        return msrp() && subtotal() ? msrp() - (promoPrice() || subtotal()) : 0;
+      }
+
+      function addOnSummary() {
+        const items = selectedAddOnItems();
+        if (!items.length) return "No add-ons selected";
+        return items.map((item) => item.name).join(", ");
+      }
+
+      function buildRows() {
+        return [
+          ["ETA", state.mode === "stock" ? "Ready for Install" : "Made for you: August Install Estimated"],
+          ["Size", state.selectedSize.name],
+          ["Finish", state.selectedFinish.name],
+          ["Cloth", state.selectedCloth.name],
+          ["Add-ons", addOnSummary()],
+          ["Price", displayPrice()],
+        ];
+      }
+
+      function summaryCards(rows) {
+        return rows
+          .map(
+            ([label, value]) => `<article class="build-item">
+              <h4>${label}</h4>
+              <p>${value}</p>
+            </article>`
+          )
+          .join("");
+      }
+
+      function renderCollectionProducts() {
+        document.getElementById("collectionProducts").innerHTML = austinCollection
+          .map(
+            (item) => `<a class="collection-product" href="${item.url}" data-bigcommerce-product-id="${item.bigCommerceProductId}">
+              <div class="collection-product-media">
+                <img src="${item.image}" alt="${item.name}" />
+              </div>
+              <div class="collection-product-body">
+                <p class="collection-product-title">${item.name}</p>
+                <p class="collection-product-price">${item.price}</p>
+                <p class="collection-product-meta">${item.category} · ${item.meta}</p>
+              </div>
+            </a>`
+          )
+          .join("");
+      }
+
+      function toggleAddOn(id) {
+        state.selectedAddOns = state.selectedAddOns.includes(id)
+          ? state.selectedAddOns.filter((item) => item !== id)
+          : [...state.selectedAddOns, id];
+        render();
+      }
+
+      function selectedStockPackage() {
+        return stockPackages.find((item) => item.id === state.selectedStockId) || stockPackages[0];
+      }
+
+      function applyStockPackage(packageId) {
+        const item = stockPackages.find((packageItem) => packageItem.id === packageId);
+        if (!item) return;
+        state.selectedStockId = item.id;
+        state.selectedSize = sizes.find((size) => size.id === item.sizeId);
+        state.selectedFinish = finishes.find((finish) => finish.id === item.finishId);
+      }
+
+      function setMode(mode) {
+        state.mode = mode;
+        if (mode === "stock") {
+          applyStockPackage(stockPackages[0].id);
+          state.openStep = "cloth";
+        } else {
+          state.openStep = "size";
+        }
+        render();
+      }
+
+      function stepSummary(stepId) {
+        if (stepId === "size") return `${state.selectedSize.name} · ${state.selectedSize.recommendedRoom}`;
+        if (stepId === "finish") return state.selectedFinish.name;
+        if (stepId === "cloth") return `${state.selectedCloth.name} · ${state.selectedCloth.family}`;
+        if (stepId === "addons") return addOnSummary();
+        return "";
+      }
+
+      function optionCount(stepId) {
+        if (stepId === "size") return sizes.length;
+        if (stepId === "finish") return finishes.length;
+        if (stepId === "cloth") return cloths.length;
+        if (stepId === "addons") return addOns.length;
+        return 0;
+      }
+
+      function isLockedStep(stepId) {
+        return state.mode === "stock" && (stepId === "size" || stepId === "finish");
+      }
+
+      function renderPathPicker() {
+        const stock = selectedStockPackage();
+        document.getElementById("pathPicker").innerHTML = `
+          <button class="path-card ${state.mode === "stock" ? "active" : ""}" type="button" data-mode="stock">
+            <p class="eyebrow">In-stock option</p>
+            <h3>Ready for Install</h3>
+            <ul class="path-facts">
+              <li><strong>Size:</strong> ${sizes.find((size) => size.id === stock.sizeId).name}</li>
+              <li><strong>Finish:</strong> ${finishes.find((finish) => finish.id === stock.finishId).name}</li>
+              <li><strong>Next:</strong> choose cloth and add-ons</li>
+            </ul>
+          </button>
+          <button class="path-card ${state.mode === "custom" ? "active" : ""}" type="button" data-mode="custom">
+            <p class="eyebrow">Build your table</p>
+            <h3>Made for you</h3>
+            <p class="path-note">August Install Estimated. Choose the size, wood finish, cloth, and table additions.</p>
+          </button>
+        `;
+      }
+
+      function renderSizeOptions() {
+        return `<div class="option-grid">${sizes
+          .map((size) => {
+            const selected = state.selectedSize.id === size.id;
+            return `<button class="option ${selected ? "selected" : ""}" type="button" data-size="${size.id}">
+                <div class="option-head">
+                  <div>
+                    <h4>${size.name}</h4>
+                  </div>
+                  <span class="check-circle">${selected ? "✓" : ""}</span>
+                </div>
+                <div class="room-box">
+                  <span>Recommended room</span>
+                  <strong>${size.recommendedRoom}</strong>
+                </div>
+                <p class="body">${size.note}</p>
+                <p class="price-line">${size.quoteOnly ? "Quote required" : `From ${formatMoney(size.basePrice)}`}</p>
+              </button>`;
+          })
+          .join("")}</div>`;
+      }
+
+      function renderFinishOptions() {
+        const renderFinishGroup = (group, description) => {
+          const options = finishes.filter((finish) => finish.group === group);
+          const selectedInGroup = options.find((finish) => finish.id === state.selectedFinish.id);
+          return `<section class="finish-section">
+            <div class="finish-section-head">
+              <div>
+                <h4>${group} finishes</h4>
+                <p>${description}</p>
+              </div>
+              <div class="finish-section-meta">
+                <span class="cloth-type">${group === "Oak" ? "+ $2,000" : "Included"}</span>
+                ${
+                  selectedInGroup
+                    ? `<span class="selected-finish-name">${selectedInGroup.name}</span>`
+                    : ""
+                }
+              </div>
+            </div>
+            <div class="finish-grid">${options
+              .map((finish) => {
+                const selected = state.selectedFinish.id === finish.id;
+                return `<button class="finish ${selected ? "selected" : ""}" type="button" data-finish="${finish.id}" aria-label="${finish.name} finish" title="${finish.name}">
+                  <div class="finish-swatch">
+                    <img src="${finish.image}" alt="${finish.name} finish swatch" />
+                    ${selected ? `<span class="finish-check">✓</span>` : ""}
+                  </div>
+                </button>`;
+              })
+              .join("")}</div>
+          </section>`;
+        };
+
+        return `${renderFinishGroup("Maple", "Smooth maple looks from light painted finishes to deep espresso tones.")}
+          ${renderFinishGroup("Oak", "Textured oak finishes for more visible grain and a warmer furniture feel.")}`;
+      }
+
+      function renderClothOptions() {
+        const clothDescriptions = {
+          "Championship Invitational": "North America's most popular home-grade cloth.",
+          "Championship Tour Edition": "Worsted tournament-grade cloth for faster, more accurate play.",
+        };
+
+        const renderClothGroup = (family) => {
+          const options = cloths.filter((cloth) => cloth.family === family);
+          const selectedInGroup = options.find((cloth) => cloth.id === state.selectedCloth.id);
+          return `<section class="cloth-section">
+              <div class="cloth-section-head">
+                <div>
+                  <h4>${family}${
+                    selectedInGroup
+                      ? `<span class="selected-cloth-name">${selectedInGroup.name}</span>`
+                      : ""
+                  }</h4>
+                  <p>${clothDescriptions[family]}</p>
+                </div>
+                <span class="cloth-type">${family.includes("Tour") ? "+ $249" : "Included"}</span>
+              </div>
+              <div class="cloth-grid">${options
+                .map((cloth) => {
+                  const selected = state.selectedCloth.id === cloth.id;
+                  return `<button class="cloth ${selected ? "selected" : ""}" type="button" data-cloth="${cloth.id}">
+                <span class="cloth-dot" style="background: ${cloth.hex}" title="${cloth.name}" aria-hidden="true"></span>
+                ${selected ? `<span class="cloth-check">✓</span>` : ""}
+              </button>`;
+                })
+                .join("")}</div>
+            </section>`;
+        };
+
+        return `${renderClothGroup("Championship Invitational")}
+          ${renderClothGroup("Championship Tour Edition")}`;
+      }
+
+      function renderAddonOptions() {
+        return `<div class="addon-list">${addOns
+          .map((item) => {
+            const selected = state.selectedAddOns.includes(item.id);
+            return `<button class="addon ${selected ? "selected" : ""}" type="button" data-addon="${item.id}">
+                <div class="addon-row">
+                  <div>
+                    <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px">
+                      <h4>${item.name}</h4>
+                      ${item.badge ? `<span class="badge">${item.badge}</span>` : ""}
+                    </div>
+                    <p class="body">${item.description}</p>
+                  </div>
+                  <div class="addon-actions">
+                    <strong>${item.quoteOnly ? "Quote" : `+ ${formatMoney(item.price)}`}</strong>
+                    <span class="check-circle">${selected ? "✓" : "›"}</span>
+                  </div>
+                </div>
+              </button>`;
+          })
+          .join("")}</div>`;
+      }
+
+      function sectionBody(stepId) {
+        if (stepId === "size") return renderSizeOptions();
+        if (stepId === "finish") return renderFinishOptions();
+        if (stepId === "cloth") return renderClothOptions();
+        if (stepId === "addons") return renderAddonOptions();
+        return "";
+      }
+
+      function renderAccordionFlow() {
+        const visibleSteps =
+          state.mode === "stock"
+            ? steps.filter((step) => step.id === "cloth" || step.id === "addons")
+            : steps;
+        if (!visibleSteps.some((step) => step.id === state.openStep)) {
+          state.openStep = visibleSteps[0].id;
+        }
+        document.getElementById("accordionFlow").innerHTML = visibleSteps
+          .map((step) => {
+            const stepNumber = steps.findIndex((item) => item.id === step.id) + 1;
+            const locked = isLockedStep(step.id);
+            const open = state.openStep === step.id && !locked;
+            return `<section class="accordion-step ${locked ? "locked" : ""}" data-section="${step.id}">
+              <button class="accordion-head" type="button" ${locked ? "" : `data-open-step="${step.id}"`}>
+                <div class="accordion-title">
+                  <h3>${stepNumber}. ${step.label}</h3>
+                  <p>${stepSummary(step.id)}</p>
+                </div>
+                <span class="accordion-count">${optionCount(step.id)} options</span>
+                <span class="accordion-toggle">${open ? "−" : "+"}</span>
+              </button>
+              ${
+                locked
+                  ? `<div class="locked-message">${step.label} is predetermined for the selected in-stock package.</div>`
+                  : open
+                  ? `<div class="accordion-body">
+                      ${step.description ? `<p class="step-description">${step.description}</p>` : ""}
+                      ${sectionBody(step.id)}
+                    </div>`
+                  : ""
+              }
+            </section>`;
+          })
+          .join("");
+      }
+
+      function currentRenderPath() {
+        return `${californiaHouseAustinRenderPath}/${state.selectedFinish.id}.png`;
+      }
+
+      function selectedGalleryImage() {
+        return galleryImages.find((image) => image.id === state.activeGalleryId) || galleryImages[0];
+      }
+
+      function renderGallery() {
+        const renderPath = currentRenderPath();
+        document.getElementById("galleryRail").innerHTML = galleryImages
+          .map((image) => {
+            const active = image.id === state.activeGalleryId;
+            const src = image.id === "build" ? renderPath : image.src;
+            return `<button class="gallery-thumb ${active ? "active" : ""}" type="button" data-gallery="${image.id}" aria-label="${image.label}">
+              <img src="${src}" alt="" />
+            </button>`;
+          })
+          .join("");
+      }
+
+      function returnToBuildPreview() {
+        if (state.activeGalleryId === "build") return;
+        state.activeGalleryId = "build";
+        renderGallery();
+        renderPreview();
+      }
+
+      function renderPreview() {
+        const image = selectedGalleryImage();
+        const poolPhoto = document.querySelector(".pool-photo");
+        const mediaFrame = document.querySelector(".product-media-frame");
+        const clothOverlay = document.getElementById("clothOverlay");
+        const isBuild = image.id === "build";
+        poolPhoto.src = isBuild ? currentRenderPath() : image.src;
+        poolPhoto.alt = isBuild
+          ? `California House Austin pool table in ${state.selectedFinish.name} finish`
+          : image.alt;
+        poolPhoto.classList.toggle("gallery-photo", !isBuild);
+        mediaFrame.classList.toggle("gallery-frame", !isBuild);
+        clothOverlay.classList.toggle("hidden", !isBuild);
+        document.documentElement.style.setProperty("--selected-cloth", state.selectedCloth.hex);
+      }
+
+      function renderFooter() {
+        document.getElementById("priceLine").textContent = displayPrice();
+        document.getElementById("cartBtn").classList.toggle("hidden", requiresQuote());
+      }
+
+      function renderBuildSummary() {
+        document.getElementById("buildSummaryGrid").innerHTML = summaryCards(buildRows());
+      }
+
+      function openModal(mode) {
+        const quoteMode = mode === "quote" || requiresQuote();
+        document.getElementById("modalEyebrow").textContent = quoteMode
+          ? "Request quote"
+          : "Added to cart";
+        document.getElementById("modalTitle").textContent = quoteMode
+          ? "Send this build to the showroom"
+          : "Table package added";
+        document.getElementById("modalText").textContent = quoteMode
+          ? "Share your contact details and the showroom can confirm room fit, delivery timing, and final availability."
+          : "Your selected table package is ready. You can still send your build to the showroom for room-fit confirmation.";
+        document.getElementById("modalSubmitBtn").textContent = quoteMode
+          ? "Request Quote"
+          : "Send Build for Review";
+        document.getElementById("modalSummary").innerHTML = summaryCards(buildRows());
+        document.getElementById("modalSuccess").classList.add("hidden");
+        document.getElementById("quoteForm").classList.remove("hidden");
+        document.getElementById("actionModal").classList.remove("hidden");
+        document.getElementById("customerName").focus();
+      }
+
+      function closeModal() {
+        document.getElementById("actionModal").classList.add("hidden");
+      }
+
+      function scrollToOpenStep() {
+        window.setTimeout(() => {
+          const target = document.querySelector(`[data-section="${state.openStep}"]`);
+          const header = document.querySelector(".site-header");
+          const offset = header ? header.getBoundingClientRect().height + 18 : 128;
+          if (!target) return;
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - offset,
+            behavior: "smooth",
+          });
+        }, 0);
+      }
+
+      function renderAndFocusOpenStep() {
+        render();
+        scrollToOpenStep();
+      }
+
+      function bindDynamicEvents() {
+        document.querySelectorAll("[data-mode]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            setMode(button.dataset.mode);
+            scrollToOpenStep();
+          });
+        });
+
+        document.querySelectorAll("[data-open-step]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            state.openStep = button.dataset.openStep;
+            renderAndFocusOpenStep();
+          });
+        });
+
+        document.querySelectorAll("[data-size]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            state.selectedSize = sizes.find((item) => item.id === button.dataset.size);
+            state.openStep = "finish";
+            renderAndFocusOpenStep();
+          });
+        });
+
+        document.querySelectorAll("[data-finish]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            state.selectedFinish = finishes.find((item) => item.id === button.dataset.finish);
+            state.openStep = "finish";
+            render();
+          });
+        });
+
+        document.querySelectorAll("[data-cloth]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            state.selectedCloth = cloths.find((item) => item.id === button.dataset.cloth);
+            state.openStep = "cloth";
+            render();
+          });
+        });
+
+        document.querySelectorAll("[data-addon]").forEach((button) => {
+          button.addEventListener("click", () => {
+            returnToBuildPreview();
+            toggleAddOn(button.dataset.addon);
+          });
+        });
+
+      }
+
+      function render() {
+        renderPathPicker();
+        renderAccordionFlow();
+        renderGallery();
+        renderPreview();
+        renderFooter();
+        renderBuildSummary();
+        renderCollectionProducts();
+        bindDynamicEvents();
+      }
+
+      document.querySelector(".config-column").addEventListener("pointerdown", () => {
+        returnToBuildPreview();
+      });
+      document.getElementById("galleryRail").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-gallery]");
+        if (!button) return;
+        state.activeGalleryId = button.dataset.gallery;
+        renderGallery();
+        renderPreview();
+      });
+      document.getElementById("quoteBtn").addEventListener("click", () => openModal("quote"));
+      document.getElementById("cartBtn").addEventListener("click", () => openModal("cart"));
+      document.querySelector(".search-bar").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+      document.getElementById("modalCloseBtn").addEventListener("click", closeModal);
+      document.getElementById("actionModal").addEventListener("click", (event) => {
+        if (event.target.id === "actionModal") closeModal();
+      });
+
+      document.getElementById("quoteForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("customerName").value.trim() || "there";
+        document.getElementById("quoteForm").classList.add("hidden");
+        document.getElementById("modalSuccess").textContent =
+          `Thanks, ${name}. Your build has been saved in this mockup.`;
+        document.getElementById("modalSuccess").classList.remove("hidden");
+      });
+
+      render();
+    </script>
+  </body>
+</html>

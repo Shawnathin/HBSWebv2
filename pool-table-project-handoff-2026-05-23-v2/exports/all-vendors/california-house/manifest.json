@@ -1,0 +1,128 @@
+﻿[
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Atherton Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/atherton-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2017/04/AthertonCoastalGlazedGraphite.jpg",
+        "originalFile":  "originals/atherton-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/atherton-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Austin Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/austin-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2017/04/AustinAuburnKhaki.jpg",
+        "originalFile":  "originals/austin-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/austin-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Basecamp Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/basecamp-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2026/03/basecamp.jpg",
+        "originalFile":  "originals/basecamp-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/basecamp-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "City Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/city-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2017/04/CityHoneyTitanium.jpg",
+        "originalFile":  "originals/city-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/city-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Cypress Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/cypress-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2023/05/CypressJavaCharcoal3.jpg",
+        "originalFile":  "originals/cypress-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/cypress-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "District Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/district-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2019/07/District-Rustic-White-Oak.jpg",
+        "originalFile":  "originals/district-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/district-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Highland Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/highland-pool-table-copy/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2024/04/Highland.jpg",
+        "originalFile":  "originals/highland-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/highland-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Menlo Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/menlo-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2021/02/MenloToastNavy.jpg",
+        "originalFile":  "originals/menlo-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/menlo-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Origami Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/origami-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2022/03/OrigamiHoneySteelGrey.jpg",
+        "originalFile":  "originals/origami-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/origami-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Rincon Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/rincon-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2025/04/Rincon-Pool-Table.jpg",
+        "originalFile":  "originals/rincon-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/rincon-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Sutter Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/sutter-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2024/04/Sutter.jpg",
+        "originalFile":  "originals/sutter-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/sutter-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Tahoe Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/tahoe-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2022/06/TahoeCoastalGlazedSteelGrey2.jpg",
+        "originalFile":  "originals/tahoe-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/tahoe-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Vista Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/vista-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2022/03/VistaAuburnKhaki2.jpg",
+        "originalFile":  "originals/vista-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/vista-pool-table.png"
+    },
+    {
+        "vendor":  "california-house",
+        "originalVendorLabel":  "California House",
+        "title":  "Windansea Pool Table | California House",
+        "sourceUrl":  "https://californiahouse.com/product/windansea-pool-table/",
+        "selectedImageUrl":  "https://californiahouse.com/wp-content/uploads/2025/03/Windansea-Pool.jpg",
+        "originalFile":  "originals/windansea-pool-table.jpg",
+        "normalizedFile":  "normalized-1600x1000/windansea-pool-table.png"
+    }
+]

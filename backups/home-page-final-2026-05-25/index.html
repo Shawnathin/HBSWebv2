@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Billiards | Luxury Game Rooms &amp; Outdoor Living</title>
+    <style>
+      :root {
+        --ink: #171717;
+        --muted: #626262;
+        --paper: #f7f4ef;
+        --warm: #efe8dc;
+        --soft: #f3f4f2;
+        --deep: #222321;
+        --accent: #4b668a;
+        --line: rgba(0, 0, 0, 0.12);
+        --white: #fff;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(18px);
+      }
+
+      .commerce-inner,
+      .category-inner,
+      .section-inner {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding-inline: 22px;
+      }
+
+      .commerce-inner {
+        display: grid;
+        grid-template-columns: minmax(190px, 1fr) minmax(660px, 720px) auto minmax(118px, 1fr);
+        gap: 14px;
+        align-items: center;
+        justify-content: stretch;
+        padding-block: 16px;
+      }
+
+      .wordmark {
+        min-width: 190px;
+        color: #555a6c;
+        font-size: 1.72rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .wordmark span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .search-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 42px;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+      }
+
+      .search-bar input {
+        min-width: 0;
+        border: 0;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+
+      .search-bar input:focus {
+        outline: 2px solid rgba(45, 48, 58, 0.22);
+        outline-offset: -2px;
+      }
+
+      .search-bar button {
+        border: 0;
+        border-left: 1px solid rgba(45, 48, 58, 0.16);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 16px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .contact-button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 22px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .contact-button:hover {
+        border-color: rgba(45, 48, 58, 0.44);
+        color: #2d303a;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        min-width: 118px;
+        justify-content: flex-end;
+        color: #2d303a;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .category-nav {
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .category-inner {
+        display: flex;
+        min-height: 46px;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        height: 46px;
+        align-items: center;
+        padding: 0 18px;
+        color: #353844;
+        font-size: 0.88rem;
+        font-weight: 720;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-item {
+        position: static;
+      }
+
+      .nav-item > a {
+        position: relative;
+      }
+
+      .nav-item > a::after {
+        content: "";
+        position: absolute;
+        right: 18px;
+        bottom: 0;
+        left: 18px;
+        height: 3px;
+        background: #171717;
+        opacity: 0;
+        transform: scaleX(0.65);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover > a::after,
+      .nav-item:focus-within > a::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 65;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        background: #fff;
+        box-shadow: 0 22px 36px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover .mega-menu,
+      .nav-item:focus-within .mega-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mega-inner {
+        display: grid;
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 44px;
+        padding: 34px 20px 38px;
+      }
+
+      .mega-title {
+        display: inline-flex;
+        color: #30323a;
+        font-size: 1.65rem;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 28px;
+      }
+
+      .mega-group h3 {
+        margin: 0;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.26);
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .mega-group h3 a {
+        color: #30323a;
+        font-size: inherit;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-group ul {
+        display: grid;
+        gap: 10px;
+        margin: 13px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mega-group a {
+        color: #555;
+        font-size: 0.95rem;
+        font-weight: 520;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature {
+        align-self: start;
+        background: #f5f1eb;
+      }
+
+      .mega-feature img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.45 / 1;
+        object-fit: contain;
+        padding: 14px;
+      }
+
+      .mega-feature-body {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+      }
+
+      .mega-feature-body a {
+        color: #30323a;
+        font-weight: 800;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature-body span {
+        color: #666;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .home-hero {
+        position: relative;
+        min-height: calc(100svh - 114px);
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.78) 39%, rgba(255, 255, 255, 0.1) 100%),
+          url("assets/home-hero-luxury-game-room.jpg") center / cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding: 92px 22px 68px;
+      }
+
+      .eyebrow {
+        color: #747474;
+        font-size: 0.72rem;
+        font-weight: 820;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 900px;
+        margin-top: 14px;
+        font-size: clamp(3.4rem, 7.4vw, 7rem);
+        line-height: 0.9;
+        letter-spacing: -0.038em;
+      }
+
+      .lead {
+        max-width: 690px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 999px;
+        padding: 0 22px;
+        color: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 820;
+        text-decoration: none;
+        transition: border-color 160ms ease, background 160ms ease, color 160ms ease, transform 160ms ease;
+      }
+
+      .btn.primary {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .btn:hover {
+        border-color: #171717;
+        transform: translateY(-1px);
+      }
+
+      .btn.primary:hover {
+        background: #30323a;
+      }
+
+      .hero-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        border-top: 1px solid rgba(0, 0, 0, 0.14);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(16px);
+      }
+
+      .hero-stat {
+        min-height: 88px;
+        border-right: 1px solid var(--line);
+        padding: 18px 22px;
+      }
+
+      .hero-stat:last-child {
+        border-right: 0;
+      }
+
+      .hero-stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 1.05rem;
+      }
+
+      .hero-stat span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.35;
+      }
+
+      .section {
+        border-top: 1px solid var(--line);
+        padding: 64px 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2 {
+        max-width: 720px;
+        margin-top: 8px;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.96;
+        letter-spacing: -0.035em;
+      }
+
+      .department-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .department-card {
+        display: grid;
+        min-height: 374px;
+        grid-template-rows: 210px 1fr;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 0;
+        text-decoration: none;
+        background: #fff;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .department-card:hover {
+        background: #fafafa;
+        transform: translateY(-2px);
+      }
+
+      .department-card.primary-department {
+        grid-column: span 2;
+        grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+        grid-template-rows: 1fr;
+      }
+
+      .department-media {
+        display: block;
+        overflow: hidden;
+        background: var(--soft);
+      }
+
+      .department-media img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 220ms ease;
+      }
+
+      .department-card:hover .department-media img {
+        transform: scale(1.025);
+      }
+
+      .department-copy {
+        display: grid;
+        align-content: start;
+        padding: 22px;
+      }
+
+      .primary-department .department-copy {
+        align-content: end;
+        padding: 28px;
+      }
+
+      .department-card h3 {
+        font-size: 1.35rem;
+      }
+
+      .primary-department h3 {
+        font-size: clamp(2rem, 3.5vw, 3.7rem);
+        line-height: 0.96;
+        letter-spacing: -0.032em;
+      }
+
+      .department-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .feature-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+        gap: 0;
+        align-items: stretch;
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .feature-media {
+        display: grid;
+        min-height: 520px;
+        place-items: center;
+        overflow: hidden;
+        background: var(--soft);
+      }
+
+      .feature-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .feature-copy {
+        display: grid;
+        align-content: center;
+        border-left: 1px solid var(--line);
+        padding: 42px;
+      }
+
+      .feature-copy h2 {
+        margin-top: 8px;
+        font-size: clamp(2.2rem, 4vw, 4.4rem);
+        line-height: 0.94;
+        letter-spacing: -0.035em;
+      }
+
+      .feature-facts {
+        display: grid;
+        gap: 10px;
+        margin: 24px 0;
+      }
+
+      .feature-facts div {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 10px;
+        color: var(--muted);
+      }
+
+      .feature-facts strong {
+        color: var(--ink);
+      }
+
+      .product-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .product-tile {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        color: inherit;
+        text-decoration: none;
+        background: #fff;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .product-tile:hover {
+        background: #fafafa;
+        transform: translateY(-2px);
+      }
+
+      .product-tile-media {
+        display: grid;
+        min-height: 220px;
+        place-items: center;
+        background: var(--soft);
+        padding: 18px;
+      }
+
+      .product-tile-media img {
+        width: 100%;
+        max-height: 190px;
+        object-fit: contain;
+      }
+
+      .product-tile-body {
+        border-top: 1px solid var(--line);
+        padding: 16px;
+      }
+
+      .product-tile h3 {
+        margin-top: 6px;
+        font-size: 1rem;
+      }
+
+      .product-tile p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .resources-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .resources-head h2 {
+        max-width: 720px;
+      }
+
+      .resource-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        margin-top: 28px;
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .resource-card {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        color: inherit;
+        text-decoration: none;
+        background: #fff;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .resource-card:hover {
+        background: #fafafa;
+        transform: translateY(-2px);
+      }
+
+      .resource-card img {
+        width: 100%;
+        aspect-ratio: 1.55 / 1;
+        object-fit: cover;
+        background: var(--soft);
+      }
+
+      .resource-card-body {
+        display: grid;
+        min-height: 214px;
+        padding: 18px;
+      }
+
+      .resource-card h3 {
+        font-size: 1.05rem;
+        line-height: 1.28;
+      }
+
+      .resource-card p:not(.eyebrow) {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .read-more {
+        align-self: end;
+        justify-self: start;
+        margin-top: 22px;
+        border: 1px solid var(--line);
+        padding: 10px 18px;
+        color: #4b668a;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .studio-band {
+        background:
+          linear-gradient(90deg, rgba(23, 23, 23, 0.94), rgba(23, 23, 23, 0.78)),
+          url("assets/home-billiards-storefront.jpg") center / cover no-repeat;
+        color: #fff;
+      }
+
+      .studio-band .section-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .studio-band .eyebrow,
+      .studio-band .lead {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .studio-band h2 {
+        max-width: 780px;
+        margin-top: 8px;
+        font-size: clamp(2.4rem, 5vw, 5rem);
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+      }
+
+      .studio-band .btn {
+        border-color: #fff;
+      }
+
+      @media (max-width: 1100px) {
+        .department-grid,
+        .product-row,
+        .resource-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .department-card.primary-department {
+          grid-column: span 2;
+          grid-template-columns: 1fr;
+          grid-template-rows: 280px 1fr;
+        }
+
+        .feature-layout,
+        .studio-band .section-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-copy {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .commerce-inner {
+          grid-template-columns: auto 1fr auto;
+          justify-content: stretch;
+        }
+
+        .search-bar {
+          grid-column: 1 / -1;
+          order: 4;
+        }
+      }
+
+      @media (max-width: 900px) {
+
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .commerce-inner {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .search-bar {
+          order: initial;
+        }
+
+        .contact-button,
+        .cart-link {
+          justify-content: flex-start;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          overflow-x: auto;
+        }
+
+        .mega-menu {
+          display: none;
+        }
+
+        .home-hero {
+          min-height: auto;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72)),
+            url("assets/home-hero-luxury-game-room.jpg") center / cover no-repeat;
+        }
+
+        .hero-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+
+        .commerce-inner,
+        .category-inner,
+        .section-inner,
+        .hero-inner {
+          padding-inline: 16px;
+        }
+
+        .department-grid,
+        .product-row,
+        .resource-grid,
+        .hero-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .department-card.primary-department {
+          grid-column: span 1;
+        }
+
+        .resources-head {
+          display: grid;
+        }
+
+        .hero-stat {
+          border-right: 0;
+        }
+
+        .section-head {
+          display: grid;
+        }
+      }
+
+      .nav-item.has-mega > a::before {
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: -12px;
+        left: 12px;
+        height: 16px;
+      }
+
+      .mega-inner.menu-only {
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+        padding-bottom: 54px;
+      }
+
+      .mega-link-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px 34px;
+      }
+
+      .mega-link-grid a {
+        display: block;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.28);
+        padding: 0 0 14px;
+        color: #30323a;
+        font-size: 1.04rem;
+        font-weight: 820;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .mega-link-grid a:hover,
+      .mega-link-grid a:focus-visible,
+      .mega-group a:hover,
+      .mega-feature-body a:hover {
+        color: #111;
+        border-color: #171717;
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #222321;
+        color: #f7f4ef;
+      }
+
+      .site-footer-main {
+        display: grid;
+        width: min(100%, 1520px);
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 42px;
+        margin: 0 auto;
+        padding: 52px 22px 46px;
+      }
+
+      .site-footer-brand {
+        max-width: 390px;
+      }
+
+      .site-footer-logo {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .site-footer-logo span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.88rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .site-footer-main h3 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .site-footer-main p,
+      .site-footer-main a {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
+      .site-footer-main a:hover {
+        color: #fff;
+      }
+
+      .site-footer-main ul {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer-contact {
+        display: grid;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .site-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer-bottom-inner {
+        display: flex;
+        width: min(100%, 1520px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
+      }
+
+      .site-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .site-footer-social a {
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+
+      /* site chrome responsive refinements */
+      @media (max-width: 900px) {
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+      }
+
+    </style>
+    <link rel="stylesheet" href="assets/mobile-overrides.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="commerce-inner">
+        <a class="wordmark" href="index.html" aria-label="Home Billiards home">
+          Home
+          <span>Billiards</span>
+        </a>
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Look for billiards, games, and lifestyle equipment"
+            aria-label="Search products"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <a class="contact-button" href="contact-us.html">Contact Us</a>
+        <a class="cart-link" href="#">My Cart</a>
+      </div>
+
+      <nav class="category-nav" aria-label="Main navigation">
+        <div class="category-inner">
+          <ul class="nav-links">
+            <li class="nav-item has-mega">
+              <a href="pool-tables.html">Billiards</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="pool-tables.html">All Billiards</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="pool-tables.html">Pool Tables</a></h3>
+                        <ul>
+                          <li><a href="pool-tables.html">In-Stock Pool Tables</a></li>
+                          <li><a href="#">Canada Billiards</a></li>
+                          <li><a href="#">California House</a></li>
+                          <li><a href="#">Olhausen Billiards</a></li>
+                          <li><a href="#">Legacy Billiards</a></li>
+                          <li><a href="#">Custom Pool Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Table Essentials</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Felt</a></li>
+                          <li><a href="#">Pool Table Covers</a></li>
+                          <li><a href="#">Pool Table Lights</a></li>
+                          <li><a href="#">Dining Tops</a></li>
+                          <li><a href="#">Benches and Storage</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Cues and Play</h3>
+                        <ul>
+                          <li><a href="cues.html">Pool Cues</a></li>
+                          <li><a href="#">Pool Cue Cases</a></li>
+                          <li><a href="#">Balls</a></li>
+                          <li><a href="#">Pool Cue Racks &amp; Holders</a></li>
+                          <li><a href="#">Billiard Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Help and Services</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Design Center</a></li>
+                          <li><a href="#">Room Size Guide</a></li>
+                          <li><a href="#">Delivery and Installation</a></li>
+                          <li><a href="#">Moving and Recovering</a></li>
+                          <li><a href="#">Commercial Projects</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="assets/california-house-austin-renders/truffle.png" alt="California House Austin pool table" />
+                    <div class="mega-feature-body">
+                      <a href="austin-pool-table.html">Build a luxury pool table</a>
+                      <span>Choose size, finish, cloth, and room upgrades.</span>
+                      <a href="pool-tables.html">View sale and in-stock tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="ping-pong-tables.html">Ping Pong</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="ping-pong-tables.html">All Ping Pong</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="ping-pong-tables.html">Ping Pong Tables</a></h3>
+                        <ul>
+                          <li><a href="ping-pong-tables.html">Indoor Tables</a></li>
+                          <li><a href="#">Outdoor Tables</a></li>
+                          <li><a href="#">Competition Tables</a></li>
+                          <li><a href="#">Foldable Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Play Gear</h3>
+                        <ul>
+                          <li><a href="#">Ping Pong Paddles</a></li>
+                          <li><a href="#">Ping Pong Balls</a></li>
+                          <li><a href="#">Nets &amp; Posts</a></li>
+                          <li><a href="#">Ping Pong Robots</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Accessories</h3>
+                        <ul>
+                          <li><a href="#">Table Covers</a></li>
+                          <li><a href="#">Replacement Nets</a></li>
+                          <li><a href="#">Storage and Care</a></li>
+                          <li><a href="#">Training Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Shop by Need</h3>
+                        <ul>
+                          <li><a href="#">Family Play</a></li>
+                          <li><a href="#">Club Practice</a></li>
+                          <li><a href="#">Commercial Use</a></li>
+                          <li><a href="#">Made in Germany</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" alt="Whistler indoor table tennis table" />
+                    <div class="mega-feature-body">
+                      <a href="whistler-indoor-table-tennis-table.html">Whistler Indoor Table Tennis Table</a>
+                      <span>Competition-quality indoor table with playback position.</span>
+                      <a href="ping-pong-tables.html">Shop ping pong tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="traeger-smokers.html">BBQ</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="traeger-smokers.html">All BBQ</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Grills and Smokers</h3><ul><li><a href="traeger-smokers.html">Traeger Smokers</a></li><li><a href="#">Pellet Grills</a></li><li><a href="#">Pizza Ovens</a></li><li><a href="#">Portable Grills</a></li></ul></section>
+                      <section class="mega-group"><h3>Fuel and Flavour</h3><ul><li><a href="#">Wood Pellets</a></li><li><a href="#">Sauces &amp; Spices</a></li><li><a href="#">Rubs</a></li><li><a href="#">Cooking Pellets</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Traeger Grill Covers</a></li><li><a href="#">Grill Tools</a></li><li><a href="#">Thermometers</a></li><li><a href="#">Cleaning Supplies</a></li></ul></section>
+                      <section class="mega-group"><h3>Outdoor Living</h3><ul><li><a href="#">Backyard Cooking</a></li><li><a href="#">Entertaining Essentials</a></li><li><a href="#">Gifts for Grillers</a></li><li><a href="#">Sale BBQ</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="traeger-smokers.html">Build the backyard setup</a><span>Smokers, pellets, covers, tools, and outdoor cooking accessories.</span><a href="traeger-smokers.html">Shop BBQ essentials</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Foosball</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Foosball</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Tables</h3><ul><li><a href="#">Foosball Tables</a></li><li><a href="#">Home Tables</a></li><li><a href="#">Commercial Tables</a></li><li><a href="#">Coin-Operated Tables</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Foosball Balls</a></li><li><a href="#">Replacement Men</a></li><li><a href="#">Handles and Rods</a></li><li><a href="#">Table Covers</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Brand</h3><ul><li><a href="#">Legacy Billiards</a></li><li><a href="#">Dynamo</a></li><li><a href="#">Commercial Grade</a></li><li><a href="#">View All</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Home vs Commercial</a></li><li><a href="#">Delivery Options</a></li><li><a href="#">Parts and Service</a></li><li><a href="#">Sale Foosball</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Game room staples</a><span>Durable tables and parts for home rec rooms and commercial spaces.</span><a href="#">Shop foosball</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="dartboards.html">Darts</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="dartboards.html">All Darts</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Boards and Cabinets</h3><ul><li><a href="dartboards.html">Dartboards</a></li><li><a href="#">Dart Board Cabinets</a></li><li><a href="#">Surrounds</a></li><li><a href="#">Scoreboards</a></li></ul></section>
+                      <section class="mega-group"><h3>Darts</h3><ul><li><a href="#">Steel Tip Darts</a></li><li><a href="#">Soft Tip Darts</a></li><li><a href="#">Winmau</a></li><li><a href="#">Beginner Sets</a></li></ul></section>
+                      <section class="mega-group"><h3>Parts</h3><ul><li><a href="#">Dart Flights</a></li><li><a href="#">Dart Shafts</a></li><li><a href="#">Dart Cases &amp; Wallets</a></li><li><a href="#">Dart Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Need</h3><ul><li><a href="#">Home Setup</a></li><li><a href="#">League Play</a></li><li><a href="#">Gifts</a></li><li><a href="#">Sale Darts</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="dartboards.html">Set up a proper dart wall</a><span>Boards, cabinets, lighting, darts, flights, shafts, and cases.</span><a href="dartboards.html">Shop dart gear</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Games</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Games</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Game Tables</h3><ul><li><a href="#">Air Hockey Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Poker Tables</a></li><li><a href="#">Game Table Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Table Games</h3><ul><li><a href="#">Poker Chips</a></li><li><a href="#">Cards</a></li><li><a href="#">Dice</a></li><li><a href="#">Board Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Rec Room</h3><ul><li><a href="#">Sports</a></li><li><a href="#">Misc. Games</a></li><li><a href="#">Family Games</a></li><li><a href="#">Party Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Room Planning</a></li><li><a href="#">Gift Ideas</a></li><li><a href="#">Commercial Game Rooms</a></li><li><a href="#">Sale Games</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Round out the room</a><span>Shuffleboard, air hockey, poker, games, cards, dice, and accessories.</span><a href="#">Shop games</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Commercial</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Commercial</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Coin-Operated</h3><ul><li><a href="#">Coin-Operated Pool Tables</a></li><li><a href="#">Coin-Operated Foosball Tables</a></li><li><a href="#">Coin-Operated Jet-Pong</a></li><li><a href="#">Parts and Service</a></li></ul></section>
+                      <section class="mega-group"><h3>Venue Games</h3><ul><li><a href="#">Commercial Air Hockey Tables</a></li><li><a href="#">Commercial Pool Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Arcade-Ready Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Projects</h3><ul><li><a href="#">Bars and Restaurants</a></li><li><a href="#">Offices</a></li><li><a href="#">Strata and Amenity Rooms</a></li><li><a href="#">Schools and Clubs</a></li></ul></section>
+                      <section class="mega-group"><h3>Support</h3><ul><li><a href="#">Bulk Quotes</a></li><li><a href="#">Delivery Planning</a></li><li><a href="#">Installation</a></li><li><a href="#">Maintenance</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Commercial game room support</a><span>Durable tables, venue-ready games, delivery planning, and service.</span><a href="#">Start a commercial quote</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#">New Arrivals</a></li>
+            <li class="nav-item"><a href="#">Sale</a></li>
+            <li class="nav-item"><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home-hero">
+        <div class="hero-inner">
+          <h1>Canada's Destination for Luxury Game Rooms &amp; Outdoor Living</h1>
+          <p class="lead">Curated for How You Live</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="pool-tables.html">Shop Pool Tables</a>
+            <a class="btn" href="austin-pool-table.html">Build the Austin</a>
+            <a class="btn" href="contact-us.html">Visit the Showroom</a>
+          </div>
+        </div>
+        <div class="hero-strip" aria-label="Home Billiards highlights">
+          <div class="hero-stat">
+            <p class="eyebrow">Delivery</p>
+            <strong>Local install packages</strong>
+            <span>Planning support from showroom to final setup.</span>
+          </div>
+          <div class="hero-stat">
+            <p class="eyebrow">Selection</p>
+            <strong>Indoor and outdoor living</strong>
+            <span>Game room staples, patio cooking, and accessories.</span>
+          </div>
+          <div class="hero-stat">
+            <p class="eyebrow">Custom</p>
+            <strong>Finish and cloth guidance</strong>
+            <span>Compare woods, cloth colors, sizing, and add-ons.</span>
+          </div>
+          <div class="hero-stat">
+            <p class="eyebrow">Showroom</p>
+            <strong>Room planning support</strong>
+            <span>Bring measurements, photos, or a wish list.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Shop departments</p>
+              <h2>Everything for the home, not just the table.</h2>
+            </div>
+            <a class="btn" href="pool-tables.html">Start with billiards</a>
+          </div>
+          <div class="department-grid">
+            <a class="department-card primary-department" href="pool-tables.html">
+              <span class="department-media">
+                <img src="assets/pool-table-room-hero.webp" alt="Finished game room with a pool table" />
+              </span>
+              <span class="department-copy">
+                <span class="eyebrow">Billiards</span>
+                <h3>Pool tables for finished rooms.</h3>
+                <p>In-stock tables, premium builders, finish samples, cloth colors, lighting, dining tops, and installation planning.</p>
+              </span>
+            </a>
+            <a class="department-card" href="ping-pong-tables.html">
+              <span class="department-media">
+                <img src="assets/ping-pong-hero.png" alt="Table tennis table in a bright room" />
+              </span>
+              <span class="department-copy">
+                <span class="eyebrow">Indoor play</span>
+                <h3>Ping Pong</h3>
+                <p>Tables, paddles, covers, and fast-moving games for active family rooms.</p>
+              </span>
+            </a>
+            <a class="department-card" href="traeger-smokers.html">
+              <span class="department-media">
+                <img src="assets/traeger-page-hero.jpg" alt="Traeger grill on an outdoor patio" />
+              </span>
+              <span class="department-copy">
+                <span class="eyebrow">Outdoor cooking</span>
+                <h3>Traeger Grills</h3>
+                <p>Wood-fired grills, pellets, covers, and backyard cooking essentials.</p>
+              </span>
+            </a>
+            <a class="department-card" href="dartboards.html">
+              <span class="department-media">
+                <img src="assets/dartboards-hero-bladex.jpg" alt="Winmau dartboard detail" />
+              </span>
+              <span class="department-copy">
+                <span class="eyebrow">Game room</span>
+                <h3>Darts</h3>
+                <p>Dartboards, cabinets, darts, flights, shafts, and casual league-night gear.</p>
+              </span>
+            </a>
+            <a class="department-card" href="cues.html">
+              <span class="department-media">
+                <img src="assets/cues-hero-fusion-series.webp" alt="Pool cue detail on a dark surface" />
+              </span>
+              <span class="department-copy">
+                <span class="eyebrow">Billiards</span>
+                <h3>Cues</h3>
+                <p>House cues, performance shafts, cases, racks, balls, and accessories.</p>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="feature-layout">
+            <div class="feature-media">
+              <img src="assets/austin-lifestyle-promo.png" alt="California House Austin pool table in a finished room" />
+            </div>
+            <div class="feature-copy">
+              <p class="eyebrow">Featured builder</p>
+              <h2>California House Austin Pool Table</h2>
+              <p class="lead">
+                A guided build path for choosing size, finish, cloth, and add-ons while keeping the
+                room-fit details in view.
+              </p>
+              <div class="feature-facts">
+                <div><span>Starting path</span><strong>In-stock or custom</strong></div>
+                <div><span>Finishes</span><strong>Maple and oak</strong></div>
+                <div><span>Cloth</span><strong>Championship options</strong></div>
+                <div><span>Package</span><strong>Delivery and install</strong></div>
+              </div>
+              <a class="btn primary" href="austin-pool-table.html">Customize the Austin</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Services</p>
+              <h2>Help for the room, the move, and the table.</h2>
+            </div>
+            <a class="btn" href="contact-us.html">Request service</a>
+          </div>
+          <div class="product-row">
+            <a class="product-tile" href="contact-us.html">
+              <div class="product-tile-media">
+                <img src="assets/service-design-help.jpg" alt="Design consultation for a luxury game room" />
+              </div>
+              <div class="product-tile-body">
+                <p class="eyebrow">Showroom</p>
+                <h3>Design help</h3>
+                <p>Bring room dimensions, photos, finish ideas, and a budget range to plan the setup.</p>
+              </div>
+            </a>
+            <a class="product-tile" href="contact-us.html">
+              <div class="product-tile-media">
+                <img src="assets/service-table-moving.jpg" alt="Pool table movers loading a table for transport" />
+              </div>
+              <div class="product-tile-body">
+                <p class="eyebrow">Moving</p>
+                <h3>Table moving service</h3>
+                <p>Professional pool table disassembly, transport, reassembly, and leveling.</p>
+              </div>
+            </a>
+            <a class="product-tile" href="contact-us.html">
+              <div class="product-tile-media">
+                <img src="assets/service-table-recovering.jpg" alt="Pool table recovering service in progress" />
+              </div>
+              <div class="product-tile-body">
+                <p class="eyebrow">Recovering</p>
+                <h3>Table recovering service</h3>
+                <p>Refresh worn cloth, update color, and get the table playing clean again.</p>
+              </div>
+            </a>
+            <a class="product-tile" href="contact-us.html">
+              <div class="product-tile-media">
+                <img src="assets/service-commercial-game-rooms.jpg" alt="Commercial billiards lounge with pool tables" />
+              </div>
+              <div class="product-tile-body">
+                <p class="eyebrow">Projects</p>
+                <h3>Commercial game rooms</h3>
+                <p>Plan durable equipment for shared spaces and hospitality projects.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="resources-head">
+            <div>
+              <p class="eyebrow">Resources</p>
+              <h2>Helpful reads before you choose the room.</h2>
+            </div>
+            <a class="btn" href="contact-us.html">Get planning help</a>
+          </div>
+          <div class="resource-grid">
+            <a class="resource-card" href="contact-us.html">
+              <img src="assets/austin-lifestyle-promo.png" alt="Finished game room with pool table" />
+              <div class="resource-card-body">
+                <p class="eyebrow">Planning</p>
+                <h3>Finished basement ideas for luxury game rooms</h3>
+                <p>Turn unused square footage into a room that works for family nights, hosting, and everyday play.</p>
+                <span class="read-more">Read more</span>
+              </div>
+            </a>
+            <a class="resource-card" href="pool-tables.html">
+              <img src="assets/resource-pool-table-style-guide.jpg" alt="Luxury pool table style guide" />
+              <div class="resource-card-body">
+                <p class="eyebrow">Buying guide</p>
+                <h3>Which pool table style fits your home best?</h3>
+                <p>Compare modern, rustic, and furniture-first tables before settling on size, finish, and room layout.</p>
+                <span class="read-more">Read more</span>
+              </div>
+            </a>
+            <a class="resource-card" href="austin-pool-table.html">
+              <img src="assets/resource-pool-table-buying-guide.jpg" alt="Pool table design planning guide" />
+              <div class="resource-card-body">
+                <p class="eyebrow">Design help</p>
+                <h3>How to buy a pool table without regrets</h3>
+                <p>Start with clearance, installation, finish samples, cloth choice, and the way the room will actually be used.</p>
+                <span class="read-more">Read more</span>
+              </div>
+            </a>
+            <a class="resource-card" href="cues.html">
+              <img src="assets/resource-cue-comparison-guide.jpg" alt="Pool cue and carom billiards cue comparison guide" />
+              <div class="resource-card-body">
+                <p class="eyebrow">Care and play</p>
+                <h3>Billiards cue vs pool cue: what changes?</h3>
+                <p>Know what to look for in cues, accessories, and starter packages before building out the full room.</p>
+                <span class="read-more">Read more</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section studio-band">
+        <div class="section-inner">
+          <div>
+            <p class="eyebrow">Design center</p>
+            <h2>Bring the room dimensions, photos, and finish ideas.</h2>
+            <p class="lead">
+              Get help matching the table, game, finish, cloth, lighting, and install plan to the
+              way the room will actually be used.
+            </p>
+          </div>
+          <a class="btn" href="contact-us.html">Plan a visit</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <div class="site-footer-logo">Home<span>Billiards</span></div>
+          <p>Canada's destination for luxury game rooms, billiards, outdoor living, and commercial play spaces.</p>
+          <div class="site-footer-contact">
+            <p>1644 S.E. Marine Drive, Vancouver, BC V5P 2R6</p>
+            <p>604 321 5553</p>
+            <p>info@homebilliards.ca</p>
+          </div>
+        </div>
+        <div>
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pool Table Design Center</a></li>
+            <li><a href="#">Services We Provide</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="pool-tables.html">Billiards</a></li>
+            <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+            <li><a href="traeger-smokers.html">BBQ</a></li>
+            <li><a href="#">Foosball</a></li>
+            <li><a href="dartboards.html">Darts</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Popular Brands</h3>
+          <ul>
+            <li><a href="#">Canada Billiards</a></li>
+            <li><a href="#">Legacy Billiards</a></li>
+            <li><a href="#">Olhausen Billiards</a></li>
+            <li><a href="#">Traeger</a></li>
+            <li><a href="#">California House</a></li>
+            <li><a href="#">Predator</a></li>
+            <li><a href="#">Winmau</a></li>
+            <li><a href="#">Championship Shuffleboard</a></li>
+            <li><a href="#">Dynamo</a></li>
+            <li><a href="#">Harrow</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <div class="site-footer-bottom-inner">
+          <span>(c) 2026 Home Billiards. All rights reserved.</span>
+          <div class="site-footer-social" aria-label="Social links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector(".search-bar").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

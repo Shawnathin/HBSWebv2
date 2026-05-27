@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>California House Finish Workbench</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/finish.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>California House Finish Workbench</h1>
+          <p>Review finish swatches, cloth cutouts, and sample renders before creating the full finish set.</p>
+        </div>
+        <div class="top-actions">
+          <a href="/cutout.html" class="back-link">Waypoint Cutout Tool</a>
+          <a href="/" class="back-link">Image Importer</a>
+        </div>
+      </section>
+
+      <section class="summary-grid">
+        <div>
+          <span id="tableCount">0</span>
+          <p>tables</p>
+        </div>
+        <div>
+          <span id="finishCount">0</span>
+          <p>finishes</p>
+        </div>
+        <div>
+          <span>Review</span>
+          <p>cloth cutouts first</p>
+        </div>
+      </section>
+
+      <section class="products-wrap">
+        <div class="section-heading">
+          <h2>Finish Swatches</h2>
+          <a href="/finish-workbench/california-house/finish-library.json" target="_blank" rel="noreferrer">Open JSON</a>
+        </div>
+        <div id="swatches" class="swatches"></div>
+      </section>
+
+      <section class="products-wrap finish-render-products">
+        <div class="section-heading">
+          <div>
+            <h2>Finish Render Test</h2>
+            <p>Choose a finish to review the generated table images.</p>
+          </div>
+          <select id="finishRenderSelect" aria-label="Choose finish"></select>
+        </div>
+        <div id="finishRenders" class="finish-render-grid"></div>
+      </section>
+
+      <section class="products-wrap ai-render-products">
+        <div class="section-heading">
+          <div>
+            <h2>AI Render Test</h2>
+            <p>Render one table and one finish first.</p>
+          </div>
+        </div>
+        <div class="ai-render-panel">
+          <label>
+            <span>Table</span>
+            <select id="aiTableSelect"></select>
+          </label>
+          <label>
+            <span>Finish</span>
+            <select id="aiFinishSelect"></select>
+          </label>
+          <label>
+            <span>OpenAI API Key</span>
+            <input id="aiApiKey" type="password" autocomplete="off" placeholder="Used once, not saved" />
+          </label>
+          <button id="aiRenderBtn" type="button" class="primary">Render Test</button>
+          <button id="aiBatchRenderBtn" type="button" class="secondary">Render Table All Finishes</button>
+        </div>
+        <div id="aiRenderStatus" class="ai-render-status">Ready for one test render.</div>
+        <div id="aiRenderResult" class="ai-render-result"></div>
+      </section>
+
+      <section class="products-wrap finish-products">
+        <div class="section-heading">
+          <h2>Table Cloth Cutout Review</h2>
+          <a href="/finish-workbench/california-house/table-workbench.json" target="_blank" rel="noreferrer">Open Workbench JSON</a>
+        </div>
+        <div id="tables" class="finish-table-list"></div>
+      </section>
+    </main>
+    <script src="/finish.js"></script>
+  </body>
+</html>

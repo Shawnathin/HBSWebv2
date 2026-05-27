@@ -1,0 +1,298 @@
+[
+  {
+    "id": "80e3c4fdaf98",
+    "url": "https://fgbradleys.com/canada-billiard/",
+    "vendor": "Canada Billiard",
+    "startedAt": "2026-05-23T19:06:02.106Z",
+    "finishedAt": "2026-05-23T19:06:09.476Z",
+    "status": "complete",
+    "foundPages": 52,
+    "savedProducts": 52,
+    "errors": [
+      {
+        "url": "https://fgbradleys.com/canada-billiard/",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "eda5fcae1b0b",
+    "url": "https://fgbradleys.com/canada-billiard/",
+    "vendor": "Canada Billiard",
+    "startedAt": "2026-05-23T19:04:57.434Z",
+    "finishedAt": "2026-05-23T19:04:58.350Z",
+    "status": "complete",
+    "foundPages": 3,
+    "savedProducts": 3,
+    "errors": [
+      {
+        "url": "https://fgbradleys.com/canada-billiard/",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "5056fb6f149e",
+    "url": "https://fgbradleys.com/canada-billiard/ ",
+    "vendor": "Canada Billiard ",
+    "startedAt": "2026-05-23T19:01:38.467Z",
+    "finishedAt": "2026-05-23T19:01:38.856Z",
+    "status": "complete",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://fgbradleys.com/canada-billiard/ ",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "ae53cd6b37ae",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables/traditional",
+    "vendor": "Olhausen traditional",
+    "startedAt": "2026-05-23T18:59:49.368Z",
+    "finishedAt": "2026-05-23T18:59:55.925Z",
+    "status": "complete",
+    "foundPages": 15,
+    "savedProducts": 15,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "8b5d30ec09d6",
+    "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+    "vendor": "Olhausen Traditioanl ",
+    "startedAt": "2026-05-23T18:58:46.857Z",
+    "finishedAt": "2026-05-23T18:58:46.875Z",
+    "status": "failed",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      },
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "fetch failed"
+      }
+    ]
+  },
+  {
+    "id": "852149db6fa5",
+    "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+    "vendor": "Olhausen Traditioanl ",
+    "startedAt": "2026-05-23T18:58:36.478Z",
+    "finishedAt": "2026-05-23T18:58:36.483Z",
+    "status": "failed",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      },
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "fetch failed"
+      }
+    ]
+  },
+  {
+    "id": "d9d036428026",
+    "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+    "vendor": "Olhausen Traditioanl ",
+    "startedAt": "2026-05-23T18:58:34.204Z",
+    "finishedAt": "2026-05-23T18:58:34.235Z",
+    "status": "failed",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      },
+      {
+        "url": "https://www.olhauhttps://www.olhausenbilliards.com/departments/pool-tables/traditional",
+        "message": "fetch failed"
+      }
+    ]
+  },
+  {
+    "id": "7fd7c33f9917",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables/select",
+    "vendor": "Olhausen select",
+    "startedAt": "2026-05-23T18:57:53.065Z",
+    "finishedAt": "2026-05-23T18:57:55.797Z",
+    "status": "complete",
+    "foundPages": 5,
+    "savedProducts": 5,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables/select",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "df19513dca60",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables/rustic",
+    "vendor": "Olhausen rustic ",
+    "startedAt": "2026-05-23T18:57:14.980Z",
+    "finishedAt": "2026-05-23T18:57:17.910Z",
+    "status": "complete",
+    "foundPages": 6,
+    "savedProducts": 6,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables/rustic",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "dd692adca161",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+    "vendor": "Olhausen",
+    "startedAt": "2026-05-23T18:56:32.338Z",
+    "finishedAt": "2026-05-23T18:56:32.721Z",
+    "status": "complete",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "c0a34ecbe50c",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables/Modern",
+    "vendor": "Olhausen",
+    "startedAt": "2026-05-23T18:55:50.360Z",
+    "finishedAt": "2026-05-23T18:55:57.420Z",
+    "status": "complete",
+    "foundPages": 14,
+    "savedProducts": 14,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables/Modern",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "a2f9dc9c67c2",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables/Modern",
+    "vendor": "Olhausen",
+    "startedAt": "2026-05-23T18:53:57.849Z",
+    "finishedAt": "2026-05-23T18:53:58.309Z",
+    "status": "complete",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables/Modern",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "4c0a10c45c35",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+    "vendor": "Olhausen",
+    "startedAt": "2026-05-23T18:53:36.367Z",
+    "finishedAt": "2026-05-23T18:53:36.613Z",
+    "status": "complete",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "3def78c6bbce",
+    "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+    "vendor": "Olhausen",
+    "startedAt": "2026-05-23T18:53:23.028Z",
+    "finishedAt": "2026-05-23T18:53:23.349Z",
+    "status": "complete",
+    "foundPages": 0,
+    "savedProducts": 0,
+    "errors": [
+      {
+        "url": "https://www.olhausenbilliards.com/departments/pool-tables",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "e123ef0e78f3",
+    "url": "https://californiahouse.com/product-category/pool-tables/",
+    "vendor": "California House",
+    "startedAt": "2026-05-23T18:49:10.844Z",
+    "finishedAt": "2026-05-23T18:49:13.823Z",
+    "status": "complete",
+    "foundPages": 14,
+    "savedProducts": 14,
+    "errors": [
+      {
+        "url": "https://californiahouse.com/product-category/pool-tables/",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "7e1f3af7a87b",
+    "url": "https://californiahouse.com/product-category/pool-tables/",
+    "vendor": "California House",
+    "startedAt": "2026-05-23T18:48:12.346Z",
+    "finishedAt": "2026-05-23T18:48:14.655Z",
+    "status": "complete",
+    "foundPages": 14,
+    "savedProducts": 14,
+    "errors": [
+      {
+        "url": "https://californiahouse.com/product-category/pool-tables/",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      }
+    ]
+  },
+  {
+    "id": "520a3bac6a53",
+    "url": "https://californiahouse.com/product-category/pool-tables/",
+    "vendor": "California House ",
+    "startedAt": "2026-05-23T18:40:45.944Z",
+    "finishedAt": "2026-05-23T18:40:53.322Z",
+    "status": "complete",
+    "foundPages": 24,
+    "savedProducts": 21,
+    "errors": [
+      {
+        "url": "https://californiahouse.com/product-category/pool-tables/",
+        "message": "Browser capture is unavailable on this computer, so the importer used direct page/image scanning."
+      },
+      {
+        "url": "https://californiahouse.com/pool-tables-shuffleboards-lookbook/",
+        "message": "No usable product image found."
+      },
+      {
+        "url": "https://californiahouse.com/game-tables-chairs-lookbook/",
+        "message": "No usable product image found."
+      },
+      {
+        "url": "https://californiahouse.com/product-category/shuffleboard-tables/",
+        "message": "No usable product image found."
+      }
+    ]
+  }
+]

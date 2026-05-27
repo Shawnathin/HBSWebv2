@@ -1,0 +1,812 @@
+[
+  {
+    "title": "Atherton Pool Table",
+    "slug": "atherton-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/atherton-pool-table/",
+    "tableFile": "tables/atherton-pool-table.png",
+    "masks": {
+      "foreground": "masks/atherton-pool-table-foreground-mask.png",
+      "cloth": "masks/atherton-pool-table-cloth-manual-mask.png",
+      "wood": "masks/atherton-pool-table-wood-mask.png",
+      "preview": "previews/atherton-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/atherton-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/atherton-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/atherton-pool-table/atherton-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/atherton-pool-table/atherton-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/atherton-pool-table/atherton-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/atherton-pool-table/atherton-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.14246119733924612,
+          "y": 0.34146341463414637
+        },
+        {
+          "x": 0.36862527716186255,
+          "y": 0.3024390243902439
+        },
+        {
+          "x": 0.8531042128603105,
+          "y": 0.38226164079822617
+        },
+        {
+          "x": 0.626940133037694,
+          "y": 0.4354767184035477
+        }
+      ],
+      "updatedAt": "2026-05-23T19:50:44.208Z"
+    }
+  },
+  {
+    "title": "Austin Pool Table",
+    "slug": "austin-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/austin-pool-table/",
+    "tableFile": "tables/austin-pool-table.png",
+    "masks": {
+      "foreground": "masks/austin-pool-table-foreground-mask.png",
+      "cloth": "masks/austin-pool-table-cloth-manual-mask.png",
+      "wood": "masks/austin-pool-table-wood-mask.png",
+      "preview": "previews/austin-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/austin-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/austin-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/austin-pool-table/austin-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/austin-pool-table/austin-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/austin-pool-table/austin-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/austin-pool-table/austin-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.19900221729490022,
+          "y": 0.3237250554323725
+        },
+        {
+          "x": 0.8120842572062085,
+          "y": 0.32727272727272727
+        },
+        {
+          "x": 0.8364745011086474,
+          "y": 0.3343680709534368
+        },
+        {
+          "x": 0.8619733924611973,
+          "y": 0.39290465631929045
+        },
+        {
+          "x": 0.8353658536585366,
+          "y": 0.4106430155210643
+        },
+        {
+          "x": 0.1590909090909091,
+          "y": 0.3964523281596452
+        },
+        {
+          "x": 0.1402439024390244,
+          "y": 0.3875831485587583
+        },
+        {
+          "x": 0.1746119733924612,
+          "y": 0.32727272727272727
+        }
+      ],
+      "updatedAt": "2026-05-23T19:51:25.627Z"
+    }
+  },
+  {
+    "title": "Basecamp Pool Table",
+    "slug": "basecamp-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/basecamp-pool-table/",
+    "tableFile": "tables/basecamp-pool-table.png",
+    "masks": {
+      "foreground": "masks/basecamp-pool-table-foreground-mask.png",
+      "cloth": "masks/basecamp-pool-table-cloth-manual-mask.png",
+      "wood": "masks/basecamp-pool-table-wood-mask.png",
+      "preview": "previews/basecamp-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/basecamp-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/basecamp-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/basecamp-pool-table/basecamp-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/basecamp-pool-table/basecamp-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/basecamp-pool-table/basecamp-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/basecamp-pool-table/basecamp-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.7200665188470067,
+          "y": 0.37339246119733926
+        },
+        {
+          "x": 0.12583148558758314,
+          "y": 0.25809312638580933
+        },
+        {
+          "x": 0.33314855875831484,
+          "y": 0.21906873614190686
+        },
+        {
+          "x": 0.8708425720620843,
+          "y": 0.2864745011086475
+        },
+        {
+          "x": 0.766629711751663,
+          "y": 0.3804878048780488
+        }
+      ],
+      "updatedAt": "2026-05-23T19:52:06.235Z"
+    }
+  },
+  {
+    "title": "City Pool Table",
+    "slug": "city-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/city-pool-table/",
+    "tableFile": "tables/city-pool-table.png",
+    "masks": {
+      "foreground": "masks/city-pool-table-foreground-mask.png",
+      "cloth": "masks/city-pool-table-cloth-manual-mask.png",
+      "wood": "masks/city-pool-table-wood-mask.png",
+      "preview": "previews/city-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/city-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/city-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/city-pool-table/city-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/city-pool-table/city-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/city-pool-table/city-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/city-pool-table/city-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.1491130820399113,
+          "y": 0.35033259423503327
+        },
+        {
+          "x": 0.37749445676274945,
+          "y": 0.30598669623059865
+        },
+        {
+          "x": 0.8531042128603105,
+          "y": 0.3946784922394678
+        },
+        {
+          "x": 0.6335920177383592,
+          "y": 0.4514412416851441
+        }
+      ],
+      "updatedAt": "2026-05-23T19:52:22.052Z"
+    }
+  },
+  {
+    "title": "Cypress Pool Table",
+    "slug": "cypress-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/cypress-pool-table/",
+    "tableFile": "tables/cypress-pool-table.png",
+    "masks": {
+      "foreground": "masks/cypress-pool-table-foreground-mask.png",
+      "cloth": "masks/cypress-pool-table-cloth-manual-mask.png",
+      "wood": "masks/cypress-pool-table-wood-mask.png",
+      "preview": "previews/cypress-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/cypress-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/cypress-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/cypress-pool-table/cypress-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/cypress-pool-table/cypress-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/cypress-pool-table/cypress-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/cypress-pool-table/cypress-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.15133037694013304,
+          "y": 0.34323725055432375
+        },
+        {
+          "x": 0.37749445676274945,
+          "y": 0.3006651884700665
+        },
+        {
+          "x": 0.8453436807095344,
+          "y": 0.3893569844789357
+        },
+        {
+          "x": 0.6236141906873615,
+          "y": 0.44611973392461196
+        }
+      ],
+      "updatedAt": "2026-05-23T19:52:50.666Z"
+    }
+  },
+  {
+    "title": "District Pool Table",
+    "slug": "district-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/district-pool-table/",
+    "tableFile": "tables/district-pool-table.png",
+    "masks": {
+      "foreground": "masks/district-pool-table-foreground-mask.png",
+      "cloth": "masks/district-pool-table-cloth-manual-mask.png",
+      "wood": "masks/district-pool-table-wood-mask.png",
+      "preview": "previews/district-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/district-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/district-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/district-pool-table/district-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/district-pool-table/district-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/district-pool-table/district-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/district-pool-table/district-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.14135254988913526,
+          "y": 0.26518847006651886
+        },
+        {
+          "x": 0.373059866962306,
+          "y": 0.2279379157427938
+        },
+        {
+          "x": 0.8442350332594235,
+          "y": 0.29889135254988913
+        },
+        {
+          "x": 0.6125277161862528,
+          "y": 0.3574279379157428
+        }
+      ],
+      "updatedAt": "2026-05-23T19:53:05.980Z"
+    }
+  },
+  {
+    "title": "Highland Pool Table",
+    "slug": "highland-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/highland-pool-table-copy/",
+    "tableFile": "tables/highland-pool-table.png",
+    "masks": {
+      "foreground": "masks/highland-pool-table-foreground-mask.png",
+      "cloth": "masks/highland-pool-table-cloth-manual-mask.png",
+      "wood": "masks/highland-pool-table-wood-mask.png",
+      "preview": "previews/highland-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/highland-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/highland-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/highland-pool-table/highland-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/highland-pool-table/highland-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/highland-pool-table/highland-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/highland-pool-table/highland-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.12028824833702882,
+          "y": 0.35033259423503327
+        },
+        {
+          "x": 0.3309312638580931,
+          "y": 0.293569844789357
+        },
+        {
+          "x": 0.8819290465631929,
+          "y": 0.3716186252771619
+        },
+        {
+          "x": 0.7156319290465631,
+          "y": 0.44789356984478934
+        }
+      ],
+      "updatedAt": "2026-05-23T19:53:19.457Z"
+    }
+  },
+  {
+    "title": "Menlo Pool Table",
+    "slug": "menlo-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/menlo-pool-table/",
+    "tableFile": "tables/menlo-pool-table.png",
+    "masks": {
+      "foreground": "masks/menlo-pool-table-foreground-mask.png",
+      "cloth": "masks/menlo-pool-table-cloth-manual-mask.png",
+      "wood": "masks/menlo-pool-table-wood-mask.png",
+      "preview": "previews/menlo-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/menlo-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/menlo-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/menlo-pool-table/menlo-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/menlo-pool-table/menlo-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/menlo-pool-table/menlo-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/menlo-pool-table/menlo-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.8719512195121951,
+          "y": 0.3893569844789357
+        },
+        {
+          "x": 0.766629711751663,
+          "y": 0.4407982261640798
+        },
+        {
+          "x": 0.7544345898004434,
+          "y": 0.4443458980044346
+        },
+        {
+          "x": 0.7211751662971175,
+          "y": 0.44611973392461196
+        },
+        {
+          "x": 0.14135254988913526,
+          "y": 0.38226164079822617
+        },
+        {
+          "x": 0.30210643015521066,
+          "y": 0.3325942350332594
+        }
+      ],
+      "updatedAt": "2026-05-23T19:54:52.637Z"
+    }
+  },
+  {
+    "title": "Origami Pool Table",
+    "slug": "origami-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/origami-pool-table/",
+    "tableFile": "tables/origami-pool-table.png",
+    "masks": {
+      "foreground": "masks/origami-pool-table-foreground-mask.png",
+      "cloth": "masks/origami-pool-table-cloth-manual-mask.png",
+      "wood": "masks/origami-pool-table-wood-mask.png",
+      "preview": "previews/origami-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/origami-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/origami-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/origami-pool-table/origami-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/origami-pool-table/origami-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/origami-pool-table/origami-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/origami-pool-table/origami-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.86529933481153,
+          "y": 0.33968957871396893
+        },
+        {
+          "x": 0.7610864745011087,
+          "y": 0.4106430155210643
+        },
+        {
+          "x": 0.725609756097561,
+          "y": 0.41596452328159644
+        },
+        {
+          "x": 0.14689578713968957,
+          "y": 0.33791574279379155
+        },
+        {
+          "x": 0.14689578713968957,
+          "y": 0.32727272727272727
+        },
+        {
+          "x": 0.31541019955654104,
+          "y": 0.27405764966740576
+        },
+        {
+          "x": 0.8586474501108647,
+          "y": 0.3343680709534368
+        }
+      ],
+      "updatedAt": "2026-05-23T19:56:20.015Z"
+    }
+  },
+  {
+    "title": "Rincon Pool Table",
+    "slug": "rincon-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/rincon-pool-table/",
+    "tableFile": "tables/rincon-pool-table.png",
+    "masks": {
+      "foreground": "masks/rincon-pool-table-foreground-mask.png",
+      "cloth": "masks/rincon-pool-table-cloth-manual-mask.png",
+      "wood": "masks/rincon-pool-table-wood-mask.png",
+      "preview": "previews/rincon-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/rincon-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/rincon-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/rincon-pool-table/rincon-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/rincon-pool-table/rincon-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/rincon-pool-table/rincon-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/rincon-pool-table/rincon-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.24223946784922396,
+          "y": 0.38403547671840355
+        },
+        {
+          "x": 0.13802660753880266,
+          "y": 0.29711751662971175
+        },
+        {
+          "x": 0.6446784922394678,
+          "y": 0.2616407982261641
+        },
+        {
+          "x": 0.8597560975609756,
+          "y": 0.2953436807095344
+        },
+        {
+          "x": 0.856430155210643,
+          "y": 0.3024390243902439
+        },
+        {
+          "x": 0.27328159645232813,
+          "y": 0.3893569844789357
+        }
+      ],
+      "updatedAt": "2026-05-23T19:56:42.807Z"
+    }
+  },
+  {
+    "title": "Sutter Pool Table",
+    "slug": "sutter-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/sutter-pool-table/",
+    "tableFile": "tables/sutter-pool-table.png",
+    "masks": {
+      "foreground": "masks/sutter-pool-table-foreground-mask.png",
+      "cloth": "masks/sutter-pool-table-cloth-manual-mask.png",
+      "wood": "masks/sutter-pool-table-wood-mask.png",
+      "preview": "previews/sutter-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/sutter-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/sutter-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/sutter-pool-table/sutter-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/sutter-pool-table/sutter-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/sutter-pool-table/sutter-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/sutter-pool-table/sutter-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.12472283813747229,
+          "y": 0.3556541019955654
+        },
+        {
+          "x": 0.30210643015521066,
+          "y": 0.4337028824833703
+        },
+        {
+          "x": 0.8774944567627494,
+          "y": 0.3254988913525499
+        },
+        {
+          "x": 0.6557649667405765,
+          "y": 0.2776053215077605
+        }
+      ],
+      "updatedAt": "2026-05-23T19:56:58.510Z"
+    }
+  },
+  {
+    "title": "Tahoe Pool Table",
+    "slug": "tahoe-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/tahoe-pool-table/",
+    "tableFile": "tables/tahoe-pool-table.png",
+    "masks": {
+      "foreground": "masks/tahoe-pool-table-foreground-mask.png",
+      "cloth": "masks/tahoe-pool-table-cloth-manual-mask.png",
+      "wood": "masks/tahoe-pool-table-wood-mask.png",
+      "preview": "previews/tahoe-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/tahoe-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/tahoe-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/tahoe-pool-table/tahoe-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/tahoe-pool-table/tahoe-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/tahoe-pool-table/tahoe-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/tahoe-pool-table/tahoe-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.14689578713968957,
+          "y": 0.3662971175166297
+        },
+        {
+          "x": 0.28325942350332595,
+          "y": 0.30598669623059865
+        },
+        {
+          "x": 0.856430155210643,
+          "y": 0.35388026607538803
+        },
+        {
+          "x": 0.86529933481153,
+          "y": 0.3574279379157428
+        },
+        {
+          "x": 0.7921286031042128,
+          "y": 0.4124168514412417
+        },
+        {
+          "x": 0.7577605321507761,
+          "y": 0.4195121951219512
+        }
+      ],
+      "updatedAt": "2026-05-23T19:57:36.649Z"
+    }
+  },
+  {
+    "title": "Vista Pool Table",
+    "slug": "vista-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/vista-pool-table/",
+    "tableFile": "tables/vista-pool-table.png",
+    "masks": {
+      "foreground": "masks/vista-pool-table-foreground-mask.png",
+      "cloth": "masks/vista-pool-table-cloth-manual-mask.png",
+      "wood": "masks/vista-pool-table-wood-mask.png",
+      "preview": "previews/vista-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/vista-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/vista-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/vista-pool-table/vista-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/vista-pool-table/vista-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/vista-pool-table/vista-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/vista-pool-table/vista-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.15022172949002216,
+          "y": 0.32727272727272727
+        },
+        {
+          "x": 0.3697339246119734,
+          "y": 0.29002217294900223
+        },
+        {
+          "x": 0.8586474501108647,
+          "y": 0.3716186252771619
+        },
+        {
+          "x": 0.6291574279379157,
+          "y": 0.42483370288248334
+        },
+        {
+          "x": 0.14246119733924612,
+          "y": 0.3325942350332594
+        }
+      ],
+      "updatedAt": "2026-05-23T19:57:57.304Z"
+    }
+  },
+  {
+    "title": "Windansea Pool Table",
+    "slug": "windansea-pool-table",
+    "sourceUrl": "https://californiahouse.com/product/windansea-pool-table/",
+    "tableFile": "tables/windansea-pool-table.png",
+    "masks": {
+      "foreground": "masks/windansea-pool-table-foreground-mask.png",
+      "cloth": "masks/windansea-pool-table-cloth-manual-mask.png",
+      "wood": "masks/windansea-pool-table-wood-mask.png",
+      "preview": "previews/windansea-pool-table-mask-preview.png"
+    },
+    "clothRemovedFile": "cloth-removed/windansea-pool-table-cloth-removed.png",
+    "clothRemovedPreviewFile": "cloth-removed-previews/windansea-pool-table-checker-preview.png",
+    "sampleRenders": [
+      {
+        "finish": "Coastal Grey Glazed",
+        "file": "sample-renders/windansea-pool-table/windansea-pool-table__coastal-grey-glazed.png"
+      },
+      {
+        "finish": "Honey",
+        "file": "sample-renders/windansea-pool-table/windansea-pool-table__honey.png"
+      },
+      {
+        "finish": "Java",
+        "file": "sample-renders/windansea-pool-table/windansea-pool-table__java.png"
+      },
+      {
+        "finish": "Midnight",
+        "file": "sample-renders/windansea-pool-table/windansea-pool-table__midnight.png"
+      }
+    ],
+    "manualCutout": {
+      "points": [
+        {
+          "x": 0.16130820399113083,
+          "y": 0.2066518847006652
+        },
+        {
+          "x": 0.3830376940133038,
+          "y": 0.17649667405764966
+        },
+        {
+          "x": 0.8353658536585366,
+          "y": 0.2492239467849224
+        },
+        {
+          "x": 0.6779379157427938,
+          "y": 0.3556541019955654
+        },
+        {
+          "x": 0.6779379157427938,
+          "y": 0.3556541019955654
+        },
+        {
+          "x": 0.1557649667405765,
+          "y": 0.20842572062084258
+        }
+      ],
+      "updatedAt": "2026-05-23T19:58:22.283Z"
+    }
+  }
+]

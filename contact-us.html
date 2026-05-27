@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us | Home Billiards</title>
+    <style>
+      :root {
+        --ink: #171717;
+        --muted: #626262;
+        --paper: #f7f4ef;
+        --line: rgba(0, 0, 0, 0.12);
+        --line-strong: rgba(0, 0, 0, 0.22);
+        --white: #fff;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(18px);
+      }
+
+      .commerce-inner,
+      .category-inner,
+      .section-inner {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding-inline: 22px;
+      }
+
+      .commerce-inner {
+        display: grid;
+        grid-template-columns: minmax(190px, 1fr) minmax(660px, 720px) auto minmax(118px, 1fr);
+        gap: 14px;
+        align-items: center;
+        justify-content: stretch;
+        padding-block: 16px;
+      }
+
+      .wordmark {
+        min-width: 190px;
+        color: #555a6c;
+        font-size: 1.72rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .wordmark span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .search-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 42px;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+      }
+
+      .search-bar input {
+        min-width: 0;
+        border: 0;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+
+      .search-bar input:focus {
+        outline: 2px solid rgba(45, 48, 58, 0.22);
+        outline-offset: -2px;
+      }
+
+      .search-bar button,
+      .contact-button {
+        border: 0;
+        background: #fff;
+        color: #555a6c;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .search-bar button {
+        border-left: 1px solid rgba(45, 48, 58, 0.16);
+        padding: 0 16px;
+      }
+
+      .contact-button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        padding: 0 22px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .contact-button:hover,
+      .contact-button[aria-current="page"] {
+        border-color: rgba(45, 48, 58, 0.44);
+        color: #2d303a;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        min-width: 118px;
+        justify-content: flex-end;
+        color: #2d303a;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .category-nav {
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .category-inner {
+        display: flex;
+        min-height: 46px;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        height: 46px;
+        align-items: center;
+        padding: 0 18px;
+        color: #353844;
+        font-size: 0.88rem;
+        font-weight: 720;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-links a:hover {
+        color: #111;
+      }
+
+      .eyebrow {
+        color: #777;
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+      }
+
+      .contact-hero {
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.82) 48%, rgba(255, 255, 255, 0.64) 100%),
+          linear-gradient(0deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.54)),
+          url("assets/home-billiards-storefront.jpg") center / cover no-repeat;
+      }
+
+      .hero-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 70px;
+        align-items: end;
+        padding-block: 76px 58px;
+      }
+
+      .hero-copy h1 {
+        max-width: 920px;
+        margin-top: 16px;
+        font-size: clamp(3.4rem, 7vw, 7.6rem);
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-copy p:not(.eyebrow) {
+        max-width: 760px;
+        margin-top: 26px;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 2vw, 1.45rem);
+        line-height: 1.45;
+      }
+
+      .quick-card {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(8px);
+        padding: 30px;
+      }
+
+      .quick-card h2 {
+        font-size: 1.45rem;
+        letter-spacing: -0.02em;
+      }
+
+      .quick-card dl {
+        display: grid;
+        gap: 18px;
+        margin: 24px 0 0;
+      }
+
+      .quick-card dt {
+        color: #777;
+        font-size: 0.74rem;
+        font-weight: 850;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .quick-card dd {
+        margin: 6px 0 0;
+        color: #252525;
+        font-size: 1rem;
+        font-weight: 760;
+        line-height: 1.45;
+      }
+
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line-strong);
+        background: #fff;
+        padding: 0 22px;
+        color: var(--ink);
+        font-size: 0.84rem;
+        font-weight: 850;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .btn.primary {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-bottom: 1px solid var(--line);
+      }
+
+      .info-card {
+        min-height: 260px;
+        border-right: 1px solid var(--line);
+        padding: 42px 34px;
+      }
+
+      .info-card:last-child {
+        border-right: 0;
+      }
+
+      .info-card h2 {
+        font-size: 1.8rem;
+        letter-spacing: -0.03em;
+      }
+
+      .info-card p,
+      .info-card a,
+      .hours-list {
+        color: var(--muted);
+        font-size: 1.03rem;
+        line-height: 1.62;
+      }
+
+      .info-card p,
+      .hours-list {
+        margin-top: 18px;
+      }
+
+      .info-card a {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      .hours-list {
+        display: grid;
+        gap: 10px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hours-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding-bottom: 10px;
+      }
+
+      .hours-list strong {
+        color: var(--ink);
+      }
+
+      .form-section {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 58px;
+        margin-block: 56px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        background: #faf7f2;
+        padding-block: 54px;
+      }
+
+      .form-copy h2 {
+        margin-top: 12px;
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .form-copy p {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 1.12rem;
+        line-height: 1.55;
+      }
+
+      .support-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 32px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .support-list li {
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+        color: #333;
+        font-weight: 760;
+      }
+
+      .contact-form {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.86);
+        padding: 28px;
+      }
+
+      .field {
+        display: grid;
+        gap: 8px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label {
+        color: #606060;
+        font-size: 0.75rem;
+        font-weight: 850;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 14px 14px;
+        color: var(--ink);
+      }
+
+      .field textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        outline: 2px solid #171717;
+        outline-offset: -2px;
+      }
+
+      .form-submit {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .form-submit p {
+        max-width: 390px;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.5;
+      }
+
+      .service-band {
+        border-top: 1px solid var(--line);
+        background: #fafafa;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .service-tile {
+        min-height: 180px;
+        border-right: 1px solid var(--line);
+        padding: 30px 24px;
+      }
+
+      .service-tile:last-child {
+        border-right: 0;
+      }
+
+      .service-tile h3 {
+        font-size: 1.08rem;
+      }
+
+      .service-tile p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.96rem;
+        line-height: 1.5;
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #222321;
+        color: #f7f4ef;
+      }
+
+      .site-footer-main {
+        display: grid;
+        width: min(100%, 1520px);
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 42px;
+        margin: 0 auto;
+        padding: 52px 22px 46px;
+      }
+
+      .site-footer-brand {
+        max-width: 390px;
+      }
+
+      .site-footer-logo {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .site-footer-logo span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.88rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .site-footer-main h3 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .site-footer-main p,
+      .site-footer-main a {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
+      .site-footer-main a:hover {
+        color: #fff;
+      }
+
+      .site-footer-main ul {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer-contact {
+        display: grid;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .site-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer-bottom-inner {
+        display: flex;
+        width: min(100%, 1520px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
+      }
+
+      .site-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .site-footer-social a {
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      @media (max-width: 1100px) {
+        .commerce-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .wordmark,
+        .cart-link {
+          justify-self: center;
+          text-align: center;
+        }
+
+        .hero-layout,
+        .form-section {
+          grid-template-columns: 1fr;
+          gap: 34px;
+        }
+
+        .contact-grid,
+        .service-grid,
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .info-card:nth-child(2),
+        .service-tile:nth-child(2) {
+          border-right: 0;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .commerce-inner,
+        .category-inner,
+        .section-inner {
+          padding-inline: 16px;
+        }
+
+        .commerce-inner {
+          padding-block: 14px;
+        }
+
+        .wordmark {
+          min-width: 0;
+          font-size: 1.35rem;
+        }
+
+        .search-bar,
+        .contact-button {
+          width: 100%;
+        }
+
+        .cart-link {
+          display: none;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          overflow-x: auto;
+          flex-wrap: nowrap;
+        }
+
+        .hero-layout {
+          padding-block: 44px 38px;
+        }
+
+        .quick-card,
+        .info-card,
+        .contact-form {
+          padding: 22px;
+        }
+
+        .contact-grid,
+        .service-grid,
+        .site-footer-main,
+        .contact-form {
+          grid-template-columns: 1fr;
+        }
+
+        .info-card,
+        .service-tile {
+          min-height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .field.full,
+        .form-submit {
+          grid-column: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="assets/mobile-overrides.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="commerce-inner">
+        <a class="wordmark" href="index.html" aria-label="Home Billiards home">
+          Home
+          <span>Billiards</span>
+        </a>
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Look for billiards, games, and lifestyle equipment"
+            aria-label="Search products"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <a class="contact-button" href="contact-us.html" aria-current="page">Contact Us</a>
+        <a class="cart-link" href="#">My Cart</a>
+      </div>
+
+      <nav class="category-nav" aria-label="Main navigation">
+        <div class="category-inner">
+          <ul class="nav-links">
+            <li><a href="pool-tables.html">Billiards</a></li>
+            <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+            <li><a href="traeger-smokers.html">BBQ</a></li>
+            <li><a href="#">Foosball</a></li>
+            <li><a href="dartboards.html">Darts</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-hero">
+        <div class="section-inner hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Contact Home Billiards</p>
+            <h1>Visit the showroom or send us your game room plans.</h1>
+            <p>
+              Talk with the team about pool tables, table tennis, BBQ, delivery,
+              installation, service, commercial spaces, or a full room plan.
+            </p>
+          </div>
+
+          <aside class="quick-card" aria-label="Quick contact details">
+            <h2>Showroom details</h2>
+            <dl>
+              <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+16043215553">(604) 321-5553</a></dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:info@homebilliards.ca">info@homebilliards.ca</a></dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>1644 SE Marine Drive, Vancouver, BC V5P 2R6</dd>
+              </div>
+            </dl>
+            <div class="contact-actions">
+              <a class="btn primary" href="tel:+16043215553">Call Now</a>
+              <a
+                class="btn"
+                href="https://www.google.com/maps/search/?api=1&query=1644+SE+Marine+Drive+Vancouver+BC+V5P+2R6"
+              >Get Directions</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-inner contact-grid" aria-label="Contact information">
+        <article class="info-card">
+          <p class="eyebrow">Visit Us</p>
+          <h2>Vancouver showroom</h2>
+          <p>
+            1644 SE Marine Drive<br />
+            Vancouver, BC, Canada<br />
+            V5P 2R6
+          </p>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Hours</p>
+          <h2>Open this week</h2>
+          <ul class="hours-list">
+            <li><span>Monday - Friday</span><strong>9am - 5pm</strong></li>
+            <li><span>Saturday</span><strong>10am - 4pm</strong></li>
+            <li><span>Sunday</span><strong>Closed</strong></li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <p class="eyebrow">Reviews</p>
+          <h2>Share your experience</h2>
+          <p>
+            One of the best ways to support a small business is to share your
+            experience with others.
+          </p>
+          <p><a href="https://www.google.com/search?q=Home+Billiards+Vancouver+review">Review us on Google</a></p>
+        </article>
+      </section>
+
+      <section class="section-inner form-section">
+        <div class="form-copy">
+          <p class="eyebrow">Contact Form</p>
+          <h2>Want us to reach out?</h2>
+          <p>
+            Send the basics and the showroom team will follow up. The current
+            response target is within 24 business hours.
+          </p>
+          <ul class="support-list">
+            <li>Product questions and availability checks</li>
+            <li>Pool table delivery, installation, moving, and recovering</li>
+            <li>Commercial game room and amenity room planning</li>
+            <li>Room dimensions, finish guidance, and quote requests</li>
+          </ul>
+        </div>
+
+        <form class="contact-form">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="first-name" autocomplete="given-name" />
+          </div>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="last-name" autocomplete="family-name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" autocomplete="tel" />
+          </div>
+          <div class="field full">
+            <label for="topic">What Can We Help With?</label>
+            <select id="topic" name="topic">
+              <option>Pool table purchase or quote</option>
+              <option>Delivery and installation</option>
+              <option>Table service, moving, or recovering</option>
+              <option>Ping pong, BBQ, darts, or games</option>
+              <option>Commercial project</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell us what you are looking for, your room size, or any timing questions."
+            ></textarea>
+          </div>
+          <div class="form-submit">
+            <p>We aim to respond to every message within 24 business hours.</p>
+            <button class="btn primary" type="submit">Send Message</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="service-band" aria-label="Popular contact reasons">
+        <div class="section-inner service-grid">
+          <article class="service-tile">
+            <p class="eyebrow">Delivery</p>
+            <h3>Install planning</h3>
+            <p>Confirm local delivery, access, stairs, timing, and placement before the table arrives.</p>
+          </article>
+          <article class="service-tile">
+            <p class="eyebrow">Service</p>
+            <h3>Table care</h3>
+            <p>Ask about recovering, moving, levelling, repairs, and game room maintenance.</p>
+          </article>
+          <article class="service-tile">
+            <p class="eyebrow">Design</p>
+            <h3>Room fit</h3>
+            <p>Share measurements and photos so the team can help with size, finish, and layout.</p>
+          </article>
+          <article class="service-tile">
+            <p class="eyebrow">Commercial</p>
+            <h3>Project support</h3>
+            <p>Plan durable equipment for offices, strata rooms, clubs, restaurants, and shared spaces.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <div class="site-footer-logo">Home<span>Billiards</span></div>
+          <p>Canada's destination for luxury game rooms, billiards, outdoor living, and commercial play spaces.</p>
+          <div class="site-footer-contact">
+            <p>1644 S.E. Marine Drive, Vancouver, BC V5P 2R6</p>
+            <p>604 321 5553</p>
+            <p>info@homebilliards.ca</p>
+          </div>
+        </div>
+        <div>
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pool Table Design Center</a></li>
+            <li><a href="#">Services We Provide</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="pool-tables.html">Billiards</a></li>
+            <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+            <li><a href="traeger-smokers.html">BBQ</a></li>
+            <li><a href="#">Foosball</a></li>
+            <li><a href="dartboards.html">Darts</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Popular Brands</h3>
+          <ul>
+            <li><a href="#">Canada Billiards</a></li>
+            <li><a href="#">Legacy Billiards</a></li>
+            <li><a href="#">Olhausen Billiards</a></li>
+            <li><a href="#">Traeger</a></li>
+            <li><a href="#">California House</a></li>
+            <li><a href="#">Predator</a></li>
+            <li><a href="#">Winmau</a></li>
+            <li><a href="#">Championship Shuffleboard</a></li>
+            <li><a href="#">Dynamo</a></li>
+            <li><a href="#">Harrow</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <div class="site-footer-bottom-inner">
+          <span>(c) 2026 Home Billiards. All rights reserved.</span>
+          <div class="site-footer-social" aria-label="Social links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector(".search-bar").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+
+      document.querySelector(".contact-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

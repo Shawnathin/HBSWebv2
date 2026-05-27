@@ -1,0 +1,243 @@
+.back-link {
+  color: var(--accent-dark);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.top-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.swatch {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.swatch img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.swatch strong {
+  display: block;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.finish-products {
+  margin-top: 16px;
+}
+
+.finish-render-products {
+  margin-top: 16px;
+}
+
+.ai-render-products {
+  margin-top: 16px;
+}
+
+.section-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+#finishRenderSelect {
+  min-width: 220px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 800;
+  padding: 10px 12px;
+}
+
+.finish-render-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.review-cell.render-card img {
+  background: #244f75;
+}
+
+.ai-render-panel {
+  display: grid;
+  grid-template-columns: minmax(170px, 1fr) minmax(170px, 1fr) minmax(220px, 1.2fr) auto auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.ai-render-panel label,
+.ai-render-panel span {
+  display: block;
+}
+
+.ai-render-panel span {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ai-render-panel select,
+.ai-render-panel input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 800;
+  padding: 10px 12px;
+}
+
+.ai-render-panel button {
+  min-height: 42px;
+  border: 1px solid var(--accent-dark);
+  border-radius: 7px;
+  background: var(--accent-dark);
+  color: #fff;
+  font-weight: 900;
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ai-render-panel button.secondary {
+  background: #fff;
+  color: var(--accent-dark);
+}
+
+.ai-render-panel button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.ai-render-status {
+  margin-top: 12px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.ai-render-result {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.ai-render-result img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #244f75;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.ai-render-result a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.ai-render-result article {
+  min-width: 0;
+}
+
+.finish-table-list {
+  display: grid;
+  gap: 18px;
+}
+
+.finish-table {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.finish-table-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 14px 0;
+}
+
+.finish-table h3 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
+.finish-table-head a {
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 14px;
+}
+
+.review-cell {
+  min-width: 0;
+}
+
+.review-cell img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #f0f3f4;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.review-cell span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.render-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 0 14px 14px;
+}
+
+@media (max-width: 900px) {
+  .review-grid,
+  .render-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-render-panel {
+    grid-template-columns: 1fr;
+  }
+}

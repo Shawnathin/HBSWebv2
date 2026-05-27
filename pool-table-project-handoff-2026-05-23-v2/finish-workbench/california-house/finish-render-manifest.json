@@ -1,0 +1,1240 @@
+{
+  "createdAt": "2026-05-23T20:04:10.977Z",
+  "tableCount": 14,
+  "finishCount": 16,
+  "root": "finish-renders",
+  "finishes": [
+    {
+      "name": "Auburn",
+      "slug": "auburn",
+      "swatchFile": "finish-swatches/auburn.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/auburn/atherton-pool-table__auburn.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/auburn/austin-pool-table__auburn.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/auburn/basecamp-pool-table__auburn.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/auburn/city-pool-table__auburn.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/auburn/cypress-pool-table__auburn.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/auburn/district-pool-table__auburn.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/auburn/highland-pool-table__auburn.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/auburn/menlo-pool-table__auburn.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/auburn/origami-pool-table__auburn.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/auburn/rincon-pool-table__auburn.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/auburn/sutter-pool-table__auburn.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/auburn/tahoe-pool-table__auburn.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/auburn/vista-pool-table__auburn.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/auburn/windansea-pool-table__auburn.png"
+        }
+      ]
+    },
+    {
+      "name": "Coastal Grey",
+      "slug": "coastal-grey",
+      "swatchFile": "finish-swatches/coastal-grey.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/coastal-grey/atherton-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/coastal-grey/austin-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/coastal-grey/basecamp-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/coastal-grey/city-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/coastal-grey/cypress-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/coastal-grey/district-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/coastal-grey/highland-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/coastal-grey/menlo-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/coastal-grey/origami-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/coastal-grey/rincon-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/coastal-grey/sutter-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/coastal-grey/tahoe-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/coastal-grey/vista-pool-table__coastal-grey.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/coastal-grey/windansea-pool-table__coastal-grey.png"
+        }
+      ]
+    },
+    {
+      "name": "Coastal Grey Glazed",
+      "slug": "coastal-grey-glazed",
+      "swatchFile": "finish-swatches/coastal-grey-glazed.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/atherton-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/austin-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/basecamp-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/city-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/cypress-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/district-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/highland-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/menlo-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/origami-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/rincon-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/sutter-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/tahoe-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/vista-pool-table__coastal-grey-glazed.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/coastal-grey-glazed/windansea-pool-table__coastal-grey-glazed.png"
+        }
+      ]
+    },
+    {
+      "name": "Dusk",
+      "slug": "dusk",
+      "swatchFile": "finish-swatches/dusk.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/dusk/atherton-pool-table__dusk.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/dusk/austin-pool-table__dusk.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/dusk/basecamp-pool-table__dusk.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/dusk/city-pool-table__dusk.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/dusk/cypress-pool-table__dusk.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/dusk/district-pool-table__dusk.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/dusk/highland-pool-table__dusk.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/dusk/menlo-pool-table__dusk.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/dusk/origami-pool-table__dusk.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/dusk/rincon-pool-table__dusk.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/dusk/sutter-pool-table__dusk.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/dusk/tahoe-pool-table__dusk.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/dusk/vista-pool-table__dusk.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/dusk/windansea-pool-table__dusk.png"
+        }
+      ]
+    },
+    {
+      "name": "Frost",
+      "slug": "frost",
+      "swatchFile": "finish-swatches/frost.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/frost/atherton-pool-table__frost.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/frost/austin-pool-table__frost.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/frost/basecamp-pool-table__frost.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/frost/city-pool-table__frost.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/frost/cypress-pool-table__frost.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/frost/district-pool-table__frost.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/frost/highland-pool-table__frost.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/frost/menlo-pool-table__frost.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/frost/origami-pool-table__frost.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/frost/rincon-pool-table__frost.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/frost/sutter-pool-table__frost.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/frost/tahoe-pool-table__frost.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/frost/vista-pool-table__frost.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/frost/windansea-pool-table__frost.png"
+        }
+      ]
+    },
+    {
+      "name": "Honey",
+      "slug": "honey",
+      "swatchFile": "finish-swatches/honey.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/honey/atherton-pool-table__honey.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/honey/austin-pool-table__honey.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/honey/basecamp-pool-table__honey.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/honey/city-pool-table__honey.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/honey/cypress-pool-table__honey.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/honey/district-pool-table__honey.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/honey/highland-pool-table__honey.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/honey/menlo-pool-table__honey.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/honey/origami-pool-table__honey.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/honey/rincon-pool-table__honey.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/honey/sutter-pool-table__honey.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/honey/tahoe-pool-table__honey.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/honey/vista-pool-table__honey.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/honey/windansea-pool-table__honey.png"
+        }
+      ]
+    },
+    {
+      "name": "Java",
+      "slug": "java",
+      "swatchFile": "finish-swatches/java.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/java/atherton-pool-table__java.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/java/austin-pool-table__java.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/java/basecamp-pool-table__java.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/java/city-pool-table__java.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/java/cypress-pool-table__java.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/java/district-pool-table__java.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/java/highland-pool-table__java.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/java/menlo-pool-table__java.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/java/origami-pool-table__java.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/java/rincon-pool-table__java.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/java/sutter-pool-table__java.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/java/tahoe-pool-table__java.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/java/vista-pool-table__java.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/java/windansea-pool-table__java.png"
+        }
+      ]
+    },
+    {
+      "name": "Sand",
+      "slug": "sand",
+      "swatchFile": "finish-swatches/sand.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/sand/atherton-pool-table__sand.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/sand/austin-pool-table__sand.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/sand/basecamp-pool-table__sand.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/sand/city-pool-table__sand.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/sand/cypress-pool-table__sand.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/sand/district-pool-table__sand.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/sand/highland-pool-table__sand.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/sand/menlo-pool-table__sand.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/sand/origami-pool-table__sand.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/sand/rincon-pool-table__sand.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/sand/sutter-pool-table__sand.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/sand/tahoe-pool-table__sand.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/sand/vista-pool-table__sand.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/sand/windansea-pool-table__sand.png"
+        }
+      ]
+    },
+    {
+      "name": "Toast",
+      "slug": "toast",
+      "swatchFile": "finish-swatches/toast.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/toast/atherton-pool-table__toast.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/toast/austin-pool-table__toast.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/toast/basecamp-pool-table__toast.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/toast/city-pool-table__toast.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/toast/cypress-pool-table__toast.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/toast/district-pool-table__toast.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/toast/highland-pool-table__toast.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/toast/menlo-pool-table__toast.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/toast/origami-pool-table__toast.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/toast/rincon-pool-table__toast.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/toast/sutter-pool-table__toast.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/toast/tahoe-pool-table__toast.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/toast/vista-pool-table__toast.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/toast/windansea-pool-table__toast.png"
+        }
+      ]
+    },
+    {
+      "name": "Rustic White Oak",
+      "slug": "rustic-white-oak",
+      "swatchFile": "finish-swatches/rustic-white-oak.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/rustic-white-oak/atherton-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/rustic-white-oak/austin-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/rustic-white-oak/basecamp-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/rustic-white-oak/city-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/rustic-white-oak/cypress-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/rustic-white-oak/district-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/rustic-white-oak/highland-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/rustic-white-oak/menlo-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/rustic-white-oak/origami-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/rustic-white-oak/rincon-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/rustic-white-oak/sutter-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/rustic-white-oak/tahoe-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/rustic-white-oak/vista-pool-table__rustic-white-oak.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/rustic-white-oak/windansea-pool-table__rustic-white-oak.png"
+        }
+      ]
+    },
+    {
+      "name": "Midnight",
+      "slug": "midnight",
+      "swatchFile": "finish-swatches/midnight.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/midnight/atherton-pool-table__midnight.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/midnight/austin-pool-table__midnight.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/midnight/basecamp-pool-table__midnight.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/midnight/city-pool-table__midnight.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/midnight/cypress-pool-table__midnight.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/midnight/district-pool-table__midnight.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/midnight/highland-pool-table__midnight.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/midnight/menlo-pool-table__midnight.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/midnight/origami-pool-table__midnight.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/midnight/rincon-pool-table__midnight.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/midnight/sutter-pool-table__midnight.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/midnight/tahoe-pool-table__midnight.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/midnight/vista-pool-table__midnight.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/midnight/windansea-pool-table__midnight.png"
+        }
+      ]
+    },
+    {
+      "name": "Truffle",
+      "slug": "truffle",
+      "swatchFile": "finish-swatches/truffle.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/truffle/atherton-pool-table__truffle.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/truffle/austin-pool-table__truffle.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/truffle/basecamp-pool-table__truffle.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/truffle/city-pool-table__truffle.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/truffle/cypress-pool-table__truffle.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/truffle/district-pool-table__truffle.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/truffle/highland-pool-table__truffle.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/truffle/menlo-pool-table__truffle.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/truffle/origami-pool-table__truffle.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/truffle/rincon-pool-table__truffle.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/truffle/sutter-pool-table__truffle.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/truffle/tahoe-pool-table__truffle.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/truffle/vista-pool-table__truffle.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/truffle/windansea-pool-table__truffle.png"
+        }
+      ]
+    },
+    {
+      "name": "Copper Oak",
+      "slug": "copper-oak",
+      "swatchFile": "finish-swatches/copper-oak.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/copper-oak/atherton-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/copper-oak/austin-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/copper-oak/basecamp-pool-table__copper-oak.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/copper-oak/city-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/copper-oak/cypress-pool-table__copper-oak.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/copper-oak/district-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/copper-oak/highland-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/copper-oak/menlo-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/copper-oak/origami-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/copper-oak/rincon-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/copper-oak/sutter-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/copper-oak/tahoe-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/copper-oak/vista-pool-table__copper-oak.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/copper-oak/windansea-pool-table__copper-oak.png"
+        }
+      ]
+    },
+    {
+      "name": "Graphite Oak",
+      "slug": "graphite-oak",
+      "swatchFile": "finish-swatches/graphite-oak.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/graphite-oak/atherton-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/graphite-oak/austin-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/graphite-oak/basecamp-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/graphite-oak/city-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/graphite-oak/cypress-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/graphite-oak/district-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/graphite-oak/highland-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/graphite-oak/menlo-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/graphite-oak/origami-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/graphite-oak/rincon-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/graphite-oak/sutter-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/graphite-oak/tahoe-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/graphite-oak/vista-pool-table__graphite-oak.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/graphite-oak/windansea-pool-table__graphite-oak.png"
+        }
+      ]
+    },
+    {
+      "name": "Honey Distressed Glazed",
+      "slug": "honey-distressed-glazed",
+      "swatchFile": "finish-swatches/honey-distressed-glazed.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/atherton-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/austin-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/basecamp-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/city-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/cypress-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/district-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/highland-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/menlo-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/origami-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/rincon-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/sutter-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/tahoe-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/vista-pool-table__honey-distressed-glazed.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/honey-distressed-glazed/windansea-pool-table__honey-distressed-glazed.png"
+        }
+      ]
+    },
+    {
+      "name": "Auburn Distressed Glazed",
+      "slug": "auburn-distressed-glazed",
+      "swatchFile": "finish-swatches/auburn-distressed-glazed.jpg",
+      "tables": [
+        {
+          "title": "Atherton Pool Table",
+          "slug": "atherton-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/atherton-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Austin Pool Table",
+          "slug": "austin-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/austin-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Basecamp Pool Table",
+          "slug": "basecamp-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/basecamp-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "City Pool Table",
+          "slug": "city-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/city-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Cypress Pool Table",
+          "slug": "cypress-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/cypress-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "District Pool Table",
+          "slug": "district-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/district-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Highland Pool Table",
+          "slug": "highland-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/highland-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Menlo Pool Table",
+          "slug": "menlo-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/menlo-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Origami Pool Table",
+          "slug": "origami-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/origami-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Rincon Pool Table",
+          "slug": "rincon-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/rincon-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Sutter Pool Table",
+          "slug": "sutter-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/sutter-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Tahoe Pool Table",
+          "slug": "tahoe-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/tahoe-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Vista Pool Table",
+          "slug": "vista-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/vista-pool-table__auburn-distressed-glazed.png"
+        },
+        {
+          "title": "Windansea Pool Table",
+          "slug": "windansea-pool-table",
+          "file": "finish-renders/auburn-distressed-glazed/windansea-pool-table__auburn-distressed-glazed.png"
+        }
+      ]
+    }
+  ]
+}

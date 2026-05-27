@@ -1,0 +1,9 @@
+{
+  "name": "hbs-product-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scraper": "node product-scraper/server.mjs"
+  }
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pool Table Image Importer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <h1>Pool Table Image Importer</h1>
+          <p>Paste your product collection URL and collect clean table images for the configurator pipeline.</p>
+        </div>
+        <button id="refreshButton" class="icon-button" title="Refresh products" aria-label="Refresh products">
+          <span aria-hidden="true">↻</span>
+        </button>
+      </section>
+
+      <section class="panel">
+        <form id="crawlForm" class="crawl-form">
+          <label>
+            Website or collection URL
+            <input id="urlInput" name="url" type="url" placeholder="https://your-site.com/collections/pool-tables" required />
+          </label>
+          <label>
+            Vendor name
+            <input id="vendorInput" name="vendor" type="text" placeholder="My Website" />
+          </label>
+          <label>
+            Page limit
+            <input id="maxPagesInput" name="maxPages" type="number" min="1" max="120" value="24" />
+          </label>
+          <button id="crawlButton" type="submit">Start Import</button>
+        </form>
+        <div id="status" class="status" role="status">Ready.</div>
+      </section>
+
+      <section class="summary-grid">
+        <div>
+          <span id="productCount">0</span>
+          <p>saved products</p>
+        </div>
+        <div>
+          <span id="runCount">0</span>
+          <p>import runs</p>
+        </div>
+        <div>
+          <span>1600 × 1000</span>
+          <p>normalized review size</p>
+        </div>
+      </section>
+
+      <section id="previewPanel" class="preview-panel" hidden>
+        <div class="preview-head">
+          <div>
+            <h2 id="previewTitle">Image Preview</h2>
+            <p id="previewMeta"></p>
+          </div>
+          <button id="closePreview" class="icon-button" title="Close preview" aria-label="Close preview">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <img id="previewImage" alt="" />
+        <div class="preview-actions">
+          <a id="previewOriginal" href="#" target="_blank" rel="noreferrer">Open original</a>
+          <a id="previewSource" href="#" target="_blank" rel="noreferrer">Open source page</a>
+        </div>
+      </section>
+
+      <section class="content">
+        <aside class="runs">
+          <h2>Recent Runs</h2>
+          <div id="runsList" class="runs-list"></div>
+        </aside>
+        <section class="products-wrap">
+          <div class="section-heading">
+            <h2>Product Images</h2>
+            <a href="/api/products" target="_blank" rel="noreferrer">Open JSON</a>
+          </div>
+          <div id="products" class="products"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

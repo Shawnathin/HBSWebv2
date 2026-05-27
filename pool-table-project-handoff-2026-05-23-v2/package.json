@@ -1,0 +1,10 @@
+{
+  "name": "pool-table-image-importer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local app for collecting pool table product images from vendor or store URLs.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

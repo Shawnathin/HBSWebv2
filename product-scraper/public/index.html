@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product Scraper</title>
+    <style>
+      :root {
+        --bg: #f6f7f2;
+        --panel: #ffffff;
+        --ink: #202124;
+        --muted: #666b73;
+        --line: #d9ded5;
+        --accent: #186a5e;
+        --accent-ink: #ffffff;
+        --warn: #8a4f13;
+        --soft: #edf3ee;
+        --shadow: 0 18px 48px rgba(35, 44, 39, 0.12);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .app-shell {
+        display: grid;
+        grid-template-columns: minmax(340px, 480px) minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        border-right: 1px solid var(--line);
+        background: var(--panel);
+        padding: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 26px;
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-size: 1.45rem;
+        line-height: 1.1;
+      }
+
+      .status-pill {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        white-space: nowrap;
+      }
+
+      form {
+        display: grid;
+        gap: 18px;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      label {
+        color: #3a3f45;
+        font-size: 0.82rem;
+        font-weight: 750;
+      }
+
+      input,
+      select {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: #fff;
+        color: var(--ink);
+        padding: 0 12px;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: var(--accent);
+        outline: 3px solid rgba(24, 106, 94, 0.14);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        gap: 12px;
+      }
+
+      .advanced {
+        display: grid;
+        gap: 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .action-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .primary-button,
+      .ghost-button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7px;
+        padding: 0 16px;
+        font-weight: 800;
+      }
+
+      .primary-button {
+        flex: 1;
+        border: 1px solid var(--accent);
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+
+      .ghost-button {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+      }
+
+      .primary-button:disabled {
+        cursor: wait;
+        opacity: 0.72;
+      }
+
+      .workspace-note {
+        margin-top: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 14px;
+      }
+
+      .workspace-note code {
+        display: block;
+        overflow-wrap: anywhere;
+        color: #1f4d43;
+        font-size: 0.86rem;
+      }
+
+      main {
+        padding: 30px;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 22px;
+      }
+
+      .metric,
+      .result-panel,
+      .product-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .metric {
+        padding: 16px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 1.55rem;
+      }
+
+      .result-panel {
+        min-height: 118px;
+        margin-bottom: 22px;
+        padding: 18px;
+      }
+
+      .result-panel h2,
+      .library h2 {
+        margin: 0 0 12px;
+        font-size: 1rem;
+      }
+
+      .result-panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .result-panel.success {
+        border-color: rgba(24, 106, 94, 0.35);
+      }
+
+      .result-panel.error {
+        border-color: rgba(138, 79, 19, 0.42);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
+      }
+
+      .product-card {
+        overflow: hidden;
+      }
+
+      .thumb-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 118px;
+        border-bottom: 1px solid var(--line);
+        background: #eef0ed;
+      }
+
+      .thumb-strip img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .thumb-strip .empty {
+        grid-column: 1 / -1;
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .product-body {
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+      }
+
+      .product-body h3 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+
+      .product-line {
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 800;
+      }
+
+      .product-body p {
+        display: -webkit-box;
+        min-height: 3.8em;
+        margin: 0;
+        overflow: hidden;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.4;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+
+      .folder {
+        overflow-wrap: anywhere;
+        color: #50565d;
+        font-family:
+          SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+        font-size: 0.78rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @media (max-width: 900px) {
+        .app-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        main {
+          padding: 22px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .sidebar {
+          padding: 22px;
+        }
+
+        .brand,
+        .action-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .form-grid,
+        .summary {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>Product Scraper</h1>
+          <span class="status-pill" id="status-pill">Ready</span>
+        </div>
+
+        <form id="scrape-form">
+          <div class="field">
+            <label for="url">Product URL</label>
+            <input id="url" name="url" type="url" placeholder="https://example.com/product" required />
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="productLine">Product line</label>
+              <input
+                id="productLine"
+                name="productLine"
+                list="product-lines"
+                placeholder="Pool Tables"
+                required
+              />
+              <datalist id="product-lines"></datalist>
+            </div>
+
+            <div class="field">
+              <label for="maxImages">Images</label>
+              <select id="maxImages" name="maxImages">
+                <option>8</option>
+                <option selected>12</option>
+                <option>18</option>
+                <option>24</option>
+                <option>36</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="advanced">
+            <div class="field">
+              <label for="productName">Product name override</label>
+              <input id="productName" name="productName" placeholder="Optional" />
+            </div>
+
+            <div class="field">
+              <label for="descriptionSelector">Description selector</label>
+              <input id="descriptionSelector" name="descriptionSelector" placeholder=".product-description" />
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-button" id="scrape-button" type="submit">Scrape Product</button>
+            <button class="ghost-button" type="button" id="refresh-button">Refresh</button>
+          </div>
+        </form>
+
+        <div class="workspace-note">
+          <code id="output-folder">scraped-products</code>
+        </div>
+      </aside>
+
+      <main>
+        <section class="summary" aria-label="Catalog summary">
+          <div class="metric">
+            <span>Products</span>
+            <strong id="product-count">0</strong>
+          </div>
+          <div class="metric">
+            <span>Lines</span>
+            <strong id="line-count">0</strong>
+          </div>
+          <div class="metric">
+            <span>Images</span>
+            <strong id="image-count">0</strong>
+          </div>
+        </section>
+
+        <section class="result-panel" id="result-panel">
+          <h2>Last Run</h2>
+          <p id="result-copy">Paste a product URL and choose a product line.</p>
+        </section>
+
+        <section class="library">
+          <h2>Saved Products</h2>
+          <div class="product-grid" id="product-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const form = document.querySelector("#scrape-form");
+      const statusPill = document.querySelector("#status-pill");
+      const resultPanel = document.querySelector("#result-panel");
+      const resultCopy = document.querySelector("#result-copy");
+      const scrapeButton = document.querySelector("#scrape-button");
+      const refreshButton = document.querySelector("#refresh-button");
+      const productGrid = document.querySelector("#product-grid");
+      const productCount = document.querySelector("#product-count");
+      const lineCount = document.querySelector("#line-count");
+      const imageCount = document.querySelector("#image-count");
+      const outputFolder = document.querySelector("#output-folder");
+      const productLines = document.querySelector("#product-lines");
+
+      function setStatus(label, mode = "") {
+        statusPill.textContent = label;
+        resultPanel.classList.remove("success", "error");
+        if (mode) resultPanel.classList.add(mode);
+      }
+
+      function productImagePath(product, image) {
+        return `/${product.folder}/${image.file}`.replaceAll("\\", "/");
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function renderCatalog(catalog) {
+        const products = catalog.products || [];
+        const lines = [...new Set(products.map((product) => product.productLine).filter(Boolean))].sort();
+        const images = products.reduce((total, product) => total + (product.images?.length || 0), 0);
+
+        productCount.textContent = products.length;
+        lineCount.textContent = lines.length;
+        imageCount.textContent = images;
+        outputFolder.textContent = catalog.outputFolder || "scraped-products";
+        productLines.innerHTML = lines.map((line) => `<option value="${line}"></option>`).join("");
+
+        productGrid.innerHTML = products
+          .map((product) => {
+            const thumbs = (product.images || [])
+              .slice(0, 3)
+              .map(
+                (image) =>
+                  `<img src="${escapeHtml(productImagePath(product, image))}" alt="${escapeHtml(
+                    image.alt || product.title
+                  )}" />`
+              )
+              .join("");
+
+            return `
+              <article class="product-card">
+                <div class="thumb-strip">
+                  ${thumbs || '<span class="empty">No images saved</span>'}
+                </div>
+                <div class="product-body">
+                  <span class="product-line">${escapeHtml(product.productLine)}</span>
+                  <h3>${escapeHtml(product.title)}</h3>
+                  <p>${escapeHtml(product.description || "No description found.")}</p>
+                  <span class="folder">${escapeHtml(product.folder)}</span>
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      async function loadCatalog() {
+        const response = await fetch("/api/products");
+        const catalog = await response.json();
+        renderCatalog(catalog);
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const payload = Object.fromEntries(new FormData(form).entries());
+
+        setStatus("Working");
+        scrapeButton.disabled = true;
+        resultCopy.textContent = "Fetching the page, saving images, and updating the catalog.";
+
+        try {
+          const response = await fetch("/api/scrape", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await response.json();
+          if (!response.ok) throw new Error(data.error || "Scrape failed.");
+
+          setStatus("Saved", "success");
+          resultCopy.textContent = `${data.product.title} saved with ${data.product.images.length} image files in ${data.product.folder}.`;
+          renderCatalog(data.catalog);
+        } catch (error) {
+          setStatus("Needs attention", "error");
+          resultCopy.textContent = error.message;
+        } finally {
+          scrapeButton.disabled = false;
+        }
+      });
+
+      refreshButton.addEventListener("click", () => {
+        setStatus("Ready");
+        loadCatalog();
+      });
+
+      loadCatalog().catch((error) => {
+        setStatus("Needs attention", "error");
+        resultCopy.textContent = error.message;
+      });
+    </script>
+  </body>
+</html>

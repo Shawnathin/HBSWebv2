@@ -1,0 +1,178 @@
+[
+  {
+    "name": "Auburn",
+    "slug": "auburn",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Auburn.jpg",
+    "file": "finish-swatches/auburn.jpg",
+    "averageColor": [
+      87,
+      67,
+      43
+    ]
+  },
+  {
+    "name": "Coastal Grey",
+    "slug": "coastal-grey",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Coastal-Grey.jpg",
+    "file": "finish-swatches/coastal-grey.jpg",
+    "averageColor": [
+      180,
+      172,
+      159
+    ]
+  },
+  {
+    "name": "Coastal Grey Glazed",
+    "slug": "coastal-grey-glazed",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Coastal-Grey-Glazed.jpg",
+    "file": "finish-swatches/coastal-grey-glazed.jpg",
+    "averageColor": [
+      127,
+      124,
+      122
+    ]
+  },
+  {
+    "name": "Dusk",
+    "slug": "dusk",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Dusk.jpg",
+    "file": "finish-swatches/dusk.jpg",
+    "averageColor": [
+      59,
+      53,
+      53
+    ]
+  },
+  {
+    "name": "Frost",
+    "slug": "frost",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Frost.jpg",
+    "file": "finish-swatches/frost.jpg",
+    "averageColor": [
+      233,
+      225,
+      214
+    ]
+  },
+  {
+    "name": "Honey",
+    "slug": "honey",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Honey.jpg",
+    "file": "finish-swatches/honey.jpg",
+    "averageColor": [
+      139,
+      110,
+      64
+    ]
+  },
+  {
+    "name": "Java",
+    "slug": "java",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Java.jpg",
+    "file": "finish-swatches/java.jpg",
+    "averageColor": [
+      70,
+      61,
+      58
+    ]
+  },
+  {
+    "name": "Sand",
+    "slug": "sand",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Sand.jpg",
+    "file": "finish-swatches/sand.jpg",
+    "averageColor": [
+      234,
+      200,
+      145
+    ]
+  },
+  {
+    "name": "Toast",
+    "slug": "toast",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Toast.jpg",
+    "file": "finish-swatches/toast.jpg",
+    "averageColor": [
+      75,
+      64,
+      57
+    ]
+  },
+  {
+    "name": "Rustic White Oak",
+    "slug": "rustic-white-oak",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Rustic-White-Oak.jpg",
+    "file": "finish-swatches/rustic-white-oak.jpg",
+    "averageColor": [
+      185,
+      160,
+      103
+    ]
+  },
+  {
+    "name": "Midnight",
+    "slug": "midnight",
+    "url": "https://californiahouse.com/wp-content/uploads/2023/10/Midnight.jpg",
+    "file": "finish-swatches/midnight.jpg",
+    "averageColor": [
+      5,
+      5,
+      13
+    ]
+  },
+  {
+    "name": "Truffle",
+    "slug": "truffle",
+    "url": "https://californiahouse.com/wp-content/uploads/2026/03/Truffle.jpg",
+    "file": "finish-swatches/truffle.jpg",
+    "averageColor": [
+      74,
+      50,
+      37
+    ]
+  },
+  {
+    "name": "Copper Oak",
+    "slug": "copper-oak",
+    "url": "https://californiahouse.com/wp-content/uploads/2024/10/Copper-Oak.jpg",
+    "file": "finish-swatches/copper-oak.jpg",
+    "averageColor": [
+      117,
+      76,
+      31
+    ]
+  },
+  {
+    "name": "Graphite Oak",
+    "slug": "graphite-oak",
+    "url": "https://californiahouse.com/wp-content/uploads/2024/10/Graphite-Oak.jpg",
+    "file": "finish-swatches/graphite-oak.jpg",
+    "averageColor": [
+      78,
+      63,
+      52
+    ]
+  },
+  {
+    "name": "Honey Distressed Glazed",
+    "slug": "honey-distressed-glazed",
+    "url": "https://californiahouse.com/wp-content/uploads/2024/10/Honey-Distressed-Glazed.jpg",
+    "file": "finish-swatches/honey-distressed-glazed.jpg",
+    "averageColor": [
+      153,
+      121,
+      81
+    ]
+  },
+  {
+    "name": "Auburn Distressed Glazed",
+    "slug": "auburn-distressed-glazed",
+    "url": "https://californiahouse.com/wp-content/uploads/2024/10/Auburn-Distressed-Glazed.jpg",
+    "file": "finish-swatches/auburn-distressed-glazed.jpg",
+    "averageColor": [
+      76,
+      48,
+      27
+    ]
+  }
+]

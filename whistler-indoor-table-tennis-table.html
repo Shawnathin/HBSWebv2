@@ -1,0 +1,2352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Whistler Indoor Table Tennis Table | Home Billiards</title>
+    <style>
+      :root {
+        --ink: #171717;
+        --muted: #626262;
+        --paper: #f7f4ef;
+        --warm: #efe8dc;
+        --line: rgba(0, 0, 0, 0.12);
+        --hairline: rgba(0, 0, 0, 0.1);
+        --white: #fff;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(18px);
+      }
+
+      .commerce-inner,
+      .category-inner,
+      .section-inner {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding-inline: 22px;
+      }
+
+      .commerce-inner {
+        display: grid;
+        grid-template-columns: minmax(190px, 1fr) minmax(660px, 720px) auto minmax(118px, 1fr);
+        gap: 14px;
+        align-items: center;
+        justify-content: stretch;
+        padding-block: 16px;
+      }
+
+      .wordmark {
+        min-width: 190px;
+        color: #555a6c;
+        font-size: 1.72rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .wordmark span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.9rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .search-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 42px;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+      }
+
+      .search-bar input {
+        min-width: 0;
+        border: 0;
+        padding: 0 16px;
+        color: var(--ink);
+      }
+
+      .search-bar input:focus {
+        outline: 2px solid rgba(45, 48, 58, 0.22);
+        outline-offset: -2px;
+      }
+
+      .search-bar button {
+        border: 0;
+        border-left: 1px solid rgba(45, 48, 58, 0.16);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 16px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .contact-button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(45, 48, 58, 0.22);
+        background: #fff;
+        color: #555a6c;
+        padding: 0 22px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .contact-button:hover {
+        border-color: rgba(45, 48, 58, 0.44);
+        color: #2d303a;
+      }
+
+      .cart-link {
+        display: inline-flex;
+        min-width: 118px;
+        justify-content: flex-end;
+        color: #2d303a;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .category-nav {
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      .category-inner {
+        display: flex;
+        min-height: 46px;
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-flex;
+        height: 46px;
+        align-items: center;
+        padding: 0 18px;
+        color: #353844;
+        font-size: 0.88rem;
+        font-weight: 720;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-item {
+        position: static;
+      }
+
+      .nav-item > a {
+        position: relative;
+      }
+
+      .nav-item > a::after {
+        content: "";
+        position: absolute;
+        right: 18px;
+        bottom: 0;
+        left: 18px;
+        height: 3px;
+        background: #171717;
+        opacity: 0;
+        transform: scaleX(0.65);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover > a::after,
+      .nav-item:focus-within > a::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+
+      .mega-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 65;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+        background: #fff;
+        box-shadow: 0 22px 36px rgba(0, 0, 0, 0.12);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px);
+        transition: opacity 160ms ease, transform 160ms ease;
+      }
+
+      .nav-item:hover .mega-menu,
+      .nav-item:focus-within .mega-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mega-inner {
+        display: grid;
+        width: min(100%, 1480px);
+        margin: 0 auto;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 44px;
+        padding: 34px 20px 38px;
+      }
+
+      .mega-title {
+        display: inline-flex;
+        color: #30323a;
+        font-size: 1.65rem;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 28px;
+      }
+
+      .mega-group h3 {
+        margin: 0;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.26);
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .mega-group h3 a {
+        color: #30323a;
+        font-size: inherit;
+        font-weight: 820;
+        text-decoration: none;
+      }
+
+      .mega-group ul {
+        display: grid;
+        gap: 10px;
+        margin: 13px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .mega-group a {
+        color: #555;
+        font-size: 0.95rem;
+        font-weight: 520;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature {
+        align-self: start;
+        background: #f5f1eb;
+      }
+
+      .mega-feature img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1.45 / 1;
+        object-fit: contain;
+        padding: 14px;
+      }
+
+      .mega-feature-body {
+        display: grid;
+        gap: 10px;
+        padding: 18px;
+      }
+
+      .mega-feature-body a {
+        color: #30323a;
+        font-weight: 800;
+        line-height: 1.35;
+        text-decoration: none;
+      }
+
+      .mega-feature-body span {
+        color: #666;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .home-hero {
+        position: relative;
+        min-height: calc(100vh - 114px);
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.74) 38%, rgba(255, 255, 255, 0.08) 100%),
+          url("assets/pool-table-room-hero.webp") center / cover no-repeat;
+      }
+
+      .hero-inner {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding: 88px 22px 76px;
+      }
+
+      .eyebrow {
+        color: #747474;
+        font-size: 0.72rem;
+        font-weight: 820;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin-top: 14px;
+        font-size: clamp(3.6rem, 8vw, 7.8rem);
+        line-height: 0.88;
+        letter-spacing: -0.045em;
+      }
+
+      .lead {
+        max-width: 690px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        padding: 0 18px;
+        color: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 820;
+        text-decoration: none;
+        transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .btn:hover {
+        border-color: #000;
+      }
+
+      .btn.primary {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .btn.primary:hover {
+        background: #262626;
+      }
+
+      .hero-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        border-top: 1px solid rgba(0, 0, 0, 0.14);
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(16px);
+      }
+
+      .hero-stat {
+        min-height: 88px;
+        border-right: 1px solid var(--line);
+        padding: 18px 22px;
+      }
+
+      .hero-stat:last-child {
+        border-right: 0;
+      }
+
+      .hero-stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 1.05rem;
+      }
+
+      .section {
+        border-top: 1px solid var(--line);
+        padding: 58px 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .section-head h2 {
+        max-width: 720px;
+        margin-top: 8px;
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.96;
+        letter-spacing: -0.035em;
+      }
+
+      .department-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .department-card {
+        min-height: 280px;
+        display: grid;
+        align-content: end;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 22px;
+        text-decoration: none;
+        background: #fff;
+        transition: background 160ms ease, transform 160ms ease;
+      }
+
+      .department-card:hover {
+        background: var(--paper);
+        transform: translateY(-2px);
+      }
+
+      .department-card h3 {
+        font-size: 1.35rem;
+      }
+
+      .department-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .feature-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .feature-media {
+        display: grid;
+        min-height: 520px;
+        place-items: center;
+        background: linear-gradient(180deg, #f5efe6 0%, #ebe2d5 100%);
+        padding: 34px;
+      }
+
+      .feature-media img {
+        width: 100%;
+        max-height: 440px;
+        object-fit: contain;
+      }
+
+      .feature-copy {
+        display: grid;
+        align-content: center;
+        border: 1px solid var(--line);
+        padding: 34px;
+      }
+
+      .feature-copy h2 {
+        margin-top: 8px;
+        font-size: clamp(2.2rem, 4vw, 4.4rem);
+        line-height: 0.94;
+        letter-spacing: -0.035em;
+      }
+
+      .feature-facts {
+        display: grid;
+        gap: 10px;
+        margin: 24px 0;
+      }
+
+      .feature-facts div {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 10px;
+        color: var(--muted);
+      }
+
+      .feature-facts strong {
+        color: var(--ink);
+      }
+
+      .product-row {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .product-tile {
+        border: 1px solid var(--line);
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .product-tile-media {
+        display: grid;
+        min-height: 220px;
+        place-items: center;
+        background: var(--paper);
+        padding: 18px;
+      }
+
+      .product-tile-media img {
+        width: 100%;
+        max-height: 190px;
+        object-fit: contain;
+      }
+
+      .product-tile-body {
+        border-top: 1px solid var(--line);
+        padding: 16px;
+      }
+
+      .product-tile h3 {
+        margin-top: 6px;
+        font-size: 1rem;
+      }
+
+      .product-tile p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .studio-band {
+        background: #171717;
+        color: #fff;
+      }
+
+      .studio-band .section-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .studio-band .eyebrow,
+      .studio-band .lead {
+        color: rgba(255, 255, 255, 0.68);
+      }
+
+      .studio-band h2 {
+        max-width: 780px;
+        margin-top: 8px;
+        font-size: clamp(2.4rem, 5vw, 5rem);
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+      }
+
+      .studio-band .btn {
+        border-color: #fff;
+      }
+
+      @media (max-width: 1100px) {
+        .department-grid,
+        .product-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .feature-layout,
+        .studio-band .section-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 1180px) {
+        .commerce-inner {
+          grid-template-columns: auto 1fr auto;
+          justify-content: stretch;
+        }
+
+        .search-bar {
+          grid-column: 1 / -1;
+          order: 4;
+        }
+      }
+
+      @media (max-width: 900px) {
+
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .commerce-inner {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .search-bar {
+          order: initial;
+        }
+
+        .contact-button,
+        .cart-link {
+          justify-content: flex-start;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+          overflow-x: auto;
+        }
+
+        .mega-menu {
+          display: none;
+        }
+
+        .home-hero {
+          min-height: auto;
+          background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.72)),
+            url("assets/pool-table-room-hero.webp") center / cover no-repeat;
+        }
+
+        .hero-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+
+        .commerce-inner,
+        .category-inner,
+        .section-inner,
+        .hero-inner {
+          padding-inline: 16px;
+        }
+
+        .department-grid,
+        .product-row,
+        .hero-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-stat {
+          border-right: 0;
+        }
+
+        .section-head {
+          display: grid;
+        }
+      }
+
+      .nav-item.has-mega > a::before {
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: -12px;
+        left: 12px;
+        height: 16px;
+      }
+
+      .mega-inner.menu-only {
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+        padding-bottom: 54px;
+      }
+
+      .mega-link-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px 34px;
+      }
+
+      .mega-link-grid a {
+        display: block;
+        border-bottom: 1px solid rgba(45, 48, 58, 0.28);
+        padding: 0 0 14px;
+        color: #30323a;
+        font-size: 1.04rem;
+        font-weight: 820;
+        line-height: 1.25;
+        text-decoration: none;
+      }
+
+      .mega-link-grid a:hover,
+      .mega-link-grid a:focus-visible,
+      .mega-group a:hover,
+      .mega-feature-body a:hover {
+        color: #111;
+        border-color: #171717;
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: #222321;
+        color: #f7f4ef;
+      }
+
+      .site-footer-main {
+        display: grid;
+        width: min(100%, 1520px);
+        grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+        gap: 42px;
+        margin: 0 auto;
+        padding: 52px 22px 46px;
+      }
+
+      .site-footer-brand {
+        max-width: 390px;
+      }
+
+      .site-footer-logo {
+        color: #fff;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .site-footer-logo span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.88rem;
+        font-weight: 650;
+        letter-spacing: 0.34em;
+      }
+
+      .site-footer-main h3 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .site-footer-main p,
+      .site-footer-main a {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.9rem;
+        line-height: 1.55;
+        text-decoration: none;
+      }
+
+      .site-footer-main a:hover {
+        color: #fff;
+      }
+
+      .site-footer-main ul {
+        display: grid;
+        gap: 7px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .site-footer-contact {
+        display: grid;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .site-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      .site-footer-bottom-inner {
+        display: flex;
+        width: min(100%, 1520px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 auto;
+        padding: 16px 22px;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.82rem;
+      }
+
+      .site-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .site-footer-social a {
+        color: rgba(255, 255, 255, 0.72);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+
+      /* site chrome responsive refinements */
+      @media (max-width: 900px) {
+        .mega-link-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .mega-link-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .site-footer-main {
+          grid-template-columns: 1fr;
+          padding-inline: 16px;
+        }
+
+        .site-footer-bottom-inner {
+          padding-inline: 16px;
+        }
+      }
+
+    
+      .product-page {
+        width: min(100%, 1520px);
+        margin: 0 auto;
+        padding: 28px 22px 92px;
+      }
+
+      .breadcrumbs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: #777;
+        font-size: 0.84rem;
+        margin-bottom: 22px;
+      }
+
+      .breadcrumbs a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        display: grid;
+        grid-template-columns: minmax(0, 1.38fr) minmax(430px, 0.62fr);
+        gap: 44px;
+        isolation: isolate;
+        min-height: 560px;
+      }
+
+      .preview-column {
+        position: sticky;
+        top: 132px;
+        align-self: start;
+      }
+
+      .preview-card {
+        display: grid;
+        grid-template-columns: 74px minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .gallery-rail {
+        display: grid;
+        align-content: start;
+        gap: 12px;
+        max-height: calc(100vh - 150px);
+        overflow: auto;
+        scrollbar-width: none;
+      }
+
+      .gallery-thumb {
+        display: grid;
+        width: 74px;
+        min-height: 74px;
+        place-items: center;
+        border: 1px solid transparent;
+        background: #fff;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .gallery-thumb.active {
+        border-color: #171717;
+      }
+
+      .gallery-thumb img {
+        display: block;
+        width: 100%;
+        height: 74px;
+        object-fit: contain;
+      }
+
+      .preview-stage {
+        position: relative;
+        display: grid;
+        min-height: clamp(420px, 43vw, 600px);
+        place-items: center;
+        overflow: hidden;
+        background: #fff;
+        padding: clamp(24px, 4vw, 46px);
+      }
+
+      .config-column {
+        position: relative;
+        z-index: 1;
+        min-width: 0;
+        min-height: 0;
+        align-self: start;
+        border: 1px solid rgba(34, 34, 34, 0.1);
+        background: rgba(255, 255, 255, 0.74);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.85) inset,
+          0 24px 70px rgba(17, 17, 17, 0.06);
+        padding: 24px;
+        backdrop-filter: blur(18px);
+      }
+
+      .media-badges {
+        position: absolute;
+        top: 18px;
+        left: 18px;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .media-badges span {
+        background: rgba(255, 255, 255, 0.84);
+        padding: 7px 10px;
+        color: #333;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .product-photo {
+        display: block;
+        width: 100%;
+        max-height: 520px;
+        object-fit: contain;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 32px;
+        box-shadow: 0 2px 10px rgba(15, 15, 15, 0.04);
+      }
+
+      .product-panel {
+        min-width: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .intro {
+        border-bottom: 1px solid var(--hairline);
+        padding: 8px 0 20px;
+      }
+
+      .intro-copy {
+        max-width: 720px;
+      }
+
+      .intro h1 {
+        margin-top: 8px;
+        max-width: 760px;
+        font-size: clamp(2.25rem, 4vw, 3.25rem);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .product-description {
+        max-width: 700px;
+        margin-top: 14px;
+        color: #626262;
+        font-size: clamp(0.9rem, 1.1vw, 0.98rem);
+        line-height: 1.6;
+      }
+
+      .product-facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        margin-top: 18px;
+        color: #626262;
+        font-size: 0.9rem;
+      }
+
+      .accordion-flow {
+        display: grid;
+        gap: 0;
+        margin-top: 24px;
+        border-top: 1px solid var(--hairline);
+      }
+
+      .accordion-step {
+        border-bottom: 1px solid var(--hairline);
+        background: transparent;
+      }
+
+      .accordion-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto 32px;
+        width: 100%;
+        align-items: center;
+        gap: 18px;
+        border: 0;
+        background: transparent;
+        padding: 22px 0;
+        color: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .accordion-title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px 12px;
+      }
+
+      .accordion-head h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.2;
+      }
+
+      .accordion-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      .accordion-count {
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+        text-align: right;
+      }
+
+      .accordion-toggle {
+        color: #171717;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .accordion-body {
+        padding: 0 0 28px;
+      }
+
+      .colour-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .colour-choice,
+      .addon-choice {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.84);
+        color: var(--ink);
+        padding: 18px;
+        text-align: left;
+        cursor: pointer;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+        transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      }
+
+      .colour-choice:hover,
+      .addon-choice:hover {
+        border-color: rgba(0, 0, 0, 0.32);
+        box-shadow: 0 14px 34px rgba(15, 15, 15, 0.07);
+        transform: translateY(-2px);
+      }
+
+      .colour-choice.selected,
+      .addon-choice.selected {
+        border-color: rgba(23, 23, 23, 0.5);
+        outline: 0;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow:
+          0 16px 38px rgba(15, 15, 15, 0.07),
+          inset 0 3px 0 #171717;
+      }
+
+      .choice-head,
+      .addon-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .swatch-block {
+        display: block;
+        height: 88px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        background: var(--swatch);
+        box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.18);
+      }
+
+      .choice-head h4,
+      .addon-choice h4 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .body {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.45;
+      }
+
+      .check-circle {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        border-radius: 999px;
+        color: #171717;
+        font-weight: 900;
+      }
+
+      .selected .check-circle {
+        border-color: #171717;
+        background: #171717;
+        color: #fff;
+      }
+
+      .addon-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .addon-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+      }
+
+      .build-summary {
+        margin-top: 14px;
+        border-color: rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.68);
+        box-shadow: 0 18px 56px rgba(15, 15, 15, 0.04);
+        padding: 18px;
+      }
+
+      .build-summary h3 {
+        font-size: 1.25rem;
+      }
+
+      .build-summary-grid {
+        display: grid;
+        gap: 7px;
+        margin-top: 14px;
+      }
+
+      .build-item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 9px 11px;
+      }
+
+      .build-item h4 {
+        margin: 0;
+        color: #666;
+        font-size: 0.72rem;
+        font-weight: 820;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .build-item p {
+        margin: 0;
+        color: #171717;
+        font-size: 0.9rem;
+        font-weight: 820;
+        text-align: right;
+      }
+
+      .product-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.06fr) minmax(440px, 0.94fr);
+        gap: 44px;
+        align-items: start;
+      }
+
+      .gallery {
+        display: grid;
+        position: sticky;
+        top: 132px;
+        grid-template-columns: 74px minmax(0, 1fr);
+        gap: 16px;
+        align-self: start;
+      }
+
+      .thumbnail-stack {
+        display: grid;
+        align-content: start;
+        gap: 10px;
+        max-height: calc(100vh - 160px);
+        overflow: auto;
+        scrollbar-width: none;
+      }
+
+      .thumbnail-stack button {
+        min-height: 74px;
+        border: 1px solid transparent;
+        background: #f3eee8;
+        padding: 0;
+        cursor: pointer;
+      }
+
+      .thumbnail-stack button.active {
+        border-color: #171717;
+        box-shadow: none;
+      }
+
+      .thumbnail-stack img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
+
+      .main-image {
+        display: grid;
+        min-height: clamp(460px, 45vw, 620px);
+        place-items: center;
+        border: 0;
+        background: #fff;
+        padding: clamp(28px, 5vw, 54px);
+      }
+
+      .main-image img {
+        width: 100%;
+        max-height: 560px;
+        object-fit: contain;
+      }
+
+      .product-summary {
+        position: sticky;
+        top: 132px;
+        display: grid;
+        gap: 22px;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 28px;
+      }
+
+      .product-summary h1 {
+        margin-top: 10px;
+        font-size: clamp(2.7rem, 5vw, 4.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .product-description {
+        max-width: 66ch;
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+
+      .review-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .review-row span {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px 12px;
+        color: #252525;
+        font-size: 0.78rem;
+        font-weight: 780;
+        line-height: 1.25;
+      }
+
+      .price-main {
+        font-size: clamp(1.65rem, 3vw, 2.2rem);
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .option-panel {
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .option-panel h3 {
+        margin: 0 0 12px;
+        font-size: 1rem;
+      }
+
+      .colour-options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .colour-option {
+        display: flex;
+        min-height: 48px;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 12px;
+        text-align: left;
+        font-weight: 760;
+        cursor: pointer;
+      }
+
+      .colour-option.active {
+        border-color: #171717;
+        box-shadow: inset 0 0 0 1px #171717;
+      }
+
+      .colour-dot {
+        display: block;
+        width: 18px;
+        height: 18px;
+        background: var(--dot);
+      }
+
+      .purchase-panel {
+        display: grid;
+        gap: 16px;
+        border-top: 1px solid var(--hairline);
+        padding-top: 18px;
+      }
+
+      .included-box {
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.78);
+        padding: 16px 18px;
+      }
+
+      .included-box h3 {
+        font-size: 1rem;
+      }
+
+      .included-list {
+        display: grid;
+        gap: 5px;
+        margin: 12px 0 0;
+        padding: 0;
+        color: #2b2b2b;
+        font-size: 0.88rem;
+        line-height: 1.45;
+        list-style: none;
+      }
+
+      .included-list li {
+        display: grid;
+        grid-template-columns: 18px minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .included-list li::before {
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .purchase-actions {
+        display: grid;
+        grid-template-columns: minmax(118px, 0.45fr) minmax(0, 1fr);
+        gap: 14px;
+        align-items: end;
+        min-width: 0;
+      }
+
+      .price-wrap {
+        display: grid;
+        gap: 6px;
+      }
+
+      .action-stack {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .action-stack .btn {
+        width: 100%;
+        min-height: 50px;
+        padding-inline: 16px;
+        line-height: 1.12;
+      }
+
+      .product-details {
+        display: grid;
+        gap: 0;
+        margin-top: 58px;
+        border-top: 1px solid var(--line);
+      }
+
+      .detail-section {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 34px;
+        border-bottom: 1px solid var(--line);
+        padding: 28px 0;
+      }
+
+      .detail-section h2 {
+        font-size: 1.1rem;
+      }
+
+      .detail-section p,
+      .detail-section li {
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .detail-section ul {
+        display: grid;
+        gap: 8px;
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .related-section {
+        margin-top: 70px;
+      }
+
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .mini-card {
+        border: 1px solid var(--line);
+        padding: 16px;
+        color: var(--ink);
+        text-decoration: none;
+      }
+
+      .mini-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 0.78;
+        object-fit: contain;
+        background: #fbfaf8;
+      }
+
+      .mini-card h3 {
+        margin: 12px 0 4px;
+        font-size: 1rem;
+      }
+
+      @media (max-width: 980px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+
+        .preview-column {
+          position: static;
+        }
+
+        .product-layout,
+        .detail-section {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          position: static;
+        }
+
+        .product-summary {
+          position: static;
+        }
+
+        .config-column {
+          padding: 22px;
+        }
+
+        .related-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .product-page {
+          padding-inline: 16px;
+        }
+
+        .preview-card {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-rail {
+          display: flex;
+          overflow-x: auto;
+          max-height: none;
+        }
+
+        .panel {
+          padding: 22px;
+        }
+
+        .product-panel {
+          padding: 0;
+        }
+
+        .config-column {
+          padding: 18px;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .product-summary {
+          padding: 22px;
+        }
+
+        .review-row,
+        .colour-options,
+        .colour-choice-grid,
+        .purchase-actions,
+        .action-stack {
+          grid-template-columns: 1fr;
+        }
+
+        .accordion-head {
+          grid-template-columns: 1fr auto;
+          gap: 10px;
+        }
+
+        .accordion-count {
+          grid-column: 1;
+          grid-row: 2;
+          text-align: left;
+        }
+
+        .accordion-toggle {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+        }
+
+        .addon-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .addon-actions {
+          justify-content: space-between;
+        }
+
+        .thumbnail-stack {
+          grid-template-columns: repeat(5, 1fr);
+          order: 2;
+          max-height: none;
+        }
+
+        .main-image {
+          min-height: 360px;
+        }
+
+        .related-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+    </style>
+    <link rel="stylesheet" href="assets/mobile-overrides.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="commerce-inner">
+        <a class="wordmark" href="index.html" aria-label="Home Billiards home">
+          Home
+          <span>Billiards</span>
+        </a>
+        <form class="search-bar" role="search">
+          <input
+            type="search"
+            placeholder="Look for billiards, games, and lifestyle equipment"
+            aria-label="Search products"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <a class="contact-button" href="contact-us.html">Contact Us</a>
+        <a class="cart-link" href="#">My Cart</a>
+      </div>
+
+      <nav class="category-nav" aria-label="Main navigation">
+        <div class="category-inner">
+          <ul class="nav-links">
+            <li class="nav-item has-mega">
+              <a href="pool-tables.html">Billiards</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="pool-tables.html">All Billiards</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="pool-tables.html">Pool Tables</a></h3>
+                        <ul>
+                          <li><a href="pool-tables.html">In-Stock Pool Tables</a></li>
+                          <li><a href="#">Canada Billiards</a></li>
+                          <li><a href="#">California House</a></li>
+                          <li><a href="#">Olhausen Billiards</a></li>
+                          <li><a href="#">Legacy Billiards</a></li>
+                          <li><a href="#">Custom Pool Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Table Essentials</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Felt</a></li>
+                          <li><a href="#">Pool Table Covers</a></li>
+                          <li><a href="#">Pool Table Lights</a></li>
+                          <li><a href="#">Dining Tops</a></li>
+                          <li><a href="#">Benches and Storage</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Cues and Play</h3>
+                        <ul>
+                          <li><a href="cues.html">Pool Cues</a></li>
+                          <li><a href="#">Pool Cue Cases</a></li>
+                          <li><a href="#">Balls</a></li>
+                          <li><a href="#">Pool Cue Racks &amp; Holders</a></li>
+                          <li><a href="#">Billiard Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Help and Services</h3>
+                        <ul>
+                          <li><a href="#">Pool Table Design Center</a></li>
+                          <li><a href="#">Room Size Guide</a></li>
+                          <li><a href="#">Delivery and Installation</a></li>
+                          <li><a href="#">Moving and Recovering</a></li>
+                          <li><a href="#">Commercial Projects</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="assets/california-house-austin-renders/truffle.png" alt="California House Austin pool table" />
+                    <div class="mega-feature-body">
+                      <a href="austin-pool-table.html">Build a luxury pool table</a>
+                      <span>Choose size, finish, cloth, and room upgrades.</span>
+                      <a href="pool-tables.html">View sale and in-stock tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="ping-pong-tables.html">Ping Pong</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="ping-pong-tables.html">All Ping Pong</a>
+                    <div class="mega-grid">
+                      <section class="mega-group">
+                        <h3><a href="ping-pong-tables.html">Ping Pong Tables</a></h3>
+                        <ul>
+                          <li><a href="ping-pong-tables.html">Indoor Tables</a></li>
+                          <li><a href="#">Outdoor Tables</a></li>
+                          <li><a href="#">Competition Tables</a></li>
+                          <li><a href="#">Foldable Tables</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Play Gear</h3>
+                        <ul>
+                          <li><a href="#">Ping Pong Paddles</a></li>
+                          <li><a href="#">Ping Pong Balls</a></li>
+                          <li><a href="#">Nets &amp; Posts</a></li>
+                          <li><a href="#">Ping Pong Robots</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Accessories</h3>
+                        <ul>
+                          <li><a href="#">Table Covers</a></li>
+                          <li><a href="#">Replacement Nets</a></li>
+                          <li><a href="#">Storage and Care</a></li>
+                          <li><a href="#">Training Accessories</a></li>
+                        </ul>
+                      </section>
+                      <section class="mega-group">
+                        <h3>Shop by Need</h3>
+                        <ul>
+                          <li><a href="#">Family Play</a></li>
+                          <li><a href="#">Club Practice</a></li>
+                          <li><a href="#">Commercial Use</a></li>
+                          <li><a href="#">Made in Germany</a></li>
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature">
+                    <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" alt="Whistler indoor table tennis table" />
+                    <div class="mega-feature-body">
+                      <a href="whistler-indoor-table-tennis-table.html">Whistler Indoor Table Tennis Table</a>
+                      <span>Competition-quality indoor table with playback position.</span>
+                      <a href="ping-pong-tables.html">Shop ping pong tables</a>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="traeger-smokers.html">BBQ</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="traeger-smokers.html">All BBQ</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Grills and Smokers</h3><ul><li><a href="traeger-smokers.html">Traeger Smokers</a></li><li><a href="#">Pellet Grills</a></li><li><a href="#">Pizza Ovens</a></li><li><a href="#">Portable Grills</a></li></ul></section>
+                      <section class="mega-group"><h3>Fuel and Flavour</h3><ul><li><a href="#">Wood Pellets</a></li><li><a href="#">Sauces &amp; Spices</a></li><li><a href="#">Rubs</a></li><li><a href="#">Cooking Pellets</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Traeger Grill Covers</a></li><li><a href="#">Grill Tools</a></li><li><a href="#">Thermometers</a></li><li><a href="#">Cleaning Supplies</a></li></ul></section>
+                      <section class="mega-group"><h3>Outdoor Living</h3><ul><li><a href="#">Backyard Cooking</a></li><li><a href="#">Entertaining Essentials</a></li><li><a href="#">Gifts for Grillers</a></li><li><a href="#">Sale BBQ</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="traeger-smokers.html">Build the backyard setup</a><span>Smokers, pellets, covers, tools, and outdoor cooking accessories.</span><a href="traeger-smokers.html">Shop BBQ essentials</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Foosball</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Foosball</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Tables</h3><ul><li><a href="#">Foosball Tables</a></li><li><a href="#">Home Tables</a></li><li><a href="#">Commercial Tables</a></li><li><a href="#">Coin-Operated Tables</a></li></ul></section>
+                      <section class="mega-group"><h3>Accessories</h3><ul><li><a href="#">Foosball Balls</a></li><li><a href="#">Replacement Men</a></li><li><a href="#">Handles and Rods</a></li><li><a href="#">Table Covers</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Brand</h3><ul><li><a href="#">Legacy Billiards</a></li><li><a href="#">Dynamo</a></li><li><a href="#">Commercial Grade</a></li><li><a href="#">View All</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Home vs Commercial</a></li><li><a href="#">Delivery Options</a></li><li><a href="#">Parts and Service</a></li><li><a href="#">Sale Foosball</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Game room staples</a><span>Durable tables and parts for home rec rooms and commercial spaces.</span><a href="#">Shop foosball</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="dartboards.html">Darts</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="dartboards.html">All Darts</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Boards and Cabinets</h3><ul><li><a href="dartboards.html">Dartboards</a></li><li><a href="#">Dart Board Cabinets</a></li><li><a href="#">Surrounds</a></li><li><a href="#">Scoreboards</a></li></ul></section>
+                      <section class="mega-group"><h3>Darts</h3><ul><li><a href="#">Steel Tip Darts</a></li><li><a href="#">Soft Tip Darts</a></li><li><a href="#">Winmau</a></li><li><a href="#">Beginner Sets</a></li></ul></section>
+                      <section class="mega-group"><h3>Parts</h3><ul><li><a href="#">Dart Flights</a></li><li><a href="#">Dart Shafts</a></li><li><a href="#">Dart Cases &amp; Wallets</a></li><li><a href="#">Dart Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Shop by Need</h3><ul><li><a href="#">Home Setup</a></li><li><a href="#">League Play</a></li><li><a href="#">Gifts</a></li><li><a href="#">Sale Darts</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="dartboards.html">Set up a proper dart wall</a><span>Boards, cabinets, lighting, darts, flights, shafts, and cases.</span><a href="dartboards.html">Shop dart gear</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Games</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Games</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Game Tables</h3><ul><li><a href="#">Air Hockey Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Poker Tables</a></li><li><a href="#">Game Table Accessories</a></li></ul></section>
+                      <section class="mega-group"><h3>Table Games</h3><ul><li><a href="#">Poker Chips</a></li><li><a href="#">Cards</a></li><li><a href="#">Dice</a></li><li><a href="#">Board Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Rec Room</h3><ul><li><a href="#">Sports</a></li><li><a href="#">Misc. Games</a></li><li><a href="#">Family Games</a></li><li><a href="#">Party Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Help</h3><ul><li><a href="#">Room Planning</a></li><li><a href="#">Gift Ideas</a></li><li><a href="#">Commercial Game Rooms</a></li><li><a href="#">Sale Games</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Round out the room</a><span>Shuffleboard, air hockey, poker, games, cards, dice, and accessories.</span><a href="#">Shop games</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item has-mega">
+              <a href="#">Commercial</a>
+              <div class="mega-menu">
+                <div class="mega-inner">
+                  <div>
+                    <a class="mega-title" href="#">All Commercial</a>
+                    <div class="mega-grid">
+                      <section class="mega-group"><h3>Coin-Operated</h3><ul><li><a href="#">Coin-Operated Pool Tables</a></li><li><a href="#">Coin-Operated Foosball Tables</a></li><li><a href="#">Coin-Operated Jet-Pong</a></li><li><a href="#">Parts and Service</a></li></ul></section>
+                      <section class="mega-group"><h3>Venue Games</h3><ul><li><a href="#">Commercial Air Hockey Tables</a></li><li><a href="#">Commercial Pool Tables</a></li><li><a href="#">Shuffleboard Tables</a></li><li><a href="#">Arcade-Ready Games</a></li></ul></section>
+                      <section class="mega-group"><h3>Projects</h3><ul><li><a href="#">Bars and Restaurants</a></li><li><a href="#">Offices</a></li><li><a href="#">Strata and Amenity Rooms</a></li><li><a href="#">Schools and Clubs</a></li></ul></section>
+                      <section class="mega-group"><h3>Support</h3><ul><li><a href="#">Bulk Quotes</a></li><li><a href="#">Delivery Planning</a></li><li><a href="#">Installation</a></li><li><a href="#">Maintenance</a></li></ul></section>
+                    </div>
+                  </div>
+                  <aside class="mega-feature"><div class="mega-feature-body"><a href="#">Commercial game room support</a><span>Durable tables, venue-ready games, delivery planning, and service.</span><a href="#">Start a commercial quote</a></div></aside>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#">New Arrivals</a></li>
+            <li class="nav-item"><a href="#">Sale</a></li>
+            <li class="nav-item"><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="product-page">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span>/</span>
+        <a href="ping-pong-tables.html">Ping Pong Tables</a><span>/</span>
+        <span>Whistler Indoor Table Tennis Table</span>
+      </nav>
+
+      <section class="page">
+        <aside class="preview-column">
+          <div class="preview-card">
+            <div class="gallery-rail" aria-label="Product gallery thumbnails">
+              <button class="gallery-thumb active" type="button" data-image="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" aria-label="View product image 1">
+                <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg" alt="" />
+              </button>
+              <button class="gallery-thumb" type="button" data-image="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/03-whistler-indoor-1-copy-70225-1651387657.jpg" aria-label="View product image 2">
+                <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/03-whistler-indoor-1-copy-70225-1651387657.jpg" alt="" />
+              </button>
+              <button class="gallery-thumb" type="button" data-image="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/06-whistler-indoor-8-copy-06871-1651387657.jpg" aria-label="View product image 3">
+                <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/06-whistler-indoor-8-copy-06871-1651387657.jpg" alt="" />
+              </button>
+              <button class="gallery-thumb" type="button" data-image="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/07-whistler-indoor-7-copy-89530-1651387657.jpg" aria-label="View product image 4">
+                <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/07-whistler-indoor-7-copy-89530-1651387657.jpg" alt="" />
+              </button>
+              <button class="gallery-thumb" type="button" data-image="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/11-hbs-made-in-germany-4x-png.webp" aria-label="View product image 5">
+                <img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/11-hbs-made-in-germany-4x-png.webp" alt="" />
+              </button>
+            </div>
+            <div class="preview-stage">
+              <div class="media-badges" aria-hidden="true">
+                <span>Indoor table</span>
+                <span>Made in Germany</span>
+              </div>
+              <img
+                class="product-photo"
+                id="mainProductImage"
+                src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/02-whistler-indoor-1-copy-70225-1651387657.jpg"
+                alt="Whistler Indoor Table Tennis Table"
+              />
+            </div>
+          </div>
+
+          <div class="panel build-summary">
+            <h3>Your Whistler Table Tennis Table at a Glance</h3>
+            <div class="build-summary-grid" id="whistlerSummary"></div>
+          </div>
+        </aside>
+
+        <section class="config-column">
+          <div class="panel product-panel">
+            <div class="intro">
+              <div class="intro-copy">
+                <p class="eyebrow">Tiger Ping Pong</p>
+                <h1>Whistler Indoor Table Tennis Table</h1>
+                <p class="product-description">
+                  Experience a true, competition-quality game with a consistently even surface and a reliable bounce across the table. Solid, stable, and refined in design, the Whistler pairs professional-level play with a clean look suited to modern interiors.
+                </p>
+                <div class="product-facts">
+                  <span>Indoor table</span>
+                  <span>Playback position</span>
+                  <span>EN-Norm 14468-1</span>
+                  <span>Made in Germany</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-flow" id="whistlerFlow"></div>
+            <div class="purchase-panel">
+              <div class="included-box">
+                <h3>Delivery and setup support</h3>
+                <ul class="included-list">
+                  <li>Showroom confirms delivery timing and availability.</li>
+                  <li>Playback position supports solo practice at home.</li>
+                  <li>Installation can be added if you want the table ready to play.</li>
+                </ul>
+              </div>
+              <div class="purchase-actions">
+              <div class="price-wrap">
+                  <p class="price-main" id="whistlerPrice">$1,500</p>
+                </div>
+                <div class="action-stack">
+                  <a class="btn" href="#">Request a Quote</a>
+                  <a class="btn primary" href="#">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="product-details">
+        <div class="detail-section">
+          <h2>Best For</h2>
+          <div>
+            <p>Crafted for indoor environments, the Whistler combines certified tournament performance with the freedom to practice and improve at home.</p>
+            <ul>
+              <li>Indoor table, not weatherproof</li>
+              <li>For national and international tournament-level play</li>
+              <li>Can be used in playback position for solo practice</li>
+            </ul>
+          </div>
+        </div>
+        <div class="detail-section">
+          <h2>Tabletop</h2>
+          <ul>
+            <li>25mm precision chipboard playing surface</li>
+            <li>Available in green or blue</li>
+            <li>Multi-coated surface with A-60mm powder-coated frame profile</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h2>Undercarriage</h2>
+          <ul>
+            <li>Compact type 4b undercarriage</li>
+            <li>Rectangle-tube profile 40 x 40 mm with powder-coated construction</li>
+            <li>4 double wheels with height adjustment on outer legs up to 25mm</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h2>Net and Safety</h2>
+          <ul>
+            <li>Perfect-II-EN stationary compact net set</li>
+            <li>Height-adjustable cotton net with stable post and clamp</li>
+            <li>Single-handle release with automatic locking in storage and playing position</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="related-section">
+        <p class="eyebrow">You may also like</p>
+        <h2>More Ping Pong</h2>
+        <div class="related-grid">
+          <a class="mini-card" href="ping-pong-tables.html"><img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/12-portland-indoor-01-58156-1768494942.jpg" alt="Portland indoor table tennis table" /><h3>Portland Indoor Table</h3><p class="card-meta">Another indoor table option.</p></a>
+          <a class="mini-card" href="#"><img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/11-hbs-made-in-germany-4x-png.webp" alt="Made in Germany" /><h3>Made in Germany</h3><p class="card-meta">Explore German-made tables.</p></a>
+          <a class="mini-card" href="#"><img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/07-whistler-indoor-7-copy-89530-1651387657.jpg" alt="Ping pong net detail" /><h3>Nets &amp; Posts</h3><p class="card-meta">Replacement and upgrade net sets.</p></a>
+          <a class="mini-card" href="#"><img src="scraped-products/ping-pong-table/whistler-indoor-table-tennis-table/06-whistler-indoor-8-copy-06871-1651387657.jpg" alt="Wheel detail" /><h3>Table Accessories</h3><p class="card-meta">Covers, care, and storage accessories.</p></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <div class="site-footer-logo">Home<span>Billiards</span></div>
+          <p>Canada's destination for luxury game rooms, billiards, outdoor living, and commercial play spaces.</p>
+          <div class="site-footer-contact">
+            <p>1644 S.E. Marine Drive, Vancouver, BC V5P 2R6</p>
+            <p>604 321 5553</p>
+            <p>info@homebilliards.ca</p>
+          </div>
+        </div>
+        <div>
+          <h3>Navigate</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Pool Table Design Center</a></li>
+            <li><a href="#">Services We Provide</a></li>
+            <li><a href="#">Shipping &amp; Returns</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="pool-tables.html">Billiards</a></li>
+            <li><a href="ping-pong-tables.html">Ping Pong</a></li>
+            <li><a href="traeger-smokers.html">BBQ</a></li>
+            <li><a href="#">Foosball</a></li>
+            <li><a href="dartboards.html">Darts</a></li>
+            <li><a href="#">Games</a></li>
+            <li><a href="#">Commercial</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Made in Canada</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Popular Brands</h3>
+          <ul>
+            <li><a href="#">Canada Billiards</a></li>
+            <li><a href="#">Legacy Billiards</a></li>
+            <li><a href="#">Olhausen Billiards</a></li>
+            <li><a href="#">Traeger</a></li>
+            <li><a href="#">California House</a></li>
+            <li><a href="#">Predator</a></li>
+            <li><a href="#">Winmau</a></li>
+            <li><a href="#">Championship Shuffleboard</a></li>
+            <li><a href="#">Dynamo</a></li>
+            <li><a href="#">Harrow</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <div class="site-footer-bottom-inner">
+          <span>(c) 2026 Home Billiards. All rights reserved.</span>
+          <div class="site-footer-social" aria-label="Social links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelector(".search-bar").addEventListener("submit", (event) => event.preventDefault());
+
+      const mainImage = document.getElementById("mainProductImage");
+      document.querySelectorAll("[data-image]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll("[data-image]").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          mainImage.src = button.dataset.image;
+        });
+      });
+
+      const topColours = [
+        {
+          id: "blue",
+          name: "Blue",
+          hex: "#2d4f96",
+          note: "Classic competition look with a crisp playing surface.",
+        },
+        {
+          id: "green",
+          name: "Green",
+          hex: "#497f6b",
+          note: "Traditional table tennis colour with a softer room presence.",
+        },
+      ];
+
+      const accessories = [
+        {
+          id: "cover",
+          name: "Fitted Table Cover",
+          price: 119,
+          description: "Keeps dust off the playing surface between sessions.",
+        },
+        {
+          id: "paddles",
+          name: "Premium Paddle Set",
+          price: 129,
+          description: "A better starter set for family play or guests.",
+        },
+        {
+          id: "balls",
+          name: "Training Ball Pack",
+          price: 39,
+          description: "Extra balls for practice, drills, and longer rallies.",
+        },
+        {
+          id: "net",
+          name: "Replacement Net Set",
+          price: 89,
+          description: "Keep a spare net ready for heavy-use play rooms.",
+        },
+      ];
+
+      const installationOptions = [
+        {
+          id: "no-install",
+          name: "No Installation",
+          price: 0,
+          description: "Keep the table boxed for pickup, storage, or your own setup.",
+        },
+        {
+          id: "installation",
+          name: "Add Installation",
+          price: 200,
+          description: "Professional setup for a ready-to-play table.",
+        },
+      ];
+
+      const state = {
+        openStep: "colour",
+        colour: topColours[0],
+        selectedAccessories: [],
+        installation: installationOptions[0],
+      };
+
+      const money = new Intl.NumberFormat("en-CA", {
+        style: "currency",
+        currency: "CAD",
+        maximumFractionDigits: 0,
+      });
+
+      function selectedAccessoryItems() {
+        return accessories.filter((item) => state.selectedAccessories.includes(item.id));
+      }
+
+      function accessorySummary() {
+        const items = selectedAccessoryItems();
+        return items.length ? items.map((item) => item.name).join(", ") : "No accessories selected";
+      }
+
+      function accessoryTotal() {
+        return selectedAccessoryItems().reduce((sum, item) => sum + item.price, 0);
+      }
+
+      function totalPrice() {
+        return 1500 + accessoryTotal() + state.installation.price;
+      }
+
+      function summaryRows() {
+        return [
+          ["Product", "Whistler Indoor"],
+          ["Tabletop", state.colour.name],
+          ["Accessories", accessorySummary()],
+          ["Installation", state.installation.name],
+          ["Use", "Indoor table"],
+          ["Price", money.format(totalPrice())],
+        ];
+      }
+
+      function renderSummary() {
+        document.getElementById("whistlerSummary").innerHTML = summaryRows()
+          .map(
+            ([label, value]) => `<article class="build-item">
+              <h4>${label}</h4>
+              <p>${value}</p>
+            </article>`
+          )
+          .join("");
+      }
+
+      function renderColourStep() {
+        return `<div class="colour-choice-grid">${topColours
+          .map((colour) => {
+            const selected = state.colour.id === colour.id;
+            return `<button class="colour-choice ${selected ? "selected" : ""}" type="button" data-colour="${colour.id}">
+              <span class="swatch-block" style="--swatch:${colour.hex}"></span>
+              <div class="choice-head">
+                <h4>${colour.name}</h4>
+                <span class="check-circle">${selected ? "✓" : ""}</span>
+              </div>
+              <p class="body">${colour.note}</p>
+            </button>`;
+          })
+          .join("")}</div>`;
+      }
+
+      function renderAccessoryStep() {
+        return `<div class="addon-list">${accessories
+          .map((item) => {
+            const selected = state.selectedAccessories.includes(item.id);
+            return `<button class="addon-choice ${selected ? "selected" : ""}" type="button" data-addon="${item.id}">
+              <div class="addon-row">
+                <div>
+                  <h4>${item.name}</h4>
+                  <p class="body">${item.description}</p>
+                </div>
+                <div class="addon-actions">
+                  <strong>+ ${money.format(item.price)}</strong>
+                  <span class="check-circle">${selected ? "✓" : "›"}</span>
+                </div>
+              </div>
+            </button>`;
+          })
+          .join("")}</div>`;
+      }
+
+      function renderInstallationStep() {
+        return `<div class="colour-choice-grid">${installationOptions
+          .map((item) => {
+            const selected = state.installation.id === item.id;
+            return `<button class="colour-choice ${selected ? "selected" : ""}" type="button" data-installation="${item.id}">
+              <div class="choice-head">
+                <h4>${item.name}</h4>
+                <span class="check-circle">${selected ? "✓" : ""}</span>
+              </div>
+              <p class="body">${item.description}</p>
+              <p class="body"><strong>${item.price ? `+ ${money.format(item.price)}` : "Included"}</strong></p>
+            </button>`;
+          })
+          .join("")}</div>`;
+      }
+
+      function stepSummary(step) {
+        if (step === "colour") return state.colour.name;
+        if (step === "accessories") return accessorySummary();
+        return state.installation.name;
+      }
+
+      function stepCount(step) {
+        if (step === "colour") return topColours.length;
+        if (step === "accessories") return accessories.length;
+        return installationOptions.length;
+      }
+
+      function renderFlow() {
+        const steps = [
+          ["colour", "Tabletop Colour", renderColourStep],
+          ["accessories", "Accessories", renderAccessoryStep],
+          ["installation", "Installation", renderInstallationStep],
+        ];
+
+        document.getElementById("whistlerFlow").innerHTML = steps
+          .map(([id, label, bodyRenderer], index) => {
+            const open = state.openStep === id;
+            return `<section class="accordion-step" data-section="${id}">
+              <button class="accordion-head" type="button" data-open-step="${id}">
+                <div class="accordion-title">
+                  <h3>${index + 1}. ${label}</h3>
+                  <p>${stepSummary(id)}</p>
+                </div>
+                <span class="accordion-count">${stepCount(id)} options</span>
+                <span class="accordion-toggle">${open ? "−" : "+"}</span>
+              </button>
+              ${open ? `<div class="accordion-body">${bodyRenderer()}</div>` : ""}
+            </section>`;
+          })
+          .join("");
+
+        document.querySelectorAll("[data-open-step]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.openStep = state.openStep === button.dataset.openStep ? "" : button.dataset.openStep;
+            render();
+          });
+        });
+
+        document.querySelectorAll("[data-colour]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.colour = topColours.find((item) => item.id === button.dataset.colour);
+            state.openStep = "colour";
+            render();
+          });
+        });
+
+        document.querySelectorAll("[data-addon]").forEach((button) => {
+          button.addEventListener("click", () => {
+            const id = button.dataset.addon;
+            state.selectedAccessories = state.selectedAccessories.includes(id)
+              ? state.selectedAccessories.filter((item) => item !== id)
+              : [...state.selectedAccessories, id];
+            state.openStep = "accessories";
+            render();
+          });
+        });
+
+        document.querySelectorAll("[data-installation]").forEach((button) => {
+          button.addEventListener("click", () => {
+            state.installation = installationOptions.find((item) => item.id === button.dataset.installation);
+            state.openStep = "installation";
+            render();
+          });
+        });
+      }
+
+      function render() {
+        renderSummary();
+        renderFlow();
+        document.getElementById("whistlerPrice").textContent = money.format(totalPrice());
+      }
+
+      render();
+    </script>
+  </body>
+</html>

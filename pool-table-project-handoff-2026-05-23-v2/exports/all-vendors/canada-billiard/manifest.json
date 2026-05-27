@@ -1,0 +1,470 @@
+﻿[
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Aristocrat",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#aristocrat",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Aristocrat_XLthumbnail.jpg",
+        "originalFile":  "originals/aristocrat.jpg",
+        "normalizedFile":  "normalized-1600x1000/aristocrat.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "banff",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#banff",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/banff_XLthumbnail.jpg",
+        "originalFile":  "originals/banff.jpg",
+        "normalizedFile":  "normalized-1600x1000/banff.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Barn",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#barn",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Barn_XLthumbnail.jpg",
+        "originalFile":  "originals/barn.jpg",
+        "normalizedFile":  "normalized-1600x1000/barn.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Black Crown",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#black-crown",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/BlackCrown_XLthumbnail.jpg",
+        "originalFile":  "originals/black-crown.jpg",
+        "normalizedFile":  "normalized-1600x1000/black-crown.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Boulevard",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#boulevard",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Boulevard_XLthumbnail.jpg",
+        "originalFile":  "originals/boulevard.jpg",
+        "normalizedFile":  "normalized-1600x1000/boulevard.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Bridge",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#bridge",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Bridge_XLthumbnail.jpg",
+        "originalFile":  "originals/bridge.jpg",
+        "normalizedFile":  "normalized-1600x1000/bridge.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Canadiana",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#canadiana",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Canadiana_XLthumbnail.jpg",
+        "originalFile":  "originals/canadiana.jpg",
+        "normalizedFile":  "normalized-1600x1000/canadiana.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Canyon",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#canyon",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Canyon_XLthumbnail.jpg",
+        "originalFile":  "originals/canyon.jpg",
+        "normalizedFile":  "normalized-1600x1000/canyon.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "cloud",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#cloud",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/cloud_XLthumbnail.jpg",
+        "originalFile":  "originals/cloud.jpg",
+        "normalizedFile":  "normalized-1600x1000/cloud.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "colonial",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#colonial",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/colonial_XLthumbnail.jpg",
+        "originalFile":  "originals/colonial.jpg",
+        "normalizedFile":  "normalized-1600x1000/colonial.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "divine",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#divine",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/divine_XLthumbnail.jpg",
+        "originalFile":  "originals/divine.jpg",
+        "normalizedFile":  "normalized-1600x1000/divine.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "dream",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#dream",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/dream_XLthumbnail.jpg",
+        "originalFile":  "originals/dream.jpg",
+        "normalizedFile":  "normalized-1600x1000/dream.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Duchess",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#duchess",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Duchess_XLthumbnail.jpg",
+        "originalFile":  "originals/duchess.jpg",
+        "normalizedFile":  "normalized-1600x1000/duchess.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Elegance",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#elegance",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Elegance_XLthumbnail.jpg",
+        "originalFile":  "originals/elegance.jpg",
+        "normalizedFile":  "normalized-1600x1000/elegance.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "euro",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#euro",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/euro_XLthumbnail.jpg",
+        "originalFile":  "originals/euro.jpg",
+        "normalizedFile":  "normalized-1600x1000/euro.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Evolution",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#evolution",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Evolution_XLthumbnail.jpg",
+        "originalFile":  "originals/evolution.jpg",
+        "normalizedFile":  "normalized-1600x1000/evolution.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "heritage",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#heritage",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/heritage_XLthumbnail.jpg",
+        "originalFile":  "originals/heritage.jpg",
+        "normalizedFile":  "normalized-1600x1000/heritage.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Ideal",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#ideal",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Ideal-thumbnailXL.jpg",
+        "originalFile":  "originals/ideal.jpg",
+        "normalizedFile":  "normalized-1600x1000/ideal.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Industria",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#industria",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Industria_XLthumbnail.jpg",
+        "originalFile":  "originals/industria.jpg",
+        "normalizedFile":  "normalized-1600x1000/industria.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "invitation",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#invitation",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/invitation_XLthumbnail.jpg",
+        "originalFile":  "originals/invitation.jpg",
+        "normalizedFile":  "normalized-1600x1000/invitation.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "La Condo",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#la-condo",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/LaCondo_XLthumbnail.jpg",
+        "originalFile":  "originals/la-condo.jpg",
+        "normalizedFile":  "normalized-1600x1000/la-condo.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "La Condo Stainless",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#la-condo-stainless",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/LaCondoStainless_XLthumbnail.jpg",
+        "originalFile":  "originals/la-condo-stainless.jpg",
+        "normalizedFile":  "normalized-1600x1000/la-condo-stainless.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Lacondo Duo",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#lacondo-duo",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/LacondoDuo_XLthumbnail.jpg",
+        "originalFile":  "originals/lacondo-duo.jpg",
+        "normalizedFile":  "normalized-1600x1000/lacondo-duo.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "laforge",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#laforge",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/laforge_XLthumbnail.jpg",
+        "originalFile":  "originals/laforge.jpg",
+        "normalizedFile":  "normalized-1600x1000/laforge.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Loft",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#loft",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Loft_XLthumbnail.jpg",
+        "originalFile":  "originals/loft.jpg",
+        "normalizedFile":  "normalized-1600x1000/loft.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "lotus",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#lotus",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/lotus_XLthumbnail.jpg",
+        "originalFile":  "originals/lotus.jpg",
+        "normalizedFile":  "normalized-1600x1000/lotus.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "lounge",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#lounge",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/lounge_XLthumbnail.jpg",
+        "originalFile":  "originals/lounge.jpg",
+        "normalizedFile":  "normalized-1600x1000/lounge.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Luxx",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#luxx",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Luxx_XLthumbnail.jpg",
+        "originalFile":  "originals/luxx.jpg",
+        "normalizedFile":  "normalized-1600x1000/luxx.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Majesty",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#majesty",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Majesty_XLthumbnail.jpg",
+        "originalFile":  "originals/majesty.jpg",
+        "normalizedFile":  "normalized-1600x1000/majesty.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Maze",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#maze",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Maze_XLthumbnail.jpg",
+        "originalFile":  "originals/maze.jpg",
+        "normalizedFile":  "normalized-1600x1000/maze.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "monarch",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#monarch",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/monarch_XLthumbnail.jpg",
+        "originalFile":  "originals/monarch.jpg",
+        "normalizedFile":  "normalized-1600x1000/monarch.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "mystere",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#mystere",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/mystere_XLthumbnail.jpg",
+        "originalFile":  "originals/mystere.jpg",
+        "normalizedFile":  "normalized-1600x1000/mystere.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Obsession",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#obsession",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Obsession_XLthumbnail.jpg",
+        "originalFile":  "originals/obsession.jpg",
+        "normalizedFile":  "normalized-1600x1000/obsession.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Onyx",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#onyx",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Onyx_XLthumbnail.jpg",
+        "originalFile":  "originals/onyx.jpg",
+        "normalizedFile":  "normalized-1600x1000/onyx.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Orlando",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#orlando",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Orlando_XLthumbnail.jpg",
+        "originalFile":  "originals/orlando.jpg",
+        "normalizedFile":  "normalized-1600x1000/orlando.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "pacific",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#pacific",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/pacific_XLthumbnail.jpg",
+        "originalFile":  "originals/pacific.jpg",
+        "normalizedFile":  "normalized-1600x1000/pacific.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "prestige",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#prestige",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/prestige_XLthumbnail.jpg",
+        "originalFile":  "originals/prestige.jpg",
+        "normalizedFile":  "normalized-1600x1000/prestige.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Queen Ann II",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#queen-ann-ii",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/QueenAnnII_XLthumbnail.jpg",
+        "originalFile":  "originals/queen-ann-ii.jpg",
+        "normalizedFile":  "normalized-1600x1000/queen-ann-ii.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Ranch",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#ranch",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Ranch_XLthumbnail.jpg",
+        "originalFile":  "originals/ranch.jpg",
+        "normalizedFile":  "normalized-1600x1000/ranch.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Rebel Snooker",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#rebel-snooker",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/RebelSnooker_XLthumbnail.jpg",
+        "originalFile":  "originals/rebel-snooker.jpg",
+        "normalizedFile":  "normalized-1600x1000/rebel-snooker.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Regance",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#regance",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Regance_XLthumbnail.jpg",
+        "originalFile":  "originals/regance.jpg",
+        "normalizedFile":  "normalized-1600x1000/regance.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Revolution",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#revolution",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Revolution_XLthumbnail.jpg",
+        "originalFile":  "originals/revolution.jpg",
+        "normalizedFile":  "normalized-1600x1000/revolution.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Shack",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#shack",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Shack_XLthumbnail.jpg",
+        "originalFile":  "originals/shack.jpg",
+        "normalizedFile":  "normalized-1600x1000/shack.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Special Anniversary",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#special-anniversary",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/SpecialAnniversary_XLthumbnail.jpg",
+        "originalFile":  "originals/special-anniversary.jpg",
+        "normalizedFile":  "normalized-1600x1000/special-anniversary.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Storm",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#storm",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Storm_XLthumbnail.jpg",
+        "originalFile":  "originals/storm.jpg",
+        "normalizedFile":  "normalized-1600x1000/storm.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "supreme",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#supreme",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/supreme_XLthumbnail.jpg",
+        "originalFile":  "originals/supreme.jpg",
+        "normalizedFile":  "normalized-1600x1000/supreme.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "tendance",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#tendance",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/tendance_XLthumbnail.jpg",
+        "originalFile":  "originals/tendance.jpg",
+        "normalizedFile":  "normalized-1600x1000/tendance.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "tentation",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#tentation",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/tentation_XLthumbnail.jpg",
+        "originalFile":  "originals/tentation.jpg",
+        "normalizedFile":  "normalized-1600x1000/tentation.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Touch",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#touch",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Touch_XLthumbnail.jpg",
+        "originalFile":  "originals/touch.jpg",
+        "normalizedFile":  "normalized-1600x1000/touch.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Track",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#track",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Track_XLthumbnail.jpg",
+        "originalFile":  "originals/track.jpg",
+        "normalizedFile":  "normalized-1600x1000/track.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "venus",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#venus",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/venus_XLthumbnail.jpg",
+        "originalFile":  "originals/venus.jpg",
+        "normalizedFile":  "normalized-1600x1000/venus.png"
+    },
+    {
+        "vendor":  "canada-billiard",
+        "originalVendorLabel":  "Canada Billiard",
+        "title":  "Xtreme",
+        "sourceUrl":  "https://fgbradleys.com/canada-billiard/#xtreme",
+        "selectedImageUrl":  "https://fgbradleys.com/wp-content/uploads/Xtreme_XLthumbnail.jpg",
+        "originalFile":  "originals/xtreme.jpg",
+        "normalizedFile":  "normalized-1600x1000/xtreme.png"
+    }
+]
