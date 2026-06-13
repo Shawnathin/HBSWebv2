@@ -1,0 +1,547 @@
+<!--
+  Paste this whole block into your website's HTML container.
+  Keep the exported assets folder beside this page, or update the image path in the CSS below.
+-->
+<style>
+  .hb-contact-page {
+    --hb-ink: #171717;
+    --hb-muted: #626262;
+    --hb-paper: #faf7f2;
+    --hb-line: rgba(0, 0, 0, 0.12);
+    --hb-line-strong: rgba(0, 0, 0, 0.22);
+    background: #fff;
+    color: var(--hb-ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  .hb-contact-page * {
+    box-sizing: border-box;
+  }
+
+  .hb-contact-page a {
+    color: inherit;
+  }
+
+  .hb-contact-page button,
+  .hb-contact-page input,
+  .hb-contact-page select,
+  .hb-contact-page textarea {
+    font: inherit;
+  }
+
+  .hb-contact-page h1,
+  .hb-contact-page h2,
+  .hb-contact-page h3,
+  .hb-contact-page p {
+    margin: 0;
+  }
+
+  .hb-contact-page__inner {
+    width: min(100%, 1520px);
+    margin: 0 auto;
+    padding-inline: 22px;
+  }
+
+  .hb-contact-page__eyebrow {
+    color: #777;
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .hb-contact-hero {
+    border-bottom: 1px solid var(--hb-line);
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.82) 48%, rgba(255, 255, 255, 0.64) 100%),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.54)),
+      url("assets/home-billiards-storefront.jpg") center / cover no-repeat;
+  }
+
+  .hb-contact-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 70px;
+    align-items: end;
+    padding-block: 76px 58px;
+  }
+
+  .hb-contact-hero__copy h1 {
+    max-width: 920px;
+    margin-top: 16px;
+    font-size: clamp(3.4rem, 7vw, 7.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+
+  .hb-contact-hero__copy p:not(.hb-contact-page__eyebrow) {
+    max-width: 760px;
+    margin-top: 26px;
+    color: var(--hb-muted);
+    font-size: clamp(1.08rem, 2vw, 1.45rem);
+    line-height: 1.45;
+  }
+
+  .hb-contact-quick-card {
+    border: 1px solid var(--hb-line);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 30px;
+    backdrop-filter: blur(8px);
+  }
+
+  .hb-contact-quick-card h2 {
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hb-contact-quick-card dl {
+    display: grid;
+    gap: 18px;
+    margin: 24px 0 0;
+  }
+
+  .hb-contact-quick-card dt {
+    color: #777;
+    font-size: 0.74rem;
+    font-weight: 850;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .hb-contact-quick-card dd {
+    margin: 6px 0 0;
+    color: #252525;
+    font-size: 1rem;
+    font-weight: 760;
+    line-height: 1.45;
+  }
+
+  .hb-contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .hb-contact-btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hb-line-strong);
+    background: #fff;
+    padding: 0 22px;
+    color: var(--hb-ink);
+    font-size: 0.84rem;
+    font-weight: 850;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .hb-contact-btn--primary {
+    border-color: #171717;
+    background: #171717;
+    color: #fff;
+  }
+
+  .hb-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--hb-line);
+  }
+
+  .hb-contact-info-card {
+    min-height: 260px;
+    border-right: 1px solid var(--hb-line);
+    padding: 42px 34px;
+  }
+
+  .hb-contact-info-card:last-child {
+    border-right: 0;
+  }
+
+  .hb-contact-info-card h2 {
+    font-size: 1.8rem;
+    letter-spacing: -0.03em;
+  }
+
+  .hb-contact-info-card p,
+  .hb-contact-info-card a,
+  .hb-contact-hours {
+    color: var(--hb-muted);
+    font-size: 1.03rem;
+    line-height: 1.62;
+  }
+
+  .hb-contact-info-card p,
+  .hb-contact-hours {
+    margin-top: 18px;
+  }
+
+  .hb-contact-info-card a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .hb-contact-hours {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hb-contact-hours li {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 10px;
+  }
+
+  .hb-contact-hours strong {
+    color: var(--hb-ink);
+  }
+
+  .hb-contact-form-section {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 58px;
+    margin-block: 56px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--hb-paper);
+    padding-block: 54px;
+  }
+
+  .hb-contact-form-copy h2 {
+    margin-top: 12px;
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .hb-contact-form-copy p {
+    margin-top: 24px;
+    color: var(--hb-muted);
+    font-size: 1.12rem;
+    line-height: 1.55;
+  }
+
+  .hb-contact-support-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 32px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .hb-contact-support-list li {
+    border-top: 1px solid var(--hb-line);
+    padding-top: 14px;
+    color: #333;
+    font-weight: 760;
+  }
+
+  .hb-contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    border: 1px solid var(--hb-line);
+    background: rgba(255, 255, 255, 0.86);
+    padding: 28px;
+  }
+
+  .hb-contact-field {
+    display: grid;
+    gap: 8px;
+  }
+
+  .hb-contact-field--full {
+    grid-column: 1 / -1;
+  }
+
+  .hb-contact-field label {
+    color: #606060;
+    font-size: 0.75rem;
+    font-weight: 850;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .hb-contact-field input,
+  .hb-contact-field select,
+  .hb-contact-field textarea {
+    width: 100%;
+    border: 1px solid var(--hb-line);
+    background: #fff;
+    padding: 14px;
+    color: var(--hb-ink);
+  }
+
+  .hb-contact-field textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .hb-contact-field input:focus,
+  .hb-contact-field select:focus,
+  .hb-contact-field textarea:focus {
+    outline: 2px solid #171717;
+    outline-offset: -2px;
+  }
+
+  .hb-contact-form-submit {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--hb-line);
+    padding-top: 18px;
+  }
+
+  .hb-contact-form-submit p {
+    max-width: 390px;
+    color: var(--hb-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .hb-contact-service-band {
+    border-top: 1px solid var(--hb-line);
+    background: #fafafa;
+  }
+
+  .hb-contact-service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .hb-contact-service-tile {
+    min-height: 180px;
+    border-right: 1px solid var(--hb-line);
+    padding: 30px 24px;
+  }
+
+  .hb-contact-service-tile:last-child {
+    border-right: 0;
+  }
+
+  .hb-contact-service-tile h3 {
+    font-size: 1.08rem;
+  }
+
+  .hb-contact-service-tile p:not(.hb-contact-page__eyebrow) {
+    margin-top: 10px;
+    color: var(--hb-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1100px) {
+    .hb-contact-hero__layout,
+    .hb-contact-form-section {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .hb-contact-grid,
+    .hb-contact-service-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hb-contact-info-card:nth-child(2),
+    .hb-contact-service-tile:nth-child(2) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .hb-contact-page__inner {
+      padding-inline: 16px;
+    }
+
+    .hb-contact-hero__layout {
+      padding-block: 44px 38px;
+    }
+
+    .hb-contact-quick-card,
+    .hb-contact-info-card,
+    .hb-contact-form {
+      padding: 22px;
+    }
+
+    .hb-contact-grid,
+    .hb-contact-service-grid,
+    .hb-contact-form {
+      grid-template-columns: 1fr;
+    }
+
+    .hb-contact-info-card,
+    .hb-contact-service-tile {
+      min-height: auto;
+      border-right: 0;
+      border-bottom: 1px solid var(--hb-line);
+    }
+
+    .hb-contact-field--full,
+    .hb-contact-form-submit {
+      grid-column: auto;
+    }
+  }
+</style>
+
+<main class="hb-contact-page">
+  <section class="hb-contact-hero">
+    <div class="hb-contact-page__inner hb-contact-hero__layout">
+      <div class="hb-contact-hero__copy">
+        <p class="hb-contact-page__eyebrow">Contact Home Billiards</p>
+        <h1>Visit the showroom or send us your game room plans.</h1>
+        <p>
+          Talk with the team about pool tables, table tennis, BBQ, delivery,
+          installation, service, commercial spaces, or a full room plan.
+        </p>
+      </div>
+
+      <aside class="hb-contact-quick-card" aria-label="Quick contact details">
+        <h2>Showroom details</h2>
+        <dl>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+16043215553">(604) 321-5553</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@homebilliards.ca">info@homebilliards.ca</a></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>1644 SE Marine Drive, Vancouver, BC V5P 2R6</dd>
+          </div>
+        </dl>
+        <div class="hb-contact-actions">
+          <a class="hb-contact-btn hb-contact-btn--primary" href="tel:+16043215553">Call Now</a>
+          <a
+            class="hb-contact-btn"
+            href="https://www.google.com/maps/search/?api=1&query=1644+SE+Marine+Drive+Vancouver+BC+V5P+2R6"
+          >Get Directions</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="hb-contact-page__inner hb-contact-grid" aria-label="Contact information">
+    <article class="hb-contact-info-card">
+      <p class="hb-contact-page__eyebrow">Visit Us</p>
+      <h2>Vancouver showroom</h2>
+      <p>
+        1644 SE Marine Drive<br />
+        Vancouver, BC, Canada<br />
+        V5P 2R6
+      </p>
+    </article>
+    <article class="hb-contact-info-card">
+      <p class="hb-contact-page__eyebrow">Hours</p>
+      <h2>Open this week</h2>
+      <ul class="hb-contact-hours">
+        <li><span>Monday - Friday</span><strong>9am - 5pm</strong></li>
+        <li><span>Saturday</span><strong>10am - 4pm</strong></li>
+        <li><span>Sunday</span><strong>Closed</strong></li>
+      </ul>
+    </article>
+    <article class="hb-contact-info-card">
+      <p class="hb-contact-page__eyebrow">Reviews</p>
+      <h2>Share your experience</h2>
+      <p>
+        One of the best ways to support a small business is to share your
+        experience with others.
+      </p>
+      <p><a href="https://www.google.com/search?q=Home+Billiards+Vancouver+review">Review us on Google</a></p>
+    </article>
+  </section>
+
+  <section class="hb-contact-page__inner hb-contact-form-section">
+    <div class="hb-contact-form-copy">
+      <p class="hb-contact-page__eyebrow">Contact Form</p>
+      <h2>Want us to reach out?</h2>
+      <p>
+        Send the basics and the showroom team will follow up. The current
+        response target is within 24 business hours.
+      </p>
+      <ul class="hb-contact-support-list">
+        <li>Product questions and availability checks</li>
+        <li>Pool table delivery, installation, moving, and recovering</li>
+        <li>Commercial game room and amenity room planning</li>
+        <li>Room dimensions, finish guidance, and quote requests</li>
+      </ul>
+    </div>
+
+    <form class="hb-contact-form" action="mailto:info@homebilliards.ca" method="post" enctype="text/plain">
+      <div class="hb-contact-field">
+        <label for="hb-first-name">First Name</label>
+        <input id="hb-first-name" name="first-name" autocomplete="given-name" />
+      </div>
+      <div class="hb-contact-field">
+        <label for="hb-last-name">Last Name</label>
+        <input id="hb-last-name" name="last-name" autocomplete="family-name" />
+      </div>
+      <div class="hb-contact-field">
+        <label for="hb-email">Email</label>
+        <input id="hb-email" type="email" name="email" autocomplete="email" />
+      </div>
+      <div class="hb-contact-field">
+        <label for="hb-phone">Phone</label>
+        <input id="hb-phone" type="tel" name="phone" autocomplete="tel" />
+      </div>
+      <div class="hb-contact-field hb-contact-field--full">
+        <label for="hb-topic">What Can We Help With?</label>
+        <select id="hb-topic" name="topic">
+          <option>Pool table purchase or quote</option>
+          <option>Delivery and installation</option>
+          <option>Table service, moving, or recovering</option>
+          <option>Ping pong, BBQ, darts, or games</option>
+          <option>Commercial project</option>
+        </select>
+      </div>
+      <div class="hb-contact-field hb-contact-field--full">
+        <label for="hb-message">Message</label>
+        <textarea
+          id="hb-message"
+          name="message"
+          placeholder="Tell us what you are looking for, your room size, or any timing questions."
+        ></textarea>
+      </div>
+      <div class="hb-contact-form-submit">
+        <p>We aim to respond to every message within 24 business hours.</p>
+        <button class="hb-contact-btn hb-contact-btn--primary" type="submit">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="hb-contact-service-band" aria-label="Popular contact reasons">
+    <div class="hb-contact-page__inner hb-contact-service-grid">
+      <article class="hb-contact-service-tile">
+        <p class="hb-contact-page__eyebrow">Delivery</p>
+        <h3>Install planning</h3>
+        <p>Confirm local delivery, access, stairs, timing, and placement before the table arrives.</p>
+      </article>
+      <article class="hb-contact-service-tile">
+        <p class="hb-contact-page__eyebrow">Service</p>
+        <h3>Table care</h3>
+        <p>Ask about recovering, moving, levelling, repairs, and game room maintenance.</p>
+      </article>
+      <article class="hb-contact-service-tile">
+        <p class="hb-contact-page__eyebrow">Design</p>
+        <h3>Room fit</h3>
+        <p>Share measurements and photos so the team can help with size, finish, and layout.</p>
+      </article>
+      <article class="hb-contact-service-tile">
+        <p class="hb-contact-page__eyebrow">Commercial</p>
+        <h3>Project support</h3>
+        <p>Plan durable equipment for offices, strata rooms, clubs, restaurants, and shared spaces.</p>
+      </article>
+    </div>
+  </section>
+</main>
