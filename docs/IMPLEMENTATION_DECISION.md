@@ -125,6 +125,11 @@ Decision: start from a custom Next.js app architecture. Reuse Catalyst ideas sel
 - Preserve the current HTML prototype files until a planned route migration replaces them.
 - Keep the scraper and pool-table rendering workbench as migration aids, not production catalog sources.
 
+## Business Decisions To Preserve
+
+- Do not build or include Find a Dealer, dealer locator, or store-locator functionality. If reference screenshots or product photos include Find a Dealer UI, treat it as third-party reference noise and do not add it to navigation, footer links, routes, search, or MVP scope.
+- Fulfillment, availability, and shipping promise copy must be data-driven from BigCommerce/backend catalog data. `Ships in 24 business hours` is an allowed display value only when that product/category data provides it. The frontend may render `fulfillmentBadge`, `availabilityMessage`, `leadTimeLabel`, or `shippingPromise` fields, but must not apply the promise globally or create live shipping calculations yet.
+
 ## Implementation Decision Summary
 
 The project should move forward as a custom Next.js + TypeScript headless storefront with BigCommerce as the commerce backend, renderer manifests as the product visualization layer, and Render as the hosting target. The static shell should remain a protected prototype/reference until each route has a dynamic equivalent and documented parity.

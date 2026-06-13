@@ -11,6 +11,8 @@ Scope: map repeated static HTML sections into future React components for a cust
 - Keep BigCommerce and renderer data access outside presentation components.
 - Use typed view models so hardcoded prototype data can be replaced one route at a time.
 - Keep existing HTML files as reference fixtures until dynamic parity is verified.
+- Do not extract or add Find a Dealer, dealer locator, or store-locator components.
+- Fulfillment, availability, and shipping promise copy should be modeled as optional product/category data fields such as `fulfillmentBadge`, `availabilityMessage`, `leadTimeLabel`, or `shippingPromise`. `Ships in 24 business hours` is an allowed display value only when backend/product data provides it; do not apply it globally or calculate shipping live in the frontend.
 
 ## App Shell Components
 
@@ -90,6 +92,8 @@ Current card patterns appear in pool tables, cues, ping pong, dartboards, Traege
 | Badges | `BadgeRow` and `ProductBadge` | Sale, in stock, custom build, preorder, made in Canada, etc. |
 
 Product card data should never invent price or inventory. Unknown values should display approved fallback labels such as `Request quote` or `Price coming soon`, depending on business approval.
+
+Approved fulfillment copy such as `Ships in 24 business hours` belongs in product-card badge/display data only when provided by backend/product data. It should not imply that the frontend has calculated live fulfillment timing.
 
 ## Product Detail Components
 

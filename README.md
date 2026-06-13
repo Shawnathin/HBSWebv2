@@ -1,0 +1,75 @@
+# HBS Website 2.0
+
+This repository now contains a Next.js + TypeScript app foundation alongside the existing static HTML prototype.
+
+The root `.html` files and `assets/` directory are still preserved as prototype reference material. The Next app uses mock data extracted from those files and does not connect to BigCommerce yet.
+
+## Run Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the app:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+If port `3000` is already busy, use another port:
+
+```bash
+npm run dev -- --hostname 127.0.0.1 --port 3001
+```
+
+Known local watcher note: this repo intentionally preserves large prototype, asset, scraper, and renderer-tooling folders. `next.config.mjs` includes watcher ignores for those legacy folders, but some local environments may still hit `EMFILE: too many open files` in `next dev`, especially through symlinked assets. The reliable workaround is:
+
+```bash
+npm run build
+./node_modules/.bin/next start --hostname 127.0.0.1 --port 3001
+```
+
+Useful checks:
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
+
+The existing scraper command is still available:
+
+```bash
+npm run scraper
+```
+
+## Current Routes
+
+- `/`
+- `/pool-tables`
+- `/pool-tables/austin-pool-table`
+- `/search`
+- `/cart`
+- `/contact-us`
+
+Do not create or use `/pool_tables`.
+
+## Integration Notes
+
+- BigCommerce is intentionally not connected.
+- No `.env` file is required or committed.
+- Unknown BigCommerce IDs remain explicit `TODO_...` placeholders.
+- Adapter stubs live under `src/lib/bigcommerce/` and `src/lib/renderer/`.
+- Austin builder fixture data lives in `src/data/mockAustinProduct.ts`.
+- Renderer fixture data lives in `src/data/mockRendererManifest.ts`.
+- Pool-table category fixture data is generated from `pool-tables.html` signals in `src/data/mockPoolTablesCategory.ts`.
+- Find a Dealer / dealer locator functionality is intentionally excluded.
+- Fulfillment/availability/shipping promise copy is data-driven. `Ships in 24 business hours` is an allowed display value only when product/category data provides it; the frontend must not apply it globally or create live shipping calculations yet.
