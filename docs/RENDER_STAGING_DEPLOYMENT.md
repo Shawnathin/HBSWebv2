@@ -2,43 +2,42 @@
 
 Decision date: 2026-06-18
 
-Scope: first staff-accessible staging deployment for the Next.js app foundation. This deployment uses mock/prototype-derived data only. It does not connect BigCommerce, does not require real API credentials, and does not add `.env` files.
+Scope: staging deployment notes for Home Billiards previews. The current staff-facing preview should use the original static HTML prototype. The Next.js app foundation remains available for engineering validation, but it is not the primary staff truth source yet.
+
+For the staff prototype preview, use `docs/STATIC_PROTOTYPE_RENDER_PREVIEW.md`.
 
 ## Deployment Shape
 
-- Render service type: Web Service.
-- Runtime: Node.
-- Service name: `hbs-website-2-staging`.
+- Render service type for staff review: Static Site.
+- Runtime: Static.
+- Service name: `hbs-static-prototype-preview`.
 - Branch for first staff preview: `feature/nextjs-foundation`.
-- Build command: `npm ci && npm run build`.
-- Start command: `npm run start`.
-- Health check path: `/`.
-- Current plan in `render.yaml`: `free` to avoid accidental paid usage. Upgrade to a paid instance later if staff need the preview to avoid sleep/cold starts.
+- Build command: `npm run build:static-prototype`.
+- Publish directory: `dist-static`.
+- The root `render.yaml` now points at the static prototype preview.
 
 ## GitHub / Render Setup
 
 Use one of these paths:
 
 1. Fast staff preview:
-   - Create a new Render Web Service from `Shawnathin/HBSWebv2`.
+   - Create a new Render Static Site from `Shawnathin/HBSWebv2`.
    - Select branch `feature/nextjs-foundation`.
-   - Use the build and start commands above.
+   - Use the build and publish settings above.
    - Keep auto-deploy enabled for commits to that branch.
 
 2. Blueprint path:
-   - Merge this branch after review.
    - In Render, create a Blueprint from the repo root `render.yaml`.
-   - Confirm the generated service uses the same build and start commands.
+   - Confirm the generated service uses `npm run build:static-prototype` and publishes `dist-static`.
 
-After the branch is merged to the default branch, point the staging service at the default branch unless the team intentionally wants branch-only previews.
+After the branch is merged to the default branch, point the staff preview at the default branch unless the team intentionally wants branch-only previews.
 
 ## Environment Variables
 
 Only non-secret environment variables are modeled in `render.yaml`:
 
 ```text
-NODE_ENV=production
-NEXT_TELEMETRY_DISABLED=1
+SKIP_INSTALL_DEPS=true
 ```
 
 Do not add BigCommerce, email, CRM, quote, cart, or private renderer credentials until the relevant backend adapter is implemented and reviewed. Add future secrets directly in the Render Dashboard or a protected Render environment group, never in committed files.
@@ -47,11 +46,11 @@ Do not add BigCommerce, email, CRM, quote, cart, or private renderer credentials
 
 The staging preview is suitable for:
 
-- homepage visual/content review.
-- pool-table category review.
-- Austin builder flow review.
-- shared navigation/header/footer review.
-- route and copy feedback.
+- static homepage visual/content review.
+- static pool-table category review.
+- static Austin builder flow review.
+- shared prototype navigation/header/footer review.
+- route, copy, merchandising, and flow feedback.
 
 It is not suitable for:
 
@@ -64,17 +63,19 @@ It is not suitable for:
 ## Routes To Verify On Render
 
 - `/`
-- `/pool-tables`
-- `/pool-tables/austin-pool-table`
-- `/search`
-- `/cart`
-- `/contact-us`
+- `/pool-tables.html`
+- `/austin-pool-table.html`
+- `/contact-us.html`
+- `/cues.html`
+- `/ping-pong-tables.html`
+- `/whistler-indoor-table-tennis-table.html`
+- `/traeger-smokers.html`
+- `/dartboards.html`
 
 Do not create or use `/pool_tables`.
 
 ## Known Notes
 
 - The preserved root `.html` prototype files remain reference material and are not rewritten by this deployment.
-- `public/assets` is a relative symlink to `../assets`; confirm images load after the first Render deploy.
-- Fulfillment, availability, and shipping promise copy remains data-driven mock data in staging and must come from backend/product data later.
-- Find a Dealer / dealer locator functionality remains out of scope.
+- Fulfillment, availability, and shipping promise copy in the prototype remains mock/reference copy until catalog-backed later.
+- Find a Dealer / dealer locator functionality remains out of scope for the production MVP, even if any reference material suggests it.
