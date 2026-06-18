@@ -1,17 +1,40 @@
-# Staff staging preview for the Next.js app foundation.
-# This service runs mock data only; BigCommerce credentials are intentionally absent.
+# Staff preview for the original static HTML prototype.
+# This intentionally serves the prototype, not the newer Next.js foundation.
 services:
   - type: web
-    name: hbs-website-2-staging
-    runtime: node
-    plan: free
-    region: oregon
-    buildCommand: npm ci && npm run build
-    startCommand: npm run start
+    name: hbs-static-prototype-preview
+    runtime: static
+    buildCommand: npm run build:static-prototype
+    staticPublishPath: ./dist-static
     autoDeployTrigger: commit
-    healthCheckPath: /
     envVars:
-      - key: NODE_ENV
-        value: production
-      - key: NEXT_TELEMETRY_DISABLED
-        value: "1"
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+    routes:
+      - type: rewrite
+        source: /contact-us
+        destination: /contact-us.html
+      - type: rewrite
+        source: /pool-tables
+        destination: /pool-tables.html
+      - type: rewrite
+        source: /austin-pool-table
+        destination: /austin-pool-table.html
+      - type: rewrite
+        source: /cues
+        destination: /cues.html
+      - type: rewrite
+        source: /ping-pong-tables
+        destination: /ping-pong-tables.html
+      - type: rewrite
+        source: /whistler-indoor-table-tennis-table
+        destination: /whistler-indoor-table-tennis-table.html
+      - type: rewrite
+        source: /traeger-smokers
+        destination: /traeger-smokers.html
+      - type: rewrite
+        source: /dartboards
+        destination: /dartboards.html
+      - type: rewrite
+        source: /bull-carbon-black-with-6-purple-abalone-points
+        destination: /bull-carbon-black-with-6-purple-abalone-points.html
