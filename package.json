@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start --hostname 0.0.0.0 --port ${PORT:-3000}",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "scraper": "node product-scraper/server.mjs"
+  },
+  "engines": {
+    "node": ">=20.18.0 <23.0.0"
   },
   "dependencies": {
     "next": "^15.0.0",

@@ -205,9 +205,9 @@ Goal: deploy a secure staging version for review.
 
 Tasks:
 
-- Create Render staging service.
-- Configure environment variables in Render.
-- Confirm GitHub deploy flow.
+- Create Render staging service. Initial service config is captured in root `render.yaml`.
+- Configure environment variables in Render. Current staff preview uses only non-secret production/runtime flags; future secrets must be added in Render, not committed.
+- Confirm GitHub deploy flow. First staff preview can deploy from `feature/nextjs-foundation`; after merge, point staging at the default branch.
 - Add staging domain.
 - Add cache/revalidation strategy for product/category pages.
 - Verify `.html` redirect behavior in staging.

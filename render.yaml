@@ -1,0 +1,17 @@
+# Staff staging preview for the Next.js app foundation.
+# This service runs mock data only; BigCommerce credentials are intentionally absent.
+services:
+  - type: web
+    name: hbs-website-2-staging
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    autoDeployTrigger: commit
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"

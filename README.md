@@ -45,6 +45,12 @@ npm run lint
 npm run build
 ```
 
+Start the production server locally after a build:
+
+```bash
+npm run start
+```
+
 The existing scraper command is still available:
 
 ```bash
@@ -61,6 +67,24 @@ npm run scraper
 - `/contact-us`
 
 Do not create or use `/pool_tables`.
+
+## Render Staff Preview
+
+The repo includes `render.yaml` for a first staff staging preview on Render. The preview runs the current Next.js app with mock/prototype-derived data only; BigCommerce is still intentionally disconnected and no `.env` file is required.
+
+Recommended first deployment:
+
+```text
+Service type: Web Service
+Branch: feature/nextjs-foundation
+Build command: npm ci && npm run build
+Start command: npm run start
+Health check path: /
+```
+
+Use the `free` instance for an initial no-cost preview, or upgrade the Render service if staff need it to stay warm during the workday. Keep all future secrets in the Render Dashboard or a protected environment group, never in committed files.
+
+See `docs/RENDER_STAGING_DEPLOYMENT.md` for the staff-preview checklist.
 
 ## Integration Notes
 
