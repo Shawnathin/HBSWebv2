@@ -71,6 +71,7 @@ Tasks:
   - `TODO_BC_MODIFIER_OPTION_ID_CLOTH`
   - `TODO_BC_VARIANT_ID_AUSTIN_SELECTED_BUILD`
 - Add adapter function interfaces before wiring live APIs.
+- If fulfillment badges are modeled, source `fulfillmentBadge`, `availabilityMessage`, `leadTimeLabel`, and `shippingPromise` from fixture data now and BigCommerce/backend catalog data later. `Ships in 24 business hours` is an allowed display value only when that data provides it.
 
 Acceptance criteria:
 
@@ -204,9 +205,9 @@ Goal: deploy a secure staging version for review.
 
 Tasks:
 
-- Create Render staging service.
-- Configure environment variables in Render.
-- Confirm GitHub deploy flow.
+- Create Render staging service. Initial service config is captured in root `render.yaml`.
+- Configure environment variables in Render. Current staff preview uses only non-secret production/runtime flags; future secrets must be added in Render, not committed.
+- Confirm GitHub deploy flow. First staff preview can deploy from `feature/nextjs-foundation`; after merge, point staging at the default branch.
 - Add staging domain.
 - Add cache/revalidation strategy for product/category pages.
 - Verify `.html` redirect behavior in staging.
@@ -256,5 +257,7 @@ Acceptance criteria:
 - Do not commit `.env` files.
 - Do not expose BigCommerce Admin/Management tokens in frontend code.
 - Do not invent real product facts, prices, availability, or IDs.
+- Do not build or include Find a Dealer, dealer locator, or store-locator functionality in nav, footer, routes, search, or backlog.
+- Treat fulfillment, availability, and shipping promise copy as data-driven. Do not globally apply `Ships in 24 business hours`; render it only when the product/category data provides that fulfillment value, and do not derive it from a fake live shipping calculation.
 - Keep Catalyst as a reference, not the default base, unless a future proof shows it reduces work without compromising the custom builder.
 - Use Render staging before production launch.

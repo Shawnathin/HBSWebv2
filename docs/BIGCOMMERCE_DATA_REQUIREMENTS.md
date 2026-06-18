@@ -56,6 +56,11 @@ Every listing card needs:
 - Price, sale price, retail/MSRP/compare-at price when available.
 - Currency.
 - Inventory/availability state.
+- Backend-provided fulfillment and availability display fields:
+  - `fulfillmentBadge`.
+  - `availabilityMessage`.
+  - `leadTimeLabel`.
+  - `shippingPromise`.
 - Purchasability state: add to cart, choose options, request quote, preorder, out of stock.
 - Badges: sale, in stock, custom order, new arrival, pro series, etc.
 - Sort data: featured rank, category sort order, delivery rank or availability rank.
@@ -68,6 +73,8 @@ Potential source:
 - Storefront GraphQL for shopper-safe product/listing data.
 - Catalog Admin APIs on the server for custom fields/metafields that are not available in the storefront query.
 - Product/category metafields for merchandising attributes.
+
+Fulfillment and shipping promise copy must come from BigCommerce/backend catalog data. `Ships in 24 business hours` is an allowed display value only when provided by that data. The frontend should render the field when present, but should not apply it globally or calculate live shipping timing yet.
 
 ### Product Detail Page
 

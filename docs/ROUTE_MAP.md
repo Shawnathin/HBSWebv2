@@ -12,6 +12,8 @@ Scope: map the current static prototype routes to proposed production routes for
 - Let BigCommerce product/category custom URLs inform final canonical paths.
 - Use dynamic route resolution where catalog URLs need to come from BigCommerce.
 - Mark MVP routes separately from later routes so staging can launch with a focused surface area.
+- Do not create `/pool_tables`; the pool table category route is `/pool-tables`.
+- Do not create Find a Dealer, dealer locator, or locator routes.
 
 ## Current Root Static Routes
 
@@ -63,6 +65,13 @@ These files should not become public production routes as-is:
 | `/collections/[slug]` | Generic category fallback | BigCommerce category/custom URL resolver | Later |
 | `/resources/[slug]` | Editorial content | CMS/static config/BigCommerce pages, TBD | Later |
 | `/services/[slug]` | Service detail pages | CMS/static config, TBD | Later |
+
+## Explicitly Excluded Routes
+
+| Route or feature | Decision |
+| --- | --- |
+| `/pool_tables` | Do not create or keep. Use `/pool-tables`. |
+| Find a Dealer / dealer locator / store locator | Do not build or include in navigation, footer, search, MVP routes, or later route backlog. Ignore this UI if it appears in reference screenshots or photos. |
 
 ## MVP Route Set
 
