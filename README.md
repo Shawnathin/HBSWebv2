@@ -12,7 +12,7 @@ Install dependencies:
 npm install
 ```
 
-Start the app:
+Start the Next.js app foundation:
 
 ```bash
 npm run dev
@@ -45,10 +45,16 @@ npm run lint
 npm run build
 ```
 
-Start the production server locally after a build:
+Start the production Next.js server locally after a build:
 
 ```bash
 npm run start
+```
+
+Build the static prototype preview locally:
+
+```bash
+npm run build:static-prototype
 ```
 
 The existing scraper command is still available:
@@ -57,7 +63,7 @@ The existing scraper command is still available:
 npm run scraper
 ```
 
-## Current Routes
+## Next App Routes
 
 - `/`
 - `/pool-tables`
@@ -70,21 +76,20 @@ Do not create or use `/pool_tables`.
 
 ## Render Staff Preview
 
-The repo includes `render.yaml` for a first staff staging preview on Render. The preview runs the current Next.js app with mock/prototype-derived data only; BigCommerce is still intentionally disconnected and no `.env` file is required.
+The repo includes `render.yaml` for a staff staging preview on Render. The default staff preview serves the original static HTML prototype, because that is the more faithful reference for the team building the real site.
 
-Recommended first deployment:
+Recommended Render deployment:
 
 ```text
-Service type: Web Service
+Service type: Static Site
 Branch: feature/nextjs-foundation
-Build command: npm ci && npm run build
-Start command: npm run start
-Health check path: /
+Build command: npm run build:static-prototype
+Publish directory: dist-static
 ```
 
-Use the `free` instance for an initial no-cost preview, or upgrade the Render service if staff need it to stay warm during the workday. Keep all future secrets in the Render Dashboard or a protected environment group, never in committed files.
+This static preview does not connect to BigCommerce and does not require secrets or `.env` files. Keep all future secrets in the Render Dashboard or a protected environment group, never in committed files.
 
-See `docs/RENDER_STAGING_DEPLOYMENT.md` for the staff-preview checklist.
+See `docs/STATIC_PROTOTYPE_RENDER_PREVIEW.md` for the staff-preview checklist. The Next.js foundation remains in the repo for engineering work, but it is not the staff truth source yet.
 
 ## Integration Notes
 
